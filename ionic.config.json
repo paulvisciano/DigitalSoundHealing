@@ -1,0 +1,7 @@
+{
+  "name": "musical-heptagons",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
