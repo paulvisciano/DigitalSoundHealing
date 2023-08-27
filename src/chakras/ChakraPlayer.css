@@ -1,0 +1,49 @@
+/* Positions */
+.chakra-player.top-left 
+{
+    position: absolute;
+    top: 0;
+    left : 0;
+}
+
+.chakra-player.top-middle 
+{
+    position: absolute;
+    top: 0;
+    left : 33%;
+}
+
+.chakra-player.top-right 
+{
+    position: absolute;
+    top: 0;
+    left : 66%;
+}
+
+.chakra-player.center 
+{
+    position: absolute;
+    top: 25%;
+    left : 33%;
+}
+
+.chakra-player.bottom-left 
+{
+    position: absolute;
+    top: 50%;
+    left : 0;
+}
+
+.chakra-player.bottom-middle 
+{
+    position: absolute;
+    top: 50%;
+    left : 33%;
+}
+
+.chakra-player.bottom-right 
+{
+    position: absolute;
+    top: 50%;
+    left : 66%;
+}

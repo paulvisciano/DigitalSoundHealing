@@ -3,6 +3,6 @@ import './Home.css';
 import ChakraPlayer from '../chakras/ChakraPlayer';
 import { PositionEnum } from '../colors/PositionsEnum';
 
-const Home: React.FC = () => <ChakraPlayer position={PositionEnum.TopLeft}/>
+const Home: React.FC = () => <ChakraPlayer playerPosition={PositionEnum.BottomRight}/>
 
 export default Home;
