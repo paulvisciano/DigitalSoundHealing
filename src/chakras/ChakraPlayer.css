@@ -1,4 +1,14 @@
 /* Positions */
+
+.chakra-player.full-screen
+{
+    position: absolute;
+    top: 0;
+    left : 0;
+    height: 100vh;
+    width: 100vw;
+}
+
 .chakra-player.top-left 
 {
     position: absolute;
@@ -46,4 +56,5 @@
     position: absolute;
     top: 50%;
     left : 66%;
+    overflow : hidden;
 }
