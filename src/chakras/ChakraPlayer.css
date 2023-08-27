@@ -1,5 +1,11 @@
 /* Positions */
 
+.chakra-player { 
+    height: 500px;
+    width: 500px;
+    overflow: hidden;
+}
+
 .chakra-player.full-screen
 {
     position: absolute;
