@@ -57,7 +57,7 @@ const ChakraCircle: React.FC<{ chakra: ChakraInterface, chakraNumber: number }> 
     return (<div className="chakraCircle"
         ref={chakraCircleRef}
         style={{
-            backgroundColor: chakra.colorHex,
+            // backgroundColor: chakra.colorHex,
             height: size,
             width: size,
             borderRadius: size

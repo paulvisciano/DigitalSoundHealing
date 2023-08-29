@@ -1,58 +1,19 @@
-Positions
+.heart-player {
+    height: 50vh;
+    width: 50vh;
+    max-height: 700px;
+    max-width: 700px;
+    border-radius: 600px;
 
-/* .chakra-player { 
-    height: 500px;
-    width: 500px;
-    overflow: hidden;
-} */
+    background-color: #B71C1C;
 
-.top-left 
-{
-    position: absolute;
-    top: 0;
-    left : 0;
-}
-
-.top-middle 
-{
-    position: absolute;
-    top: 0;
-    left : 50%;
-    z-index: 3;
-}
-
-.top-right 
-{
-    position: absolute;
-    top: 0;
-    left : 100%;
-}
-
-.center 
-{
-    position: absolute;
-    top: 50%;
-    left : 50%;
-}
-
-.bottom-left 
-{
-    position: absolute;
-    top: 100%;
-    left : 0;
-}
-
-.bottom-middle 
-{
-    position: absolute;
-    top: 100%;
-    left : 50%;
-    z-index: 6;
-}
-
-.bottom-right 
-{
-    position: absolute;
-    top: 100%;
-    left : 100%;
+    box-shadow:
+    inset 0 0 50px #E53935,
+    inset 20px 0 80px #E53935,
+    inset -20px 0 80px #E53935,
+    inset 20px 0 300px #E53935  ,
+    inset -20px 0 300px #C62828,
+    0 0 50px #E53935,
+    -10px 0 80px #E53935,
+    10px 0 80px #C62828;
 }

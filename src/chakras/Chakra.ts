@@ -1,6 +1,6 @@
 import { ColorEnum } from "../colors/ColorEnum";
 import { getUniqueColorFromGeneric } from "../colors/ColorGenerator";
-import { PositionEnum } from "../colors/PositionsEnum";
+import { PositionEnum } from "../positions/PositionsEnum";
 import { NoteEnum } from "../sounds/NoteEnum";
 
 //https://www.color-meanings.com/chakra-colors-the-7-chakras-and-their-meanings/
@@ -101,4 +101,6 @@ export class Chakra implements ChakraInterface {
         console.log(`Play ${this.name} | ${this.note} | ${uniqueColor}`);
 
     }
+
+    
 }

@@ -58,3 +58,15 @@ the 6 crowns
     > https://developer.apple.com/documentation/corehaptics/updating_continuous_and_transient_haptic_parameters_in_real_time
     > https://www.youtube.com/watch?v=00jRoEFnpk8
 
+
+FUTURE IDEAS : 
+
+    - Create an animation which goes from the constilation to the individual instruments for each chakra
+    - Each chakra is a planet, make the instruments look like the planets 
+    - Make the planets move based on spacial data, suddle motion in the planet based on the movement of the actual planets
+
+Resources :
+    - Chakras & Planets https://jothishi.com/chakras-and-planets/
+    - Glowing effects https://codersblock.com/blog/creating-glow-effects-with-css/
+
+keywords : TheNumber7, Chakras, Colors, Aroma, Notes, Planets
