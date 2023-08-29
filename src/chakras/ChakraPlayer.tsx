@@ -12,17 +12,17 @@ const ChakraPlayer: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
 
     useEffect(() => {
         if (animation.current === null) {
-
+            //TODO: Add rotation if it looks better, when the note cirles are in place
             const rotatingAnimation = createAnimation()
                 .addElement(chakraCircleRef.current!)
                 .keyframes([
                     { offset: 0, transform: 'scale(1) rotate(0)' },
-                    { offset: 0.15, transform: 'scale(1.03) rotate(45deg)' },
-                    { offset: 0.3, transform: 'scale(1.05) rotate(90deg)' },
-                    { offset: 0.5, transform: 'scale(1.08) rotate(125deg)' },
-                    { offset: 0.75, transform: 'scale(1.05) rotate(180deg)' },
-                    { offset: 0.85, transform: 'scale(1.03) rotate(270deg)' },
-                    { offset: 1, transform: 'scale(1) rotate(360deg)' }
+                    { offset: 0.15, transform: 'scale(1.03) rotate(0)' },
+                    { offset: 0.3, transform: 'scale(1.05) rotate(0)' },
+                    { offset: 0.5, transform: 'scale(1.1) rotate(0)' },
+                    { offset: 0.75, transform: 'scale(1.05) rotate(0)' },
+                    { offset: 0.85, transform: 'scale(1.03) rotate(0)' },
+                    { offset: 1, transform: 'scale(1) rotate(0)' }
                 ]);
 
             animation.current = createAnimation()
@@ -33,27 +33,13 @@ const ChakraPlayer: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
         }
     }, [chakraCircleRef]);
 
-    const playAnimation = () => {
-        animation.current?.play();
-    };
-    const pauseAnimation = () => {
-        animation.current?.pause();
-    };
-    const stopAnimation = () => {
-        animation.current?.stop();
+    const toggleAnimation = () => {
+        animation.current?.isRunning() ?  animation.current?.pause() : animation.current?.play();
     };
 
-    const [isHovering, setIsHovering] = React.useState(
-        false
-    );
-
-    return (<div ref={chakraCircleRef} className={`${chakra.nameAsString}-player ${chakra.position}`} onMouseEnter={() => {
-        setIsHovering(true);
-        playAnimation();
-    }}
-        onMouseLeave={() => {
-            setIsHovering(false);
-            playAnimation();
+    return (<div ref={chakraCircleRef} className={`${chakra.nameAsString}-player ${chakra.position}`} 
+        onClick={() => {
+            toggleAnimation();
         }}>
         {
             Chakras.map(chakra => (<ChakrasComponent chakra={chakra}></ChakrasComponent>))

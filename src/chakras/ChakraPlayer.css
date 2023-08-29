@@ -1,19 +1,144 @@
-.heart-player {
+/* Create a mixin to simplify all of this 
+or move it to jscss*/
+.crown-player {
     height: 50vh;
     width: 50vh;
+    max-height: 300px;
+    max-width: 300px;
+    border-radius: 600px;
+
+    background-color: #4A148C;
+
+    box-shadow:
+    inset 0 0 40px #7B1FA2,
+    inset 20px 0 80px #6A1B9A,
+    inset -20px 0 200px #6A1B9A,
+    inset 20px 0 300px #4A148C  ,
+    inset -20px 0 300px #4A148C,
+    0 0 50px #AB47BC,
+    -5px 0 80px #AB47BC,
+    40px 0 80px #6A1B9A;
+}
+
+/* TODO Add the rest of the planets */
+.thirdeye-player {
+    height: 50vh;
+    width: 50vh;
+    max-height: 400px;
+    max-width: 400px;
+    border-radius: 600px;
+
+    background-color: #1A237E;
+
+    box-shadow:
+    inset 0 0 40px #3F51B5,
+    inset 20px 0 80px #283593,
+    inset -20px 0 200px #283593,
+    inset 20px 0 300px #1A237E  ,
+    inset -20px 0 300px #1A237E,
+    0 0 50px #283593,
+    -5px 0 80px #283593,
+    40px 0 80px #283593;
+}
+
+.throat-player {
+    height: 50vh;
+    width: 50vh;
+    max-height: 360px;
+    max-width: 360px;
+    border-radius: 600px;
+
+    background-color: #01579B;
+
+    box-shadow:
+    inset 0 0 40px #81D4FA,
+    inset 20px 0 80px #81D4FA,
+    inset -20px 0 200px #29B6F6,
+    inset 20px 0 300px #42A5F5  ,
+    inset -20px 0 300px #42A5F5,
+    0 0 50px #03A9F4,
+    -5px 0 80px #03A9F4,
+    40px 0 80px #03A9F4;
+}
+
+.heart-player {
+    height: 57vh;
+    width: 57vh;
     max-height: 700px;
     max-width: 700px;
     border-radius: 600px;
 
-    background-color: #B71C1C;
+    background-color: #2E7D32;
 
     box-shadow:
-    inset 0 0 50px #E53935,
-    inset 20px 0 80px #E53935,
-    inset -20px 0 80px #E53935,
-    inset 20px 0 300px #E53935  ,
+    inset 0 0 40px #4CAF50,
+    inset 20px 0 80px #388E3C,
+    inset -20px 0 200px #388E3C,
+    inset 20px 0 300px #388E3C  ,
+    inset -20px 0 300px #388E3C,
+    0 0 50px #388E3C,
+    -5px 0 80px #388E3C,
+    20px 0 80px #388E3C;
+}
+
+.solar-player {
+    height: 50vh;
+    width: 50vh;
+    max-height: 340px;
+    max-width: 340px;
+    border-radius: 600px;
+
+    background-color: #FDD835;
+
+    box-shadow:
+    inset 0 0 40px #FBC02D,
+    inset 20px 0 80px #FBC02D,
+    inset -20px 0 200px #FBC02D,
+    inset 20px 0 300px #F9A825  ,
+    inset -20px 0 300px #FDD835,
+    0 0 50px #FBC02D,
+    -5px 0 80px #F9A825,
+    40px 0 80px #FBC02D;
+}
+
+.sacral-player {
+    height: 50vh;
+    width: 50vh;
+    max-height: 400px;
+    max-width: 400px;
+    border-radius: 600px;
+
+    background-color: #E65100;
+
+    box-shadow:
+    inset 0 0 40px #FF9800,
+    inset 20px 0 80px #EF6C00,
+    inset -20px 0 200px #F57C00,
+    inset 20px 0 300px #E65100  ,
+    inset -20px 0 300px #E65100,
+    0 0 50px #F57C00,
+    -5px 0 80px #F57C00,
+    40px 0 80px #F57C00;
+}
+
+.root-player {
+    height: 45vh;
+    width: 45vh;
+    max-height: 390px;
+    max-width: 390px;
+    border-radius: 600px;
+
+    background-color: #E65100;
+
+    background-color: #C62828;
+
+    box-shadow:
+    inset 0 0 40px #E53935,
+    inset 20px 0 80px #C62828,
+    inset -20px 0 200px #D32F2F,
+    inset 20px 0 300px #C62828  ,
     inset -20px 0 300px #C62828,
-    0 0 50px #E53935,
-    -10px 0 80px #E53935,
-    10px 0 80px #C62828;
+    0 0 50px #C62828,
+    -5px 0 80px #E53935,
+    20px 0 80px #D32F2F;
 }
