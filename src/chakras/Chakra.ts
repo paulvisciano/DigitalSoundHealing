@@ -1,13 +1,14 @@
 import { ColorEnum } from "../colors/ColorEnum";
 import { getUniqueColorFromGeneric } from "../colors/ColorGenerator";
+import { PositionEnum } from "../colors/PositionsEnum";
 import { NoteEnum } from "../sounds/NoteEnum";
 
 //https://www.color-meanings.com/chakra-colors-the-7-chakras-and-their-meanings/
-enum ChakraEnum {
+export enum ChakraEnum {
     Crown = 1,
     ThirdEye = 2,
     Throat = 3,
-    Heart = 4,
+    Heart = 4, 
     Solar = 5,
     Sacral = 6,
     Root = 7
@@ -19,16 +20,18 @@ export interface ChakraInterface {
     note: NoteEnum;
     color: ColorEnum;
     colorHex : string;
+    position : PositionEnum;
     play : any;
 }
 
-class Chakra implements ChakraInterface {
+export class Chakra implements ChakraInterface {
     name: ChakraEnum;
     nameAsString : string;
     note: NoteEnum;
     noteAsString : string;
     color: ColorEnum;
     colorHex : string;
+    position : PositionEnum;
 
     constructor(name: ChakraEnum) {
         this.name = name;
@@ -39,42 +42,50 @@ class Chakra implements ChakraInterface {
                 this.note = NoteEnum.B;
                 this.color = ColorEnum.Violet;
                 this.colorHex = '#6000EE';
+                this.position = PositionEnum.TopLeft
                 break;
             case ChakraEnum.ThirdEye:
                 this.note = NoteEnum.A;
                 this.color = ColorEnum.DarkBlue;
                 this.colorHex = "#3F51B5";
+                this.position = PositionEnum.TopMiddle
                 break;
             case ChakraEnum.Throat:
                 this.note = NoteEnum.G;
                 this.color = ColorEnum.LightBlue;
                 this.colorHex = "#2196F3";
+                this.position = PositionEnum.TopRight
                 break;
             case ChakraEnum.Heart:
                 this.note = NoteEnum.F;
                 this.color = ColorEnum.Green;
                 this.colorHex = "#4CAF50";
+                this.position = PositionEnum.Center
                 break;
             case ChakraEnum.Solar:
                 this.note = NoteEnum.E;
                 this.color = ColorEnum.Yellow;
                 this.colorHex = "#FFEB3B";
+                this.position = PositionEnum.BottomLeft
                 break;
             case ChakraEnum.Sacral:
                 this.note = NoteEnum.D;
                 this.color = ColorEnum.Orange;
                 this.colorHex = "#FF9800";
+                this.position = PositionEnum.BottomMiddle
                 break;
             case ChakraEnum.Root:
                 this.note = NoteEnum.C;
                 this.color = ColorEnum.Red;
                 this.colorHex = "#F44336";
+                this.position = PositionEnum.BottomRight
                 break;
 
             default:
                 this.note = NoteEnum.F;
                 this.color = ColorEnum.Green;
                 this.colorHex = "#4CAF50";
+                this.position = PositionEnum.Center;
                 break;
         }
 
@@ -91,13 +102,3 @@ class Chakra implements ChakraInterface {
 
     }
 }
-
-export const Chakras = [
-    new Chakra(ChakraEnum.Crown),
-    new Chakra(ChakraEnum.ThirdEye),
-    new Chakra(ChakraEnum.Throat),
-    new Chakra(ChakraEnum.Heart),
-    new Chakra(ChakraEnum.Solar),
-    new Chakra(ChakraEnum.Sacral),
-    new Chakra(ChakraEnum.Root),
-];

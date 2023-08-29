@@ -1,17 +1,14 @@
 import React from 'react';
 import { PositionEnum } from '../colors/PositionsEnum';
 import ChakrasComponent from '../chakras/ChakrasComponent';
-import { PlayerPositionEnum } from '../colors/PlayerPosition';
 import './ChakraPlayer.css';
+import { ChakraInterface } from './Chakra';
+import { Chakras } from '../pages/Home';
 
-const chakraPositions = [PositionEnum.TopLeft, PositionEnum.TopMiddle, PositionEnum.TopRight,
-PositionEnum.Center,
-PositionEnum.BottomLeft, PositionEnum.BottomMiddle, PositionEnum.BottomRight];
-
-const ChakraPlayer: React.FC<{ playerPosition: PlayerPositionEnum }> = ({ playerPosition = PlayerPositionEnum.FullScreen  }) =>
-    <div className={`chakra-player ${playerPosition.toString()}`}>
+const ChakraPlayer: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => 
+    <div className={`${chakra.nameAsString}-player ${chakra.position}`}>
         {
-        chakraPositions.map(chakraPosition => <ChakrasComponent position={chakraPosition}></ChakrasComponent>)
+        Chakras.map(chakra => (<ChakrasComponent chakra={chakra}></ChakrasComponent>))
     }</div>
 
 export default ChakraPlayer;

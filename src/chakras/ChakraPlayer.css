@@ -1,66 +1,58 @@
-/* Positions */
+Positions
 
-.chakra-player { 
+/* .chakra-player { 
     height: 500px;
     width: 500px;
     overflow: hidden;
-}
+} */
 
-.chakra-player.full-screen
-{
-    position: absolute;
-    top: 0;
-    left : 0;
-    height: 100vh;
-    width: 100vw;
-}
-
-.chakra-player.top-left 
+.top-left 
 {
     position: absolute;
     top: 0;
     left : 0;
 }
 
-.chakra-player.top-middle 
+.top-middle 
 {
     position: absolute;
     top: 0;
-    left : 33%;
+    left : 50%;
+    z-index: 3;
 }
 
-.chakra-player.top-right 
+.top-right 
 {
     position: absolute;
     top: 0;
-    left : 66%;
+    left : 100%;
 }
 
-.chakra-player.center 
-{
-    position: absolute;
-    top: 25%;
-    left : 33%;
-}
-
-.chakra-player.bottom-left 
+.center 
 {
     position: absolute;
     top: 50%;
+    left : 50%;
+}
+
+.bottom-left 
+{
+    position: absolute;
+    top: 100%;
     left : 0;
 }
 
-.chakra-player.bottom-middle 
+.bottom-middle 
 {
     position: absolute;
-    top: 50%;
-    left : 33%;
+    top: 100%;
+    left : 50%;
+    z-index: 6;
 }
 
-.chakra-player.bottom-right 
+.bottom-right 
 {
     position: absolute;
-    top: 50%;
-    left : 66%;
-    overflow : hidden;
+    top: 100%;
+    left : 100%;
 }

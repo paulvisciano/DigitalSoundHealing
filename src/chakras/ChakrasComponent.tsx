@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from 'react';
-import { ChakraInterface, Chakras } from './Chakras';
+import { ChakraInterface } from './Chakra';
 import './ChakrasComponent.css';
 import useSound from 'use-sound';
 import bongo from "../assets/sounds/bongo.wav";
 import { createAnimation, Animation } from '@ionic/react';
-import { PositionEnum } from '../colors/PositionsEnum';
+import { Chakras } from '../pages/Home';
 
 const BASE_SIZE = 800;
 
@@ -75,8 +75,8 @@ const ChakraCircle: React.FC<{ chakra: ChakraInterface, chakraNumber: number }> 
 }
 
 
-const ChakrasComponent: React.FC<{ position: PositionEnum }> = ({ position }) => {
-    return <div className={`chakraCircle ${position.toString()}`}>
+const ChakrasComponent: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
+    return <div className={`chakraCircle ${chakra.nameAsString}`}>
         {
             Chakras.map((chakra: any, index: number) => <ChakraCircle key={chakra.name}
                 chakra={chakra} chakraNumber={index + 1} />
