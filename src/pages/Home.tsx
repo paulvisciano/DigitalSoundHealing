@@ -14,6 +14,6 @@ export const Chakras = [
   new Chakra(ChakraEnum.Root),
 ];
 
-const Home: React.FC = () => <>{Chakras.map(chakra => (<div><ChakraPlayer chakra={chakra}></ChakraPlayer></div>))}</>
+const Home: React.FC = () => <>{Chakras.map(chakra => (<ChakraPlayer key={`${chakra.name}_${chakra.note}`} chakra={chakra}/>))}</>
 
 export default Home;

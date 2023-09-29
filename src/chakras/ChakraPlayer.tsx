@@ -1,12 +1,11 @@
 import React, { useEffect, useRef } from 'react';
-import ChakrasComponent from '../chakras/ChakrasComponent';
 import { ChakraInterface } from './Chakra';
-import { Chakras } from '../pages/Home';
 import './ChakraPlayer.css'
 import { createAnimation, Animation } from '@ionic/react';
+import useSound from 'use-sound';
+import { MethodEnum, SingingBowl } from '../instruments/SingingBowl';
 
 const ChakraPlayer: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
-
     const chakraCircleRef = useRef<HTMLDivElement | null>(null);
     const animation = useRef<Animation | null>(null);
 
@@ -34,17 +33,21 @@ const ChakraPlayer: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
     }, [chakraCircleRef]);
 
     const toggleAnimation = () => {
-        animation.current?.isRunning() ?  animation.current?.pause() : animation.current?.play();
+        animation.current?.isRunning() ? animation.current?.pause() : animation.current?.play();
     };
 
-    return (<div ref={chakraCircleRef} className={`${chakra.nameAsString}-player ${chakra.position}`} 
+    const singingBowl = new SingingBowl();
+
+    const [strikeSoundBowl] = useSound(singingBowl.getSoundPath(chakra.note, MethodEnum.Strike), { volume: 0.01 });
+    const [glideSoundBowl] = useSound(singingBowl.getSoundPath(chakra.note, MethodEnum.Glide), { volume: 0.01 });
+
+    return (<div ref={chakraCircleRef} className={`${chakra.nameAsString}-player ${chakra.position}`}
         onClick={() => {
             toggleAnimation();
-        }}>
-        {
-            Chakras.map(chakra => (<ChakrasComponent chakra={chakra}></ChakrasComponent>))
-        }</div>);
+            strikeSoundBowl();
+        }} onDoubleClick={() => {
+            glideSoundBowl();
+        }} />);
 }
-
 
 export default ChakraPlayer;

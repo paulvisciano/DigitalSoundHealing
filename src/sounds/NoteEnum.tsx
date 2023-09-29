@@ -1,9 +1,9 @@
 export enum NoteEnum {
-    B = 1,
-    A = 2,
-    F = 3,
-    E = 4,
-    D = 5,
-    C = 6,
-    G = 7
+    B = "B",
+    A = "A",
+    F = "F",
+    E = "E",
+    D = "D",
+    C = "C",
+    G = "G"
 }

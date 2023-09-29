@@ -3,6 +3,7 @@
     position: absolute;
     top: 10%;
     left: 15%;
+    z-index: 1;
 }
 
 .top-middle {
@@ -16,18 +17,21 @@
     position: absolute;
     top: 10%;
     left: 70%;
+    z-index: 2;
 }
 
 .center {
     position: absolute;
     top: 27%;
     left: 33%;
+    z-index: 7;
 }
 
 .bottom-left {
     position: absolute;
     top: 50%;
     left: 10%;
+    z-index: 4;
 }
 
 .bottom-middle {
@@ -41,4 +45,5 @@
     position: absolute;
     top: 50%;
     left: 63%;
+    z-index: 5;
 }
