@@ -18,6 +18,10 @@ or move it to jscss*/
     0 0 50px #AB47BC,
     -5px 0 80px #AB47BC,
     40px 0 80px #6A1B9A;
+
+    .chakra-center { 
+        background-color: #42048d;
+    }
 }
 
 /* TODO Add the rest of the planets */
@@ -39,6 +43,10 @@ or move it to jscss*/
     0 0 50px #283593,
     -5px 0 80px #283593,
     40px 0 80px #283593;
+
+    .chakra-center { 
+        background-color: #030e7f;
+    }
 }
 
 .throat-player {
@@ -59,6 +67,10 @@ or move it to jscss*/
     0 0 50px #03A9F4,
     -5px 0 80px #03A9F4,
     40px 0 80px #03A9F4;
+
+    .chakra-center { 
+        background-color: #01579B;
+    }
 }
 
 .heart-player {
@@ -79,6 +91,10 @@ or move it to jscss*/
     0 0 50px #388E3C,
     -5px 0 80px #388E3C,
     20px 0 80px #388E3C;
+
+    .chakra-center { 
+        background-color: #008f08;
+    }
 }
 
 .solar-player {
@@ -99,6 +115,10 @@ or move it to jscss*/
     0 0 50px #FBC02D,
     -5px 0 80px #F9A825,
     40px 0 80px #FBC02D;
+
+    .chakra-center { 
+        background-color: #edc204;
+    }
 }
 
 .sacral-player {
@@ -119,6 +139,10 @@ or move it to jscss*/
     0 0 50px #F57C00,
     -5px 0 80px #F57C00,
     40px 0 80px #F57C00;
+
+    .chakra-center { 
+        background-color: #c74600;
+    }
 }
 
 .root-player {
@@ -141,4 +165,32 @@ or move it to jscss*/
     0 0 50px #C62828,
     -5px 0 80px #E53935,
     20px 0 80px #D32F2F;
+
+    .chakra-center { 
+        background-color: #b50101;
+    }
+}
+
+
+.chakra-center { 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 30%;
+    width: 30%;
+    border-radius: 100px;
+    opacity: 0.3;
+}
+
+.note-lbl { 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    font-size: 28px;
+    color: white;
+
+    user-select: none;
 }
