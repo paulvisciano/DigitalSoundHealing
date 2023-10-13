@@ -73,27 +73,60 @@ or move it to jscss*/
     }
 }
 
-.heart-player {
-    height: 57vh;
-    width: 57vh;
-    max-height: 700px;
-    max-width: 700px;
-    border-radius: 600px;
 
-    background-color: #2E7D32;
+.heart-shape-wrapper {
+    height: 70vh;
+    width: 70vh;
+    background-image: url("../assets/chakras/heart.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
 
-    box-shadow:
-        inset 0 0 40px #4CAF50,
-        inset 20px 0 80px #388E3C,
-        inset -20px 0 200px #388E3C,
-        inset 20px 0 300px #388E3C,
-        inset -20px 0 300px #388E3C,
-        0 0 50px #388E3C,
-        -5px 0 80px #388E3C,
-        20px 0 80px #388E3C;
+    .heart-player {
+        position: relative;
+        top: 17.77%;
+        left: 5px;
+        margin: 0 auto;
+        height: 66%;
+        width: 66%;
+        border-radius: 300px;
+        opacity: 0.9;
 
-    .chakra-center {
-        background-color: #008f08;
+        background-color: #2E7D32;
+
+        /* 50
+        #e8f5e9
+        100
+        #c8e6c9
+        200
+        #a5d6a7
+        300
+        #81c784
+        400
+        #66bb6a
+        500
+        #4caf50
+        600
+        #43a047
+        700
+        #388e3c
+        800
+        #2e7d32
+        900
+        #1b5e20 */
+
+        box-shadow:
+            inset 0 0 40px #388e3c,
+            inset 20px 0 80px #81c784,
+            inset -20px 0 200px #1b5e20,
+            inset 20px 0 300px #1b5e20,
+            inset -20px 0 300px #2e7d32,
+            0 0 50px #388e3c,
+            -5px 0 80px #2e7d32,
+            20px 0 80px #2e7d32;
+
+        .chakra-center {
+            background-color: #1b5e20;
+        }
     }
 }
 
@@ -152,11 +185,11 @@ or move it to jscss*/
     background-image: url("../assets/chakras/root.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: bottom center, 50%, 50%;
 
     .root-player {
         position: relative;
-        top : 50px;
+        top: 11%;
+        left: 5px;
         margin: 0 auto;
         height: 77%;
         width: 77%;
@@ -188,7 +221,7 @@ or move it to jscss*/
     height: 30%;
     width: 30%;
     border-radius: 100px;
-    opacity: 0.6;
+    opacity: 0.9;
 }
 
 .note-lbl {
