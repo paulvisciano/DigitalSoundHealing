@@ -69,5 +69,7 @@ Resources :
     - Chakras & Planets https://jothishi.com/chakras-and-planets/
     - Glowing effects https://codersblock.com/blog/creating-glow-effects-with-css/
     - Material Design Colors : https://mui.com/material-ui/customization/color/
+    - SVGs as background : https://www.svgbackgrounds.com/how-to-add-svgs-with-css-background-image/
+    - Source for SVGs : https://thenounproject.com/
 
 keywords : TheNumber7, Chakras, Colors, Aroma, Notes, Planets
