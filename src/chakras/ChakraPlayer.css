@@ -10,16 +10,16 @@ or move it to jscss*/
     background-color: #4A148C;
 
     box-shadow:
-    inset 0 0 40px #7B1FA2,
-    inset 20px 0 80px #6A1B9A,
-    inset -20px 0 200px #6A1B9A,
-    inset 20px 0 300px #4A148C  ,
-    inset -20px 0 300px #4A148C,
-    0 0 50px #AB47BC,
-    -5px 0 80px #AB47BC,
-    40px 0 80px #6A1B9A;
+        inset 0 0 40px #7B1FA2,
+        inset 20px 0 80px #6A1B9A,
+        inset -20px 0 200px #6A1B9A,
+        inset 20px 0 300px #4A148C,
+        inset -20px 0 300px #4A148C,
+        0 0 50px #AB47BC,
+        -5px 0 80px #AB47BC,
+        40px 0 80px #6A1B9A;
 
-    .chakra-center { 
+    .chakra-center {
         background-color: #42048d;
     }
 }
@@ -35,16 +35,16 @@ or move it to jscss*/
     background-color: #1A237E;
 
     box-shadow:
-    inset 0 0 40px #3F51B5,
-    inset 20px 0 80px #283593,
-    inset -20px 0 200px #283593,
-    inset 20px 0 300px #1A237E  ,
-    inset -20px 0 300px #1A237E,
-    0 0 50px #283593,
-    -5px 0 80px #283593,
-    40px 0 80px #283593;
+        inset 0 0 40px #3F51B5,
+        inset 20px 0 80px #283593,
+        inset -20px 0 200px #283593,
+        inset 20px 0 300px #1A237E,
+        inset -20px 0 300px #1A237E,
+        0 0 50px #283593,
+        -5px 0 80px #283593,
+        40px 0 80px #283593;
 
-    .chakra-center { 
+    .chakra-center {
         background-color: #030e7f;
     }
 }
@@ -59,16 +59,16 @@ or move it to jscss*/
     background-color: #01579B;
 
     box-shadow:
-    inset 0 0 40px #81D4FA,
-    inset 20px 0 80px #81D4FA,
-    inset -20px 0 200px #29B6F6,
-    inset 20px 0 300px #42A5F5  ,
-    inset -20px 0 300px #42A5F5,
-    0 0 50px #03A9F4,
-    -5px 0 80px #03A9F4,
-    40px 0 80px #03A9F4;
+        inset 0 0 40px #81D4FA,
+        inset 20px 0 80px #81D4FA,
+        inset -20px 0 200px #29B6F6,
+        inset 20px 0 300px #42A5F5,
+        inset -20px 0 300px #42A5F5,
+        0 0 50px #03A9F4,
+        -5px 0 80px #03A9F4,
+        40px 0 80px #03A9F4;
 
-    .chakra-center { 
+    .chakra-center {
         background-color: #01579B;
     }
 }
@@ -83,16 +83,16 @@ or move it to jscss*/
     background-color: #2E7D32;
 
     box-shadow:
-    inset 0 0 40px #4CAF50,
-    inset 20px 0 80px #388E3C,
-    inset -20px 0 200px #388E3C,
-    inset 20px 0 300px #388E3C  ,
-    inset -20px 0 300px #388E3C,
-    0 0 50px #388E3C,
-    -5px 0 80px #388E3C,
-    20px 0 80px #388E3C;
+        inset 0 0 40px #4CAF50,
+        inset 20px 0 80px #388E3C,
+        inset -20px 0 200px #388E3C,
+        inset 20px 0 300px #388E3C,
+        inset -20px 0 300px #388E3C,
+        0 0 50px #388E3C,
+        -5px 0 80px #388E3C,
+        20px 0 80px #388E3C;
 
-    .chakra-center { 
+    .chakra-center {
         background-color: #008f08;
     }
 }
@@ -107,16 +107,16 @@ or move it to jscss*/
     background-color: #FDD835;
 
     box-shadow:
-    inset 0 0 40px #FBC02D,
-    inset 20px 0 80px #FBC02D,
-    inset -20px 0 200px #FBC02D,
-    inset 20px 0 300px #F9A825  ,
-    inset -20px 0 300px #FDD835,
-    0 0 50px #FBC02D,
-    -5px 0 80px #F9A825,
-    40px 0 80px #FBC02D;
+        inset 0 0 40px #FBC02D,
+        inset 20px 0 80px #FBC02D,
+        inset -20px 0 200px #FBC02D,
+        inset 20px 0 300px #F9A825,
+        inset -20px 0 300px #FDD835,
+        0 0 50px #FBC02D,
+        -5px 0 80px #F9A825,
+        40px 0 80px #FBC02D;
 
-    .chakra-center { 
+    .chakra-center {
         background-color: #edc204;
     }
 }
@@ -131,63 +131,71 @@ or move it to jscss*/
     background-color: #E65100;
 
     box-shadow:
-    inset 0 0 40px #FF9800,
-    inset 20px 0 80px #EF6C00,
-    inset -20px 0 200px #F57C00,
-    inset 20px 0 300px #E65100  ,
-    inset -20px 0 300px #E65100,
-    0 0 50px #F57C00,
-    -5px 0 80px #F57C00,
-    40px 0 80px #F57C00;
+        inset 0 0 40px #FF9800,
+        inset 20px 0 80px #EF6C00,
+        inset -20px 0 200px #F57C00,
+        inset 20px 0 300px #E65100,
+        inset -20px 0 300px #E65100,
+        0 0 50px #F57C00,
+        -5px 0 80px #F57C00,
+        40px 0 80px #F57C00;
 
-    .chakra-center { 
+    .chakra-center {
         background-color: #c74600;
     }
 }
 
-.root-player {
-    height: 45vh;
-    width: 45vh;
-    max-height: 390px;
-    max-width: 390px;
-    border-radius: 600px;
 
-    background-color: #E65100;
+.root-shape-wrapper {
+    height: 50vh;
+    width: 50vh;
+    background-image: url("../assets/chakras/root.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center, 50%, 50%;
 
-    background-color: #C62828;
+    .root-player {
+        position: relative;
+        top : 50px;
+        margin: 0 auto;
+        height: 77%;
+        width: 77%;
+        border-radius: 300px;
+        opacity: 0.9;
 
-    box-shadow:
-    inset 0 0 40px #E53935,
-    inset 20px 0 80px #C62828,
-    inset -20px 0 200px #D32F2F,
-    inset 20px 0 300px #C62828  ,
-    inset -20px 0 300px #C62828,
-    0 0 50px #C62828,
-    -5px 0 80px #E53935,
-    20px 0 80px #D32F2F;
+        background-color: #E65100;
 
-    .chakra-center { 
-        background-color: #b50101;
+        box-shadow:
+            inset 0 0 40px #E53935,
+            inset 20px 0 80px #C62828,
+            inset -20px 0 200px #D32F2F,
+            inset 20px 0 300px #C62828,
+            inset -20px 0 300px #C62828,
+            0 0 50px #C62828,
+            -5px 0 80px #E53935,
+            20px 0 80px #D32F2F;
+
+        .chakra-center {
+            background-color: #b50101;
+        }
     }
 }
 
-
-.chakra-center { 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+.chakra-center {
+    position: relative;
+    top: 33%;
+    margin: 0 auto;
     height: 30%;
     width: 30%;
     border-radius: 100px;
-    opacity: 0.3;
+    opacity: 0.6;
 }
 
-.note-lbl { 
+.note-lbl {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 
     font-size: 28px;
     color: white;

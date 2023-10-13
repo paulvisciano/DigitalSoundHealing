@@ -22,18 +22,20 @@ const ChakraPlayer: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
     const [strikeSoundBowl] = useSound(singingBowl.getSoundPath(chakra.note, MethodEnum.Strike), { volume: 0.1 });
     const [glideSoundBowl] = useSound(singingBowl.getSoundPath(chakra.note, MethodEnum.Glide), { volume: 0.2 });
 
-    return (<div ref={chakraCircleRef} className={`${chakra.nameAsString}-player ${chakra.position}`}
-        onClick={() => {
-            toggleAnimation();
-            strikeSoundBowl();
-        }}>
-        <div className='chakra-center' onClick={() => {
-            glideSoundBowl();
-        }}>
-            <div ref={noteLblRef} className='note-lbl' >{chakra.note}</div>
-        </div>
-
-    </div>);
+    return (
+        <div className={`${chakra.nameAsString}-shape-wrapper ${chakra.position}`}>
+            <div ref={chakraCircleRef} className={`${chakra.nameAsString}-player`}
+                onClick={() => {
+                    toggleAnimation();
+                    strikeSoundBowl();
+                }}>
+                <div className='chakra-center' onClick={() => {
+                    glideSoundBowl();
+                }}>
+                    <div ref={noteLblRef} className='note-lbl' >{chakra.note}</div>
+                </div>
+            </div>
+        </div>);
 }
 
 export default ChakraPlayer;
