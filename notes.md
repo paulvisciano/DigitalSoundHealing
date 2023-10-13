@@ -68,5 +68,6 @@ FUTURE IDEAS :
 Resources :
     - Chakras & Planets https://jothishi.com/chakras-and-planets/
     - Glowing effects https://codersblock.com/blog/creating-glow-effects-with-css/
+    - Chakras & Matras https://thehavenshoppe.com/planets-and-chakras/
 
 keywords : TheNumber7, Chakras, Colors, Aroma, Notes, Planets
