@@ -1,5 +1,26 @@
 /* Create a mixin to simplify all of this 
 or move it to jscss*/
+.chakra-center {
+    position: relative;
+    top: 33%;
+    margin: 0 auto;
+    height: 30%;
+    width: 30%;
+    border-radius: 100px;
+    opacity: 0.9;
+}
+
+.note-lbl {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 28px;
+    color: white;
+
+    user-select: none;
+}
 
 .crown-shape-wrapper {
     height: 60vh;
@@ -168,30 +189,41 @@ or move it to jscss*/
     }
 }
 
-.sacral-player {
-    height: 50vh;
-    width: 50vh;
-    max-height: 400px;
-    max-width: 400px;
-    border-radius: 600px;
 
-    background-color: #E65100;
+.sacral-shape-wrapper {
+    height: 75vh;
+    width: 75vh;
+    background-image: url("../assets/chakras/sacral.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
 
-    box-shadow:
-        inset 0 0 40px #FF9800,
-        inset 20px 0 80px #EF6C00,
-        inset -20px 0 200px #F57C00,
-        inset 20px 0 300px #E65100,
-        inset -20px 0 300px #E65100,
-        0 0 50px #F57C00,
-        -5px 0 80px #F57C00,
-        40px 0 80px #F57C00;
+    .sacral-player {
+        position: relative;
+        top: 20%;
+        left: -1px;
+        margin: 0 auto;
+        height: 60%;
+        width: 60%;
+        border-radius: 300px;
+        opacity: 0.75;
 
-    .chakra-center {
-        background-color: #c74600;
+        background-color: var(--orange-800);
+
+        box-shadow:
+            inset 0 0 40px var(--orange-400),
+            inset 20px 0 80px var(--orange-500),
+            inset -20px 0 200px var(--orange-800),
+            inset 20px 0 300px var(--orange-800),
+            inset -20px 0 300px var(--orange-800),
+            0 0 50px var(--orange-700),
+            -5px 0 80px var(--orange-700),
+            40px 0 80px var(--orange-700);
+
+        .chakra-center {
+            background-color: var(--orange-900);
+        }
     }
 }
-
 
 .root-shape-wrapper {
     height: 50vh;
@@ -210,7 +242,7 @@ or move it to jscss*/
         border-radius: 300px;
         opacity: 0.9;
 
-        background-color: #E65100;
+        background-color: var(--orange-900);
 
         box-shadow:
             inset 0 0 40px #E53935,
@@ -226,26 +258,4 @@ or move it to jscss*/
             background-color: #b50101;
         }
     }
-}
-
-.chakra-center {
-    position: relative;
-    top: 33%;
-    margin: 0 auto;
-    height: 30%;
-    width: 30%;
-    border-radius: 100px;
-    opacity: 0.9;
-}
-
-.note-lbl {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    font-size: 28px;
-    color: white;
-
-    user-select: none;
 }
