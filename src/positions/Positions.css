@@ -2,7 +2,7 @@
 .top-left {
     position: absolute;
     top: -5%;
-    left: 5%;
+    left: 0%;
     z-index: 1;
 }
 
@@ -29,8 +29,8 @@
 
 .bottom-left {
     position: absolute;
-    top: 50%;
-    left: 10%;
+    top: 42%;
+    left: 0%;
     z-index: 4;
 }
 
