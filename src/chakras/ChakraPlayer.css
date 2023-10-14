@@ -1,5 +1,6 @@
 /* Create a mixin to simplify all of this 
 or move it to jscss*/
+
 .crown-player {
     height: 50vh;
     width: 50vh;
@@ -7,20 +8,20 @@ or move it to jscss*/
     max-width: 300px;
     border-radius: 600px;
 
-    background-color: #4A148C;
+    background-color: var(--purple-800);
 
     box-shadow:
-        inset 0 0 40px #7B1FA2,
-        inset 20px 0 80px #6A1B9A,
-        inset -20px 0 200px #6A1B9A,
-        inset 20px 0 300px #4A148C,
-        inset -20px 0 300px #4A148C,
-        0 0 50px #AB47BC,
-        -5px 0 80px #AB47BC,
-        40px 0 80px #6A1B9A;
+        inset 0 0 40px var(--purple-600),
+        inset 20px 0 80px var(--purple-800),
+        inset -20px 0 200px var(--purple-900),
+        inset 20px 0 300px var(--purple-900),
+        inset -20px 0 300px var(--purple-900),
+        0 0 50px var(--purple-300),
+        -5px 0 80px var(--purple-800),
+        40px 0 80px var(--purple-900);
 
     .chakra-center {
-        background-color: #42048d;
+        background-color: var(--purple-900);
     }
 }
 
@@ -32,20 +33,20 @@ or move it to jscss*/
     max-width: 400px;
     border-radius: 600px;
 
-    background-color: #1A237E;
+    background-color: var(--indigo-900);
 
     box-shadow:
-        inset 0 0 40px #3F51B5,
-        inset 20px 0 80px #283593,
-        inset -20px 0 200px #283593,
-        inset 20px 0 300px #1A237E,
-        inset -20px 0 300px #1A237E,
-        0 0 50px #283593,
-        -5px 0 80px #283593,
-        40px 0 80px #283593;
+        inset 0 0 40px var(--indigo-500),
+        inset 20px 0 80px var(--indigo-800),
+        inset -20px 0 200px var(--indigo-800),
+        inset 20px 0 300px var(--indigo-900),
+        inset -20px 0 300px var(--indigo-900),
+        0 0 50px var(--indigo-800),
+        -5px 0 80px var(--indigo-800),
+        40px 0 80px var(--indigo-800);
 
     .chakra-center {
-        background-color: #030e7f;
+        background-color: var(--indigo-900);
     }
 }
 
@@ -56,20 +57,20 @@ or move it to jscss*/
     max-width: 360px;
     border-radius: 600px;
 
-    background-color: #01579B;
+    background-color: var(--blue-800);
 
     box-shadow:
-        inset 0 0 40px #81D4FA,
-        inset 20px 0 80px #81D4FA,
-        inset -20px 0 200px #29B6F6,
-        inset 20px 0 300px #42A5F5,
-        inset -20px 0 300px #42A5F5,
-        0 0 50px #03A9F4,
-        -5px 0 80px #03A9F4,
-        40px 0 80px #03A9F4;
+        inset 0 0 40px var(--blue-200),
+        inset 20px 0 80px var(--blue-400),
+        inset -20px 0 200px var(--blue-400),
+        inset 20px 0 300px var(--blue-800),
+        inset -20px 0 300px var(--blue-800),
+        0 0 50px var(--blue-500),
+        -5px 0 80px var(--blue-500),
+        40px 0 80px var(--blue-500);
 
     .chakra-center {
-        background-color: #01579B;
+        background-color: var(--blue-900);
     }
 }
 
@@ -91,41 +92,20 @@ or move it to jscss*/
         border-radius: 300px;
         opacity: 0.9;
 
-        background-color: #2E7D32;
-
-        /* 50
-        #e8f5e9
-        100
-        #c8e6c9
-        200
-        #a5d6a7
-        300
-        #81c784
-        400
-        #66bb6a
-        500
-        #4caf50
-        600
-        #43a047
-        700
-        #388e3c
-        800
-        #2e7d32
-        900
-        #1b5e20 */
+        background-color: var(--green-800);
 
         box-shadow:
-            inset 0 0 40px #388e3c,
-            inset 20px 0 80px #81c784,
-            inset -20px 0 200px #1b5e20,
-            inset 20px 0 300px #1b5e20,
-            inset -20px 0 300px #2e7d32,
-            0 0 50px #388e3c,
-            -5px 0 80px #2e7d32,
-            20px 0 80px #2e7d32;
+            inset 0 0 40px var(--green-700),
+            inset 20px 0 80px var(--green-300),
+            inset -20px 0 200px var(--green-900),
+            inset 20px 0 300px var(--green-900),
+            inset -20px 0 300px var(--green-800),
+            0 0 50px var(--green-700),
+            -5px 0 80px var(--green-800),
+            20px 0 80px var(--green-800);
 
         .chakra-center {
-            background-color: #1b5e20;
+            background-color: var(--green-900);
         }
     }
 }
@@ -137,20 +117,20 @@ or move it to jscss*/
     max-width: 340px;
     border-radius: 600px;
 
-    background-color: #FDD835;
+    background-color: var(--yellow-700);
 
     box-shadow:
-        inset 0 0 40px #FBC02D,
-        inset 20px 0 80px #FBC02D,
-        inset -20px 0 200px #FBC02D,
-        inset 20px 0 300px #F9A825,
-        inset -20px 0 300px #FDD835,
-        0 0 50px #FBC02D,
-        -5px 0 80px #F9A825,
-        40px 0 80px #FBC02D;
+        inset 0 0 40px var(--yellow-600),
+        inset 20px 0 80px var(--yellow-800),
+        inset -20px 0 200px var(--yellow-800),
+        inset 20px 0 300px var(--yellow-700),
+        inset -20px 0 300px var(--yellow-900),
+        0 0 50px var(--yellow-800),
+        -5px 0 80px var(--yellow-600),
+        40px 0 80px var(--yellow-800);
 
     .chakra-center {
-        background-color: #edc204;
+        background-color: var(--yellow-800);
     }
 }
 

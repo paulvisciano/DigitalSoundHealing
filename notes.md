@@ -27,7 +27,6 @@ TODOS :
     3 | 22
     6 | 25
 
-
 latency could be a consern
 
 
@@ -36,18 +35,7 @@ latency could be a consern
     Am Trumpet > 
     G Violin >  1 | 1000
 
-
-
 2 insturements to use for starters are a horn, shofar horn & put harp on the edges
-
-
-
-Resources : 
-    > https://www.audacityteam.org/
-    > https://freesound.org/
-    > https://www.joshwcomeau.com/react/announcing-use-sound-react-hook/
-    > https://github.com/joshwcomeau/use-sound#sprites
-
 
 
 Vikings 
@@ -66,6 +54,10 @@ FUTURE IDEAS :
     - Make the planets move based on spacial data, suddle motion in the planet based on the movement of the actual planets
 
 Resources :
+    - https://www.audacityteam.org/
+    - https://freesound.org/
+    - https://www.joshwcomeau.com/react/announcing-use-sound-react-hook/
+    - https://github.com/joshwcomeau/use-sound#sprites
     - Chakras & Planets https://jothishi.com/chakras-and-planets/
     - Glowing effects https://codersblock.com/blog/creating-glow-effects-with-css/
     - Material Design Colors : https://mui.com/material-ui/customization/color/
