@@ -1,8 +1,8 @@
 /* Positions */
 .top-left {
     position: absolute;
-    top: 10%;
-    left: 15%;
+    top: -5%;
+    left: 5%;
     z-index: 1;
 }
 
