@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { ChakraInterface } from './Chakra';
 import './ChakraPlayer.css'
-import { createAnimation, Animation } from '@ionic/react';
+import { Animation } from '@ionic/react';
 import useSound from 'use-sound';
 import { MethodEnum, SingingBowl } from '../instruments/SingingBowl';
 import pulsating from '../animations/pulsating';
