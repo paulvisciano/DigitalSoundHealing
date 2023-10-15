@@ -1,8 +1,8 @@
 import React from 'react';
 import './Home.css';
-import ChakraPlayer from '../components/ChakraPlayer';
-import { Chakra, ChakraEnum } from '../components/Chakra';
-import "../positions/Positions.css";
+import ChakraPlayer from 'components/ChakraPlayer';
+import { Chakra, ChakraEnum } from 'components/Chakra';
+import "positions/Positions.css";
 
 export const Chakras = [
   new Chakra(ChakraEnum.Crown),

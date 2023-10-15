@@ -3,9 +3,9 @@ import { ChakraInterface } from './Chakra';
 import './ChakraPlayer.css'
 import { Animation } from '@ionic/react';
 import useSound from 'use-sound';
-import { MethodEnum, SingingBowl } from '../instruments/SingingBowl';
-import pulsating from '../animations/pulsating';
-import rotation from '../animations/rotation';
+import { MethodEnum, SingingBowl } from 'instruments/SingingBowl';
+import pulsating from 'animations/pulsating';
+import rotation from 'animations/rotation';
 
 
 const ChakraPlayer: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
