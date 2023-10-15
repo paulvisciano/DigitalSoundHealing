@@ -7,11 +7,11 @@ import { MethodEnum, SingingBowl } from 'instruments/SingingBowl';
 import pulsating from 'animations/pulsating';
 import rotation from 'animations/rotation';
 import ChakraShape from './chakraShape/ChakraShape';
+import ChakraCenter from './chakraCenter/ChakraCenter';
 
 const ChakraPlayer: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
     const chakraShapeRef = useRef<HTMLDivElement>(null);
     const chakraCircleRef = useRef<HTMLDivElement | null>(null);
-    const noteLblRef = useRef<HTMLDivElement | null>(null);
     const rotationAnimation = useRef<Animation | null>(null);
     const pulsatingAnimation = useRef<Animation | null>(null);
     const singingBowl = new SingingBowl();
@@ -25,7 +25,6 @@ const ChakraPlayer: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
     };
 
     const [strikeSoundBowl] = useSound(singingBowl.getSoundPath(chakra.note, MethodEnum.Strike), { volume: 0.1 });
-    const [glideSoundBowl] = useSound(singingBowl.getSoundPath(chakra.note, MethodEnum.Glide), { volume: 0.2 });
 
     return (
         <ChakraShape reference={chakraShapeRef} chakra={chakra}>
@@ -34,11 +33,7 @@ const ChakraPlayer: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
                     toggleAnimation();
                     strikeSoundBowl();
                 }}>
-                <div className='chakra-center' onClick={() => {
-                    glideSoundBowl();
-                }}>
-                    <div ref={noteLblRef} className='note-lbl' >{chakra.note}</div>
-                </div>
+                <ChakraCenter chakra={chakra}/>
             </div>
         </ChakraShape>
        );

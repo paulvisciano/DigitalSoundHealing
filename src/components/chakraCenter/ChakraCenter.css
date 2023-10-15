@@ -1,0 +1,23 @@
+/* Create a mixin to simplify all of this 
+or move it to jscss*/
+.chakra-center {
+    position: relative;
+    top: 33%;
+    margin: 0 auto;
+    height: 30%;
+    width: 30%;
+    border-radius: 100px;
+    opacity: 0.9;
+}
+
+.note-lbl {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 28px;
+    color: white;
+
+    user-select: none;
+}
