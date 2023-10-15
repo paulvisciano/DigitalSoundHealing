@@ -22,252 +22,192 @@ or move it to jscss*/
     user-select: none;
 }
 
-.crown-shape-wrapper {
-    height: 60vh;
-    width: 60vh;
-    background-image: url("../assets/chakras/crown.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
+.crown-player {
+    position: relative;
+    top: 15.77%;
+    left: 2px;
+    margin: 0 auto;
+    height: 70%;
+    width: 70%;
+    border-radius: 300px;
+    opacity: 0.9;
 
-    .crown-player {
-        position: relative;
-        top: 15.77%;
-        left: 2px;
-        margin: 0 auto;
-        height: 70%;
-        width: 70%;
-        border-radius: 300px;
-        opacity: 0.9;
+    background-color: var(--purple-800);
 
-        background-color: var(--purple-800);
+    box-shadow:
+        inset 0 0 40px var(--purple-600),
+        inset 20px 0 80px var(--purple-800),
+        inset -20px 0 200px var(--purple-900),
+        inset 20px 0 300px var(--purple-900),
+        inset -20px 0 300px var(--purple-900),
+        0 0 50px var(--purple-300),
+        -5px 0 80px var(--purple-800),
+        40px 0 80px var(--purple-900);
 
-        box-shadow:
-            inset 0 0 40px var(--purple-600),
-            inset 20px 0 80px var(--purple-800),
-            inset -20px 0 200px var(--purple-900),
-            inset 20px 0 300px var(--purple-900),
-            inset -20px 0 300px var(--purple-900),
-            0 0 50px var(--purple-300),
-            -5px 0 80px var(--purple-800),
-            40px 0 80px var(--purple-900);
-
-        .chakra-center {
-            background-color: var(--purple-900);
-        }
+    .chakra-center {
+        background-color: var(--purple-900);
     }
 }
 
-.thirdeye-shape-wrapper {
-    height: 80vh;
-    width: 80vh;
-    background-image: url("../assets/chakras/third-eye.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
+.thirdeye-player {
+    position: relative;
+    top: 25%;
+    left: 0px;
+    margin: 0 auto;
+    height: 57%;
+    width: 57%;
+    border-radius: 300px;
+    opacity: 0.9;
 
-    .thirdeye-player {
-        position: relative;
-        top: 25%;
-        left: 0px;
-        margin: 0 auto;
-        height: 57%;
-        width: 57%;
-        border-radius: 300px;
-        opacity: 0.9;
+    background-color: var(--indigo-800);
 
-        background-color: var(--indigo-800);
+    box-shadow:
+        inset 0 0 40px var(--indigo-500),
+        inset 20px 0 80px var(--indigo-500),
+        inset -20px 0 200px var(--indigo-500),
+        inset 20px 0 300px var(--indigo-900),
+        inset -20px 0 300px var(--indigo-900),
+        0 0 50px var(--indigo-500),
+        -5px 0 80px var(--indigo-500),
+        40px 0 80px var(--indigo-500);
 
-        box-shadow:
-            inset 0 0 40px var(--indigo-500),
-            inset 20px 0 80px var(--indigo-500),
-            inset -20px 0 200px var(--indigo-500),
-            inset 20px 0 300px var(--indigo-900),
-            inset -20px 0 300px var(--indigo-900),
-            0 0 50px var(--indigo-500),
-            -5px 0 80px var(--indigo-500),
-            40px 0 80px var(--indigo-500);
-
-        .chakra-center {
-            background-color: var(--indigo-900);
-        }
+    .chakra-center {
+        background-color: var(--indigo-900);
     }
 }
 
-.throat-shape-wrapper {
-    height: 60vh;
-    width: 60vh;
-    background-image: url("../assets/chakras/throat.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
+.throat-player {
+    position: relative;
+    top: 11%;
+    left: 4px;
+    margin: 0 auto;
+    height: 76%;
+    width: 76%;
+    border-radius: 300px;
+    opacity: 0.9;
 
-    .throat-player {
-        position: relative;
-        top: 11%;
-        left: 4px;
-        margin: 0 auto;
-        height: 76%;
-        width: 76%;
-        border-radius: 300px;
-        opacity: 0.9;
+    background-color: var(--blue-800);
 
-        background-color: var(--blue-800);
+    box-shadow:
+        inset 0 0 40px var(--blue-200),
+        inset 20px 0 80px var(--blue-400),
+        inset -20px 0 200px var(--blue-400),
+        inset 20px 0 300px var(--blue-800),
+        inset -20px 0 300px var(--blue-800),
+        0 0 50px var(--blue-500),
+        -5px 0 80px var(--blue-500),
+        40px 0 80px var(--blue-500);
 
-        box-shadow:
-            inset 0 0 40px var(--blue-200),
-            inset 20px 0 80px var(--blue-400),
-            inset -20px 0 200px var(--blue-400),
-            inset 20px 0 300px var(--blue-800),
-            inset -20px 0 300px var(--blue-800),
-            0 0 50px var(--blue-500),
-            -5px 0 80px var(--blue-500),
-            40px 0 80px var(--blue-500);
-
-        .chakra-center {
-            top : 35%;
-            background-color: var(--blue-900);
-        }
+    .chakra-center {
+        top: 35%;
+        background-color: var(--blue-900);
     }
 }
 
-.heart-shape-wrapper {
-    height: 70vh;
-    width: 70vh;
-    background-image: url("../assets/chakras/heart.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.8;
+.heart-player {
+    position: relative;
+    top: 17.77%;
+    left: 5px;
+    margin: 0 auto;
+    height: 66%;
+    width: 66%;
+    border-radius: 300px;
+    opacity: 0.9;
 
-    .heart-player {
-        position: relative;
-        top: 17.77%;
-        left: 5px;
-        margin: 0 auto;
-        height: 66%;
-        width: 66%;
-        border-radius: 300px;
-        opacity: 0.9;
+    background-color: var(--green-800);
 
-        background-color: var(--green-800);
+    box-shadow:
+        inset 0 0 40px var(--green-700),
+        inset 20px 0 80px var(--green-300),
+        inset -20px 0 200px var(--green-900),
+        inset 20px 0 300px var(--green-900),
+        inset -20px 0 300px var(--green-800),
+        0 0 50px var(--green-700),
+        -5px 0 80px var(--green-800),
+        20px 0 80px var(--green-800);
 
-        box-shadow:
-            inset 0 0 40px var(--green-700),
-            inset 20px 0 80px var(--green-300),
-            inset -20px 0 200px var(--green-900),
-            inset 20px 0 300px var(--green-900),
-            inset -20px 0 300px var(--green-800),
-            0 0 50px var(--green-700),
-            -5px 0 80px var(--green-800),
-            20px 0 80px var(--green-800);
-
-        .chakra-center {
-            background-color: var(--green-900);
-        }
+    .chakra-center {
+        background-color: var(--green-900);
     }
 }
 
+.solar-player {
+    position: relative;
+    top: 17%;
+    left: -5px;
+    margin: 0 auto;
+    height: 66%;
+    width: 66%;
+    border-radius: 300px;
+    opacity: 0.9;
+    background-color: var(--yellow-700);
 
-.solar-shape-wrapper {
-    height: 65vh;
-    width: 65vh;
-    background-image: url("../assets/chakras/solar.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.8;
+    box-shadow:
+        inset 0 0 40px var(--yellow-600),
+        inset 20px 0 80px var(--yellow-800),
+        inset -20px 0 200px var(--yellow-800),
+        inset 20px 0 300px var(--yellow-700),
+        inset -20px 0 300px var(--yellow-900),
+        0 0 50px var(--yellow-800),
+        -5px 0 80px var(--yellow-600),
+        40px 0 80px var(--yellow-800);
 
-    .solar-player {
-        position: relative;
-        top: 17%;
-        left: -5px;
-        margin: 0 auto;
-        height: 66%;
-        width: 66%;
-        border-radius: 300px;
-        opacity: 0.9;
-        background-color: var(--yellow-700);
-
-        box-shadow:
-            inset 0 0 40px var(--yellow-600),
-            inset 20px 0 80px var(--yellow-800),
-            inset -20px 0 200px var(--yellow-800),
-            inset 20px 0 300px var(--yellow-700),
-            inset -20px 0 300px var(--yellow-900),
-            0 0 50px var(--yellow-800),
-            -5px 0 80px var(--yellow-600),
-            40px 0 80px var(--yellow-800);
-
-        .chakra-center {
-            top : 35%;
-            background-color: var(--yellow-800);
-        }
+    .chakra-center {
+        top: 35%;
+        background-color: var(--yellow-800);
     }
 }
 
+.sacral-player {
+    position: relative;
+    top: 20%;
+    left: -1px;
+    margin: 0 auto;
+    height: 60%;
+    width: 60%;
+    border-radius: 300px;
+    opacity: 0.75;
 
-.sacral-shape-wrapper {
-    height: 75vh;
-    width: 75vh;
-    background-image: url("../assets/chakras/sacral.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: var(--orange-800);
 
-    .sacral-player {
-        position: relative;
-        top: 20%;
-        left: -1px;
-        margin: 0 auto;
-        height: 60%;
-        width: 60%;
-        border-radius: 300px;
-        opacity: 0.75;
+    box-shadow:
+        inset 0 0 40px var(--orange-400),
+        inset 20px 0 80px var(--orange-500),
+        inset -20px 0 200px var(--orange-800),
+        inset 20px 0 300px var(--orange-800),
+        inset -20px 0 300px var(--orange-800),
+        0 0 50px var(--orange-700),
+        -5px 0 80px var(--orange-700),
+        40px 0 80px var(--orange-700);
 
-        background-color: var(--orange-800);
-
-        box-shadow:
-            inset 0 0 40px var(--orange-400),
-            inset 20px 0 80px var(--orange-500),
-            inset -20px 0 200px var(--orange-800),
-            inset 20px 0 300px var(--orange-800),
-            inset -20px 0 300px var(--orange-800),
-            0 0 50px var(--orange-700),
-            -5px 0 80px var(--orange-700),
-            40px 0 80px var(--orange-700);
-
-        .chakra-center {
-            background-color: var(--orange-900);
-        }
-    }
-}
-
-.root-shape-wrapper {
-    height: 55vh;
-    width: 55vh;
-    background-image: url("../assets/chakras/root.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    .root-player {
-        position: relative;
-        top: 11%;
-        left: 5px;
-        margin: 0 auto;
-        height: 77%;
-        width: 77%;
-        border-radius: 300px;
-        opacity: 0.9;
-
+    .chakra-center {
         background-color: var(--orange-900);
+    }
+}
 
-        box-shadow:
-            inset 0 0 40px #E53935,
-            inset 20px 0 80px #C62828,
-            inset -20px 0 200px #D32F2F,
-            inset 20px 0 300px #C62828,
-            inset -20px 0 300px #C62828,
-            0 0 50px #C62828,
-            -5px 0 80px #E53935,
-            20px 0 80px #D32F2F;
+.root-player {
+    position: relative;
+    top: 11%;
+    left: 5px;
+    margin: 0 auto;
+    height: 77%;
+    width: 77%;
+    border-radius: 300px;
+    opacity: 0.9;
 
-        .chakra-center {
-            background-color: #b50101;
-        }
+    background-color: var(--orange-900);
+
+    box-shadow:
+        inset 0 0 40px #E53935,
+        inset 20px 0 80px #C62828,
+        inset -20px 0 200px #D32F2F,
+        inset 20px 0 300px #C62828,
+        inset -20px 0 300px #C62828,
+        0 0 50px #C62828,
+        -5px 0 80px #E53935,
+        20px 0 80px #D32F2F;
+
+    .chakra-center {
+        background-color: #b50101;
     }
 }

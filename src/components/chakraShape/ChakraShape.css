@@ -1,0 +1,61 @@
+/* Create a mixin to simplify all of this 
+or move it to jscss*/
+.crown-shape-wrapper {
+    height: 60vh;
+    width: 60vh;
+    background-image: url("assets/chakras/crown.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.thirdeye-shape-wrapper {
+    height: 80vh;
+    width: 80vh;
+    background-image: url("assets/chakras/third-eye.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.throat-shape-wrapper {
+    height: 60vh;
+    width: 60vh;
+    background-image: url("assets/chakras/throat.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.heart-shape-wrapper {
+    height: 70vh;
+    width: 70vh;
+    background-image: url("assets/chakras/heart.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+}
+
+
+.solar-shape-wrapper {
+    height: 65vh;
+    width: 65vh;
+    background-image: url("assets/chakras/solar.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+}
+
+
+.sacral-shape-wrapper {
+    height: 75vh;
+    width: 75vh;
+    background-image: url("assets/chakras/sacral.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.root-shape-wrapper {
+    height: 55vh;
+    width: 55vh;
+    background-image: url("assets/chakras/root.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
