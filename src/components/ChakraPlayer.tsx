@@ -24,14 +24,14 @@ const ChakraPlayer: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
         pulsatingAnimation.current?.isRunning() ? pulsatingAnimation.current?.pause() : pulsatingAnimation.current?.play();
     };
 
-    const [strikeSoundBowl] = useSound(singingBowl.getSoundPath(chakra.note, MethodEnum.Strike), { volume: 0.1 });
+    const [glideSoundBowl] = useSound(singingBowl.getSoundPath(chakra.note, MethodEnum.Glide), { volume: 0.2 });
 
     return (
         <ChakraShape reference={chakraShapeRef} chakra={chakra}>
             <div ref={chakraCircleRef} className={`${chakra.nameAsString}-player`}
                 onClick={() => {
                     toggleAnimation();
-                    strikeSoundBowl();
+                    glideSoundBowl();
                 }}>
                 <ChakraCenter chakra={chakra}/>
             </div>

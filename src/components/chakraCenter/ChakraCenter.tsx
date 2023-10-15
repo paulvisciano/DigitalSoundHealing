@@ -17,11 +17,11 @@ const ChakraCenter: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
         pulsatingAnimation.current?.isRunning() ? pulsatingAnimation.current?.pause() : pulsatingAnimation.current?.play();
     };
 
-    const [glideSoundBowl] = useSound(singingBowl.getSoundPath(chakra.note, MethodEnum.Glide), { volume: 0.2 });
+    const [strikeSoundBowl] = useSound(singingBowl.getSoundPath(chakra.note, MethodEnum.Strike), { volume: 0.1 });
 
     return (
-        <div ref={chakraCenterRef} className='chakra-center' onClick={(event) => {
-            glideSoundBowl();
+        <div ref={chakraCenterRef} className={`chakra-center ${chakra.nameAsString}-center`} onClick={(event) => {
+            strikeSoundBowl();
             toggleAnimation();
             event.stopPropagation();
 
