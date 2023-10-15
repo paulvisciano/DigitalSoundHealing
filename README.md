@@ -6,3 +6,10 @@ Many hours were spent researching the connection between the stars, chakras, col
 
 If you want to find out more about the research, that went into creating this app make sure you check out 
 [The Digital Sound Healing Trello Board](https://trello.com/invite/b/cPY43Z4E/ATTI82717df8d43c607fe71af7be93aaff40647533D9/digital-sound-healing)
+
+To get started developing : 
+
+```
+npm install
+npm start
+```
