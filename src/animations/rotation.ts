@@ -8,9 +8,9 @@ const rotation = (animation: React.MutableRefObject<Animation | null>, elementRe
                 .addElement(elementRef.current!)
                 .keyframes([
                     { offset: 0, transform: 'scale(1) rotate(0deg)' },
-                    { offset: 0.25, transform: 'scale(1.25) rotate(180deg)' },
-                    { offset: 0.5, transform: 'scale(1.5) rotate(360deg)' },
-                    { offset: 0.75, transform: 'scale(1.25) rotate(180deg)' },
+                    { offset: 0.25, transform: 'scale(1.125) rotate(180deg)' },
+                    { offset: 0.5, transform: 'scale(1.25) rotate(360deg)' },
+                    { offset: 0.75, transform: 'scale(1.125) rotate(180deg)' },
                     { offset: 1, transform: 'scale(1) rotate(0deg)' }
                 ]);
 
