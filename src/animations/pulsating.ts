@@ -13,7 +13,7 @@ const pulsating = (animation: React.MutableRefObject<Animation | null>, elementR
                     { offset: 0.5, transform: 'scale(1.07) rotate(0)' },
                     { offset: 0.75, transform: 'scale(1.05) rotate(0)' },
                     { offset: 0.85, transform: 'scale(1.03) rotate(0)' },
-                    { offset: 1, transform: 'scale(0.97) rotate(0)' }
+                    { offset: 1, transform: 'scale(0.98) rotate(0)' }
                 ]);
 
             animation.current = createAnimation()
