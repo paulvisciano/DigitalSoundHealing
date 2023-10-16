@@ -2,6 +2,7 @@
 or move it to jscss*/
 .chakra-center {
     position: relative;
+    cursor: url("assets/icons/strike.svg") 32 32, pointer;
     top: 33%;
     margin: 0 auto;
     height: 30%;

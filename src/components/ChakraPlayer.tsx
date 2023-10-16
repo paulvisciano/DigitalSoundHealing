@@ -46,7 +46,7 @@ const ChakraPlayer: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
 
     return (
         <ChakraShape reference={chakraShapeRef} chakra={chakra}>
-            <div ref={chakraCircleRef} className={`chakra-player ${chakra.nameAsString}-player`} onClick={toggle}>
+            <div ref={chakraCircleRef} className={`chakra-player ${chakra.nameAsString}-player ${soundIsPlaying ? 'is-playing' : ''}`} onClick={toggle}>
                 <ChakraCenter chakra={chakra} />
             </div>
         </ChakraShape>

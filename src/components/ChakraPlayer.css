@@ -2,9 +2,14 @@
 or move it to jscss*/
 .chakra-player {
     position: relative;
+    cursor: url("assets/icons/rotate.svg") 32 32, pointer;
     pointer-events: auto;
     margin: 0 auto;
     border-radius: 300px;
+}
+
+.is-playing { 
+    cursor: url("assets/icons/pause.svg") 32 32, pointer;
 }
 
 .crown-player {
