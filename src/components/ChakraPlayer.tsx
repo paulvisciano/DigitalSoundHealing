@@ -22,7 +22,13 @@ const ChakraPlayer: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
     useEffect(rotation(rotationAnimation, chakraShapeRef), [chakraShapeRef]);
     useEffect(pulsating(pulsatingAnimation, chakraCircleRef), [chakraCircleRef]);
 
-    const [play, { pause }] = useSound(singingBowl.getSoundPath(chakra.note, MethodEnum.Glide), { volume: 0.2 });
+    const [play, { sound, pause }] = useSound(singingBowl.getSoundPath(chakra.note, MethodEnum.Glide), { volume: 0.2 });
+
+    sound?.on('end', () => {
+        setSoundIsPlaying(false);
+        rotationAnimation.current?.pause();
+        pulsatingAnimation.current?.pause();
+    })
 
     const toggle = () => {
         if (soundIsPlaying) {
