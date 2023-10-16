@@ -1,13 +1,17 @@
 /* Create a mixin to simplify all of this 
 or move it to jscss*/
-.crown-player {
+.chakra-player {
     position: relative;
+    pointer-events: auto;
+    margin: 0 auto;
+    border-radius: 300px;
+}
+
+.crown-player {
     top: 15.77%;
     left: 2px;
-    margin: 0 auto;
     height: 70%;
     width: 70%;
-    border-radius: 300px;
     opacity: 0.8;
 
     background-color: var(--purple-800);
@@ -24,13 +28,10 @@ or move it to jscss*/
 }
 
 .thirdeye-player {
-    position: relative;
     top: 25%;
     left: 0px;
-    margin: 0 auto;
     height: 57%;
     width: 57%;
-    border-radius: 300px;
     opacity: 0.85;
 
     background-color: var(--indigo-800);
@@ -47,13 +48,10 @@ or move it to jscss*/
 }
 
 .throat-player {
-    position: relative;
     top: 11%;
     left: 4px;
-    margin: 0 auto;
     height: 76%;
     width: 76%;
-    border-radius: 300px;
     opacity: 0.9;
 
     background-color: var(--blue-800);
@@ -70,13 +68,10 @@ or move it to jscss*/
 }
 
 .heart-player {
-    position: relative;
     top: 17.77%;
     left: 5px;
-    margin: 0 auto;
     height: 66%;
     width: 66%;
-    border-radius: 300px;
     opacity: 0.8;
 
     background-color: var(--green-800);
@@ -93,13 +88,10 @@ or move it to jscss*/
 }
 
 .solar-player {
-    position: relative;
     top: 17%;
     left: -5px;
-    margin: 0 auto;
     height: 66%;
     width: 66%;
-    border-radius: 300px;
     opacity: 0.9;
     background-color: var(--yellow-700);
 
@@ -115,13 +107,10 @@ or move it to jscss*/
 }
 
 .sacral-player {
-    position: relative;
     top: 20%;
     left: -1px;
-    margin: 0 auto;
     height: 60%;
     width: 60%;
-    border-radius: 300px;
     opacity: 0.75;
 
     background-color: var(--orange-800);
@@ -138,13 +127,10 @@ or move it to jscss*/
 }
 
 .root-player {
-    position: relative;
     top: 11%;
     left: 5px;
-    margin: 0 auto;
     height: 77%;
     width: 77%;
-    border-radius: 300px;
     opacity: 0.8;
 
     background-color: var(--red-900);
