@@ -4,7 +4,7 @@ const pulsating = (animation: React.MutableRefObject<Animation | null>, elementR
     return () => {
         if (animation.current === null) {
             //TODO: Add rotation if it looks better, when the note cirles are in place
-            const rotatingAnimation = createAnimation()
+            const pulsatingAnimation = createAnimation()
                 .addElement(elementRef.current!)
                 .keyframes([
                     { offset: 0, transform: 'scale(0.98) rotate(0)' },
@@ -20,7 +20,7 @@ const pulsating = (animation: React.MutableRefObject<Animation | null>, elementR
                 .addElement(elementRef.current!)
                 .duration(5000)
                 .iterations(Infinity)
-                .addAnimation([rotatingAnimation]);
+                .addAnimation([pulsatingAnimation]);
         }
     };
 }
