@@ -1,6 +1,16 @@
 import { NoteEnum } from "../sounds/NoteEnum";
-import { MethodEnum } from "./SingingBowl";
+
+export enum InstumentName {
+    TibetanMetalSingingBowl = "Tibetan Metal Singing Bowl",
+    TibetanCrystalSingingBowl = "Tibetan Crystal Singing Bowl",
+}
+
+export enum InstrumentGestureEnum {
+    Strike = "Strike",
+    Glide = "Glide"
+}
 
 export interface InstumentInterface { 
-    getSoundPath : (note : NoteEnum, method :MethodEnum ) => any;
+    name : InstumentName;
+    getSoundPath : (note : NoteEnum, gesture :InstrumentGestureEnum ) => any;
 }

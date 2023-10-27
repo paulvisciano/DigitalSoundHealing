@@ -3,13 +3,19 @@ import { ChakraInterface } from './Chakra';
 import './ChakraPlayer.css'
 import { Animation } from '@ionic/react';
 import useSound from 'use-sound';
-import { MethodEnum, SingingBowl } from 'instruments/SingingBowl';
+import { SingingBowl } from 'instruments/SingingBowl';
 import pulsating from 'animations/pulsating';
 import rotation from 'animations/rotation';
 import ChakraShape from './chakraShape/ChakraShape';
 import ChakraCenter from './chakraCenter/ChakraCenter';
+import { useDispatch, useSelector } from 'react-redux';
+import { playSound, selectPlayedNotes } from './ChakraPlayerSlice';
+import { InstrumentGestureEnum } from 'instruments/InstrumentInterface';
 
 const ChakraPlayer: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
+    const playedNotes = useSelector(selectPlayedNotes);
+    const dispatch = useDispatch();
+
     const singingBowl = new SingingBowl();
 
     const [soundIsPlaying, setSoundIsPlaying] = useState(false);
@@ -22,7 +28,7 @@ const ChakraPlayer: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
     useEffect(rotation(rotationAnimation, chakraShapeRef), [chakraShapeRef]);
     useEffect(pulsating(pulsatingAnimation, chakraCircleRef), [chakraCircleRef]);
 
-    const [play, { sound, pause }] = useSound(singingBowl.getSoundPath(chakra.note, MethodEnum.Glide), { volume: 0.2 });
+    const [play, { sound, pause }] = useSound(singingBowl.getSoundPath(chakra.note, InstrumentGestureEnum.Glide), { volume: 0.2 });
 
     sound?.on('end', () => {
         setSoundIsPlaying(false);
@@ -46,8 +52,9 @@ const ChakraPlayer: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
 
     return (
         <ChakraShape reference={chakraShapeRef} chakra={chakra}>
-            <div ref={chakraCircleRef} className={`chakra-player ${chakra.nameAsString}-player ${soundIsPlaying ? 'is-playing' : ''}`} onClick={toggle}>
+            <div ref={chakraCircleRef} className={`chakra-player ${chakra.nameAsString}-player ${soundIsPlaying ? 'is-playing' : ''}`} onClick={() => dispatch(playSound({ instrument: singingBowl, note: chakra.note, gesture : InstrumentGestureEnum.Glide}))}>
                 <ChakraCenter chakra={chakra} />
+                {playedNotes ? <span> Played notes {playedNotes}</span> : null}
             </div>
         </ChakraShape>
     );
