@@ -2,15 +2,16 @@ import React, { useEffect, useRef } from 'react';
 import { Animation } from '@ionic/react';
 import { ChakraInterface } from 'components/Chakra';
 import './ChakraCenter.css'
-import useSound from 'use-sound';
 import { SingingBowl } from 'instruments/SingingBowl';
 import pulsating from 'animations/pulsating';
-import { InstrumentGestureEnum } from 'instruments/InstrumentInterface';
+import { useDispatch } from 'react-redux';
+import { sheetMusicSlice } from 'store/sheetMusicSlice';
 
 const ChakraCenter: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
     const chakraCenterRef = useRef<HTMLDivElement | null>(null);
     const pulsatingAnimation = useRef<Animation | null>(null);
     const singingBowl = new SingingBowl();
+    const dispatch = useDispatch();
 
     useEffect(pulsating(pulsatingAnimation, chakraCenterRef), [chakraCenterRef]);
 
@@ -18,14 +19,15 @@ const ChakraCenter: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
         pulsatingAnimation.current?.isRunning() ? pulsatingAnimation.current?.pause() : pulsatingAnimation.current?.play();
     };
 
-    const [strikeSoundBowl] = useSound(singingBowl.getSoundPath(chakra.note, InstrumentGestureEnum.Strike), { volume: 0.1 });
-
     return (
         <div ref={chakraCenterRef} className={`chakra-center ${chakra.nameAsString}-center`} onClick={(event) => {
-            strikeSoundBowl();
-            toggleAnimation();
-            event.stopPropagation();
+            let soundDataKey = `strike${chakra.note.toString()}`;
 
+            dispatch(sheetMusicSlice.actions.performAction( { instrument : singingBowl.name, note : chakra.note } , { sound : { play : soundDataKey}} ));
+
+            toggleAnimation();
+
+            event.stopPropagation();
         }}>
             <div className='note-lbl' >{chakra.note}</div>
         </div>

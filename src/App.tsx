@@ -3,7 +3,7 @@ import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Provider } from 'react-redux'
-import store from "./store";
+import store from "./store/store";
 import Home from './pages/Home';
 
 /* Core CSS required for Ionic components to work properly */
