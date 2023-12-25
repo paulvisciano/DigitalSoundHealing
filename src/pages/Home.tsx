@@ -1,6 +1,6 @@
 import React from 'react';
 import { IonMenu, IonToolbar, IonContent, IonPage, IonMenuButton, IonHeader } from '@ionic/react';
-import ChakraPlayer from 'components/ChakraPlayer';
+import ChakraPlayer from 'components/chakraPlayer/ChakraPlayer';
 import { Chakra, ChakraEnum } from 'components/Chakra';
 import './Home.css';
 import "positions/Positions.css";

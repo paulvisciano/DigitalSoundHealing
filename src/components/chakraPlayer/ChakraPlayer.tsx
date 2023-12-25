@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ChakraInterface } from './Chakra';
+import { ChakraInterface } from '../Chakra';
 import './ChakraPlayer.css'
 import { Animation } from '@ionic/react';
 import { MetalSingingBowl } from 'instruments/MetalSingingBowl';
 import pulsating from 'animations/pulsating';
 import rotation from 'animations/rotation';
-import ChakraShape from './chakraShape/ChakraShape';
-import ChakraCenter from './chakraCenter/ChakraCenter';
+import ChakraShape from '../chakraShape/ChakraShape';
+import ChakraCenter from '../chakraCenter/ChakraCenter';
 import { useDispatch } from 'react-redux';
 
 const ChakraPlayer: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
