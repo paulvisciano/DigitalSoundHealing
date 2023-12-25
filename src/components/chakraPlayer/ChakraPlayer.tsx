@@ -1,16 +1,18 @@
-import React, { createRef, useEffect, useRef, useState } from 'react';
-import { ChakraInterface } from './Chakra';
+import React, { useEffect, useRef, useState } from 'react';
+import { ChakraInterface } from '../Chakra';
 import './ChakraPlayer.css'
 import { Animation } from '@ionic/react';
-import useSound from 'use-sound';
-import { MethodEnum, SingingBowl } from 'instruments/SingingBowl';
+import { MetalSingingBowl } from 'instruments/MetalSingingBowl';
 import pulsating from 'animations/pulsating';
 import rotation from 'animations/rotation';
-import ChakraShape from './chakraShape/ChakraShape';
-import ChakraCenter from './chakraCenter/ChakraCenter';
+import ChakraShape from '../chakraShape/ChakraShape';
+import ChakraCenter from '../chakraCenter/ChakraCenter';
+import { useDispatch } from 'react-redux';
 
 const ChakraPlayer: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
-    const singingBowl = new SingingBowl();
+    const dispatch = useDispatch();
+
+    const singingBowl = new MetalSingingBowl();
 
     const [soundIsPlaying, setSoundIsPlaying] = useState(false);
 
@@ -22,31 +24,33 @@ const ChakraPlayer: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
     useEffect(rotation(rotationAnimation, chakraShapeRef), [chakraShapeRef]);
     useEffect(pulsating(pulsatingAnimation, chakraCircleRef), [chakraCircleRef]);
 
-    const [play, { sound, pause }] = useSound(singingBowl.getSoundPath(chakra.note, MethodEnum.Glide), { volume: 0.2 });
+    //TODO : handle a sound ending via redux
+    // const [play, { sound, pause }] = useSound(singingBowl.getSoundPath(chakra.note, SoundBowlGestureEnum.Glide), { volume: 0.2 });
 
-    sound?.on('end', () => {
-        setSoundIsPlaying(false);
-        rotationAnimation.current?.pause();
-        pulsatingAnimation.current?.pause();
-    })
+    // sound?.on('end', () => {
+    //     setSoundIsPlaying(false);
+    //     rotationAnimation.current?.pause();
+    //     pulsatingAnimation.current?.pause();
+    // })
 
     const toggle = () => {
         if (soundIsPlaying) {
             rotationAnimation.current?.pause();
             pulsatingAnimation.current?.pause();
-            pause();
+            dispatch(singingBowl.stopGlide(chakra.note));
             setSoundIsPlaying(false);
         } else {
             rotationAnimation.current?.play();
             pulsatingAnimation.current?.play();
-            play();
+            dispatch(singingBowl.glide(chakra.note));
             setSoundIsPlaying(true);
         }
     };
 
     return (
         <ChakraShape reference={chakraShapeRef} chakra={chakra}>
-            <div ref={chakraCircleRef} className={`chakra-player ${chakra.nameAsString}-player ${soundIsPlaying ? 'is-playing' : ''}`} onClick={toggle}>
+            <div ref={chakraCircleRef} className={`chakra-player ${chakra.nameAsString}-player ${soundIsPlaying ? 'is-playing' : ''}`} onClick={toggle
+            }>
                 <ChakraCenter chakra={chakra} />
             </div>
         </ChakraShape>

@@ -1,11 +1,7 @@
-.top-left {
-    position: absolute;
-    top : 0;
-    left : 0;
-}
+.transparent {
+    box-shadow: none;
 
-.top-right {
-    position: absolute;
-    top : 0;
-    left : 50%;
+    ion-toolbar { 
+        --background : none;
+    }
 }

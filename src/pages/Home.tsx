@@ -1,7 +1,8 @@
 import React from 'react';
-import './Home.css';
-import ChakraPlayer from 'components/ChakraPlayer';
+import { IonMenu, IonToolbar, IonContent, IonPage, IonMenuButton, IonHeader } from '@ionic/react';
+import ChakraPlayer from 'components/chakraPlayer/ChakraPlayer';
 import { Chakra, ChakraEnum } from 'components/Chakra';
+import './Home.css';
 import "positions/Positions.css";
 
 export const Chakras = [
@@ -14,6 +15,22 @@ export const Chakras = [
   new Chakra(ChakraEnum.Root),
 ];
 
-const Home: React.FC = () => <>{Chakras.map(chakra => (<ChakraPlayer key={`${chakra.name}_${chakra.note}`} chakra={chakra}/>))}</>
+const Home: React.FC = () =>
+  <>
+    <IonMenu contentId="main-content" side='end'>
+      <IonContent>
+      </IonContent>
+    </IonMenu>
+    <IonPage id="main-content">
+      <IonHeader className='transparent'>
+        <IonToolbar>
+          <IonMenuButton slot="end"></IonMenuButton>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent fullscreen={true}>
+        {Chakras.map(chakra => (<ChakraPlayer key={`${chakra.name}_${chakra.note}`} chakra={chakra} />))}
+      </IonContent>
+    </IonPage>
+  </>
 
 export default Home;
