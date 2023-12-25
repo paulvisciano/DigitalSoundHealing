@@ -35,17 +35,18 @@ const ChakraPlayer: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
     // })
 
     const toggle = () => {
-        let soundDataKey = singingBowl.getSoundKey(SoundBowlGestureEnum.Glide, chakra.note);
+        let payload = { instrument: singingBowl.name };
+        let soundKey = singingBowl.getSoundKey(SoundBowlGestureEnum.Glide, chakra.note);
 
         if (soundIsPlaying) {
             rotationAnimation.current?.pause();
             pulsatingAnimation.current?.pause();
-            dispatch(sheetMusicSlice.actions.performAction({ instrument: singingBowl.name, note: chakra.note }, { sound: { stop: soundDataKey} }));
+            dispatch(sheetMusicSlice.actions.stop(payload, { sound: { stop: soundKey} }));
             setSoundIsPlaying(false);
         } else {
             rotationAnimation.current?.play();
             pulsatingAnimation.current?.play();
-            dispatch(sheetMusicSlice.actions.performAction({ instrument: singingBowl.name, note: chakra.note }, { sound: { play: soundDataKey } }));
+            dispatch(sheetMusicSlice.actions.play(payload, { sound: { play: soundKey } }));
             setSoundIsPlaying(true);
         }
     };

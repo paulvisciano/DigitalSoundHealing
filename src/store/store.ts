@@ -7,6 +7,7 @@ const soundsData : any =  {};
 
 const registerInstumentSounds = () => {
   let singingBowl = new SingingBowl();
+  
   singingBowl.registerSounds(soundsData);
 }
 
