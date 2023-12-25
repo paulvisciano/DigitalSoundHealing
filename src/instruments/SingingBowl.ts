@@ -16,37 +16,47 @@ import bowlFGlide from "../assets/sounds/Bowl_F_Glide.wav";
 import bowlGGlide from "../assets/sounds/Bowl_G_Glide.wav";
 
 export enum SoundBowlGestureEnum {
-    Strike = "Strike",
-    Glide = "Glide"
+    Strike = "strike",
+    Glide = "glide"
 }
 
 export class SingingBowl implements InstumentInterface {
     name = InstumentName.TibetanMetalSingingBowl;
 
-    getSoundPath = (note: NoteEnum, method: SoundBowlGestureEnum) => {
+    getSoundKey = (gesture : SoundBowlGestureEnum, note : NoteEnum) => `${gesture}${note.toUpperCase()}`;
+
+    registerSounds = (soundsData : any) => {
+        Object.values(SoundBowlGestureEnum).map(gesture => {
+            Object.values(NoteEnum).map(note =>  {
+                soundsData[this.getSoundKey(gesture, note)] = this.getSoundPath(note, gesture);
+            });
+        })
+    };
+
+    private getSoundPath = (note: NoteEnum, gesture: SoundBowlGestureEnum) => {
         let soundPath;
 
         switch (note) {
             case NoteEnum.A:
-                soundPath = method === SoundBowlGestureEnum.Strike ? bowlAStrike : bowlAGlide;
+                soundPath = gesture === SoundBowlGestureEnum.Strike ? bowlAStrike : bowlAGlide;
                 break;
             case NoteEnum.B:
-                soundPath = method === SoundBowlGestureEnum.Strike ? bowlBStrike : bowlBGlide;
+                soundPath = gesture === SoundBowlGestureEnum.Strike ? bowlBStrike : bowlBGlide;
                 break;
             case NoteEnum.C:
-                soundPath = method === SoundBowlGestureEnum.Strike ? bowlCStrike : bowlCGlide;
+                soundPath = gesture === SoundBowlGestureEnum.Strike ? bowlCStrike : bowlCGlide;
                 break;
             case NoteEnum.D:
-                soundPath = method === SoundBowlGestureEnum.Strike ? bowlDStrike : bowlDGlide;
+                soundPath = gesture === SoundBowlGestureEnum.Strike ? bowlDStrike : bowlDGlide;
                 break;
             case NoteEnum.E:
-                soundPath = method === SoundBowlGestureEnum.Strike ? bowlEStrike : bowlEGlide;
+                soundPath = gesture === SoundBowlGestureEnum.Strike ? bowlEStrike : bowlEGlide;
                 break;
             case NoteEnum.F:
-                soundPath = method === SoundBowlGestureEnum.Strike ? bowlFStrike : bowlFGlide;
+                soundPath = gesture === SoundBowlGestureEnum.Strike ? bowlFStrike : bowlFGlide;
                 break;
             case NoteEnum.G:
-                soundPath = method === SoundBowlGestureEnum.Strike ? bowlGStrike : bowlGGlide;
+                soundPath = gesture === SoundBowlGestureEnum.Strike ? bowlGStrike : bowlGGlide;
                 break;
             default:
                 soundPath = null;
