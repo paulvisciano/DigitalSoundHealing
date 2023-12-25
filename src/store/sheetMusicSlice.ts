@@ -9,7 +9,7 @@ type Payload = {
   instrument: InstumentName;
 }
 
-type SheetMusicAction = {
+export type SheetMusicAction = {
   instrument: InstumentName;
   sound: Meta;
 }
@@ -40,5 +40,6 @@ export const sheetMusicSlice = createSlice({
 });
 
 export const { play , stop } = sheetMusicSlice.actions;
+export const selectMusicActions = (state: any) => state.sheetMusic.actions
 
 export default sheetMusicSlice.reducer;
