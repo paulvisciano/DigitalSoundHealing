@@ -2,18 +2,17 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ChakraInterface } from './Chakra';
 import './ChakraPlayer.css'
 import { Animation } from '@ionic/react';
-import { SingingBowl, SoundBowlGestureEnum } from 'instruments/SingingBowl';
+import { MetalSingingBowl } from 'instruments/MetalSingingBowl';
 import pulsating from 'animations/pulsating';
 import rotation from 'animations/rotation';
 import ChakraShape from './chakraShape/ChakraShape';
 import ChakraCenter from './chakraCenter/ChakraCenter';
 import { useDispatch } from 'react-redux';
-import { sheetMusicSlice } from 'store/sheetMusicSlice';
 
 const ChakraPlayer: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
     const dispatch = useDispatch();
 
-    const singingBowl = new SingingBowl();
+    const singingBowl = new MetalSingingBowl();
 
     const [soundIsPlaying, setSoundIsPlaying] = useState(false);
 
@@ -35,18 +34,15 @@ const ChakraPlayer: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
     // })
 
     const toggle = () => {
-        let payload = { instrument: singingBowl.name };
-        let soundKey = singingBowl.getSoundKey(SoundBowlGestureEnum.Glide, chakra.note);
-
         if (soundIsPlaying) {
             rotationAnimation.current?.pause();
             pulsatingAnimation.current?.pause();
-            dispatch(sheetMusicSlice.actions.stop(payload, { sound: { stop: soundKey} }));
+            dispatch(singingBowl.stopGlide(chakra.note));
             setSoundIsPlaying(false);
         } else {
             rotationAnimation.current?.play();
             pulsatingAnimation.current?.play();
-            dispatch(sheetMusicSlice.actions.play(payload, { sound: { play: soundKey } }));
+            dispatch(singingBowl.glide(chakra.note));
             setSoundIsPlaying(true);
         }
     };

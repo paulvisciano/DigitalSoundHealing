@@ -1,13 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import soundsMiddleware from 'redux-sounds';
 import sheetMusicReducer from './sheetMusicSlice';
-import { SingingBowl } from 'instruments/SingingBowl';
+import { MetalSingingBowl } from 'instruments/MetalSingingBowl';
 
 const soundsData : any =  {};
 
 const registerInstumentSounds = () => {
-  let singingBowl = new SingingBowl();
-  
+  let singingBowl = new MetalSingingBowl();
+
   singingBowl.registerSounds(soundsData);
 }
 

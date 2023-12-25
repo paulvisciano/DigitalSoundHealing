@@ -1,5 +1,3 @@
-import { NoteEnum } from "../sounds/NoteEnum";
-import { InstumentInterface, InstumentName } from "./InstrumentInterface";
 import bowlAStrike from "../assets/sounds/Bowl_A_Strike.wav";
 import bowlBStrike from "../assets/sounds/Bowl_B_Strike.wav";
 import bowlCStrike from "../assets/sounds/Bowl_C_Strike.wav";
@@ -15,23 +13,45 @@ import bowlEGlide from "../assets/sounds/Bowl_E_Glide.wav";
 import bowlFGlide from "../assets/sounds/Bowl_F_Glide.wav";
 import bowlGGlide from "../assets/sounds/Bowl_G_Glide.wav";
 
-export enum SoundBowlGestureEnum {
+import { NoteEnum } from "../sounds/NoteEnum";
+import { InstumentInterface, InstumentName } from "./InstrumentInterface";
+import { sheetMusicSlice } from "store/sheetMusicSlice";
+
+enum SoundBowlGestureEnum {
     Strike = "strike",
     Glide = "glide"
 }
 
-export class SingingBowl implements InstumentInterface {
+export class MetalSingingBowl implements InstumentInterface {
     name = InstumentName.TibetanMetalSingingBowl;
 
-    getSoundKey = (gesture : SoundBowlGestureEnum, note : NoteEnum) => `${gesture}${note.toUpperCase()}`;
+    strike = (note: NoteEnum) => {
+        let soundKey = this.getSoundKey(SoundBowlGestureEnum.Strike, note);
 
-    registerSounds = (soundsData : any) => {
+        return sheetMusicSlice.actions.play({ instrument: this.name }, { sound: { play: soundKey } })
+    }
+
+    glide = (note: NoteEnum) => {
+        let soundKey = this.getSoundKey(SoundBowlGestureEnum.Glide, note);
+
+        return sheetMusicSlice.actions.play({ instrument: this.name }, { sound: { play: soundKey } })
+    }
+
+    stopGlide = (note : NoteEnum) => {
+        let soundKey = this.getSoundKey(SoundBowlGestureEnum.Glide, note);
+
+        return sheetMusicSlice.actions.stop({ instrument: this.name }, { sound: { stop: soundKey } })
+    }
+
+    registerSounds = (soundsData: any) => {
         Object.values(SoundBowlGestureEnum).map(gesture => {
-            Object.values(NoteEnum).map(note =>  {
+            Object.values(NoteEnum).map(note => {
                 soundsData[this.getSoundKey(gesture, note)] = this.getSoundPath(note, gesture);
             });
         })
     };
+
+    private getSoundKey = (gesture: SoundBowlGestureEnum, note: NoteEnum) => `${gesture}${note.toUpperCase()}`;
 
     private getSoundPath = (note: NoteEnum, gesture: SoundBowlGestureEnum) => {
         let soundPath;
