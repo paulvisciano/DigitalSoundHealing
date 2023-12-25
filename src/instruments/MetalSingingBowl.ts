@@ -46,7 +46,7 @@ export class MetalSingingBowl implements InstumentInterface {
     registerSounds = (soundsData: any) => {
         Object.values(SoundBowlGestureEnum).map(gesture => {
             Object.values(NoteEnum).map(note => {
-                soundsData[this.getSoundKey(gesture, note)] = this.getSoundPath(note, gesture);
+                soundsData[this.getSoundKey(gesture, note)] = { src : [this.getSoundPath(note, gesture)], volume : 0.2 };
             });
         })
     };
