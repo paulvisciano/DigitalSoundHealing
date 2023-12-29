@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import backgroundLofiAm from "../../assets/sounds/Background_Lofi_Am.wav";
 import { AppState } from 'store/store';
 import { AvailableBackgroundTracks } from './availableBackgroundTracks';
-import { addTrack, changeVolume, play } from 'store/backgroundTrackSlice';
+import { addTrack, changeVolume, play, stop } from 'store/backgroundTrackSlice';
 
 const BackgroundTracks: React.FC = ({ }) => {
     const dispatch = useDispatch();
@@ -29,6 +29,9 @@ const BackgroundTracks: React.FC = ({ }) => {
             }));
 
             dispatch(play({}, { sound: { play: soundKey } }))
+        }
+        else if(volume === 0.0) {
+            dispatch(stop({ soundKey : soundKey}, { sound : { stop : soundKey }}));
         }
         else {
             dispatch(changeVolume({ soundKey: soundKey, volume: volume }, { sound: { volume: [soundKey, volume] } }))

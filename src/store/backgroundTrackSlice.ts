@@ -9,6 +9,10 @@ type BackgroundTrack = {
   volume: number;
 }
 
+type StopPayload = {
+  soundKey : string;
+}
+
 export type BackgroundTrackState = {
   tracks: BackgroundTrack[];
 }
@@ -31,6 +35,14 @@ export const backgroundTrackSlice = createSlice({
       reducer: (state: BackgroundTrackState, action: PayloadAction<BackgroundTrack /*payload*/, string /*type*/, Meta/*meta*/>) => state,
       prepare: (payload: any, meta: Meta) => ({ payload, meta })
     },
+    stop: {
+      reducer: (state: BackgroundTrackState, action: PayloadAction<StopPayload /*payload*/, string /*type*/, Meta/*meta*/>) => {
+        state.tracks = state.tracks.filter(track => track.soundKey !== action.payload.soundKey);
+
+        return state;
+      },
+      prepare: (payload: StopPayload, meta: Meta) => ({ payload, meta })
+    },
     changeVolume: {
       reducer: (state: BackgroundTrackState, action: PayloadAction<BackgroundTrack /*payload*/, string /*type*/, Meta/*meta*/>) => {
         let newTracks = state.tracks.map(track => {
@@ -52,6 +64,6 @@ export const backgroundTrackSlice = createSlice({
   }
 });
 
-export const { addTrack, play, changeVolume } = backgroundTrackSlice.actions;
+export const { addTrack, play, stop, changeVolume } = backgroundTrackSlice.actions;
 
 export default backgroundTrackSlice.reducer;
