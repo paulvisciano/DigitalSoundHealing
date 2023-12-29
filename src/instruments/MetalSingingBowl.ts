@@ -24,6 +24,7 @@ enum SoundBowlGestureEnum {
 
 export class MetalSingingBowl implements InstumentInterface {
     name = InstumentName.TibetanMetalSingingBowl;
+    readonly VOLUME = 0.07;
 
     strike = (note: NoteEnum) => {
         let soundKey = this.getSoundKey(SoundBowlGestureEnum.Strike, note);
@@ -46,7 +47,7 @@ export class MetalSingingBowl implements InstumentInterface {
     registerSounds = (soundsData: any) => {
         Object.values(SoundBowlGestureEnum).map(gesture => {
             Object.values(NoteEnum).map(note => {
-                soundsData[this.getSoundKey(gesture, note)] = { src : [this.getSoundPath(note, gesture)], volume : 0.2 };
+                soundsData[this.getSoundKey(gesture, note)] = { src : [this.getSoundPath(note, gesture)], volume : this.VOLUME };
             });
         })
     };

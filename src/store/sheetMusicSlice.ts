@@ -5,7 +5,7 @@ type Meta = {
   sound: any;
 }
 
-type Payload = {
+type PlayInstrumentPayload = {
   instrument: InstumentName;
 }
 
@@ -14,7 +14,7 @@ type SheetMusicAction = {
   sound: Meta;
 }
 
-const _playPause = (state : any, action: PayloadAction<Payload /*payload*/, string /*type*/, Meta/*meta*/>) => {
+const _playPause = (state : any, action: PayloadAction<PlayInstrumentPayload /*payload*/, string /*type*/, Meta/*meta*/>) => {
   let sheetMusicAction = { instrument: action.payload.instrument, sound: action.meta.sound };
 
   state.actions.push(sheetMusicAction);
@@ -32,6 +32,16 @@ export const sheetMusicSlice = createSlice({
       reducer: _playPause,
       prepare: (payload: any, meta: Meta) => ({ payload, meta })
     },
+    playBackgroundTrack : {
+      reducer: (state : any, action: PayloadAction<any /*payload*/, string /*type*/, Meta/*meta*/>) => {
+        // let sheetMusicAction = { instrument: action.payload.instrument, sound: action.meta.sound };
+      
+        // state.actions.push(sheetMusicAction);
+      
+        return state;
+      },
+      prepare: (payload: any, meta: any) => ({ payload, meta })
+    },
     stop: {
       reducer: _playPause,
       prepare: (payload: any, meta: Meta) => ({ payload, meta })
@@ -39,6 +49,6 @@ export const sheetMusicSlice = createSlice({
   }
 });
 
-export const { play , stop } = sheetMusicSlice.actions;
+export const { play , stop, playBackgroundTrack} = sheetMusicSlice.actions;
 
 export default sheetMusicSlice.reducer;

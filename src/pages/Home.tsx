@@ -4,6 +4,7 @@ import ChakraPlayer from 'components/chakraPlayer/ChakraPlayer';
 import { Chakra, ChakraEnum } from 'components/Chakra';
 import './Home.css';
 import "positions/Positions.css";
+import BackgroundTracks from 'components/backgroundTracks/backgroundTracks';
 
 export const Chakras = [
   new Chakra(ChakraEnum.Crown),
@@ -19,6 +20,7 @@ const Home: React.FC = () =>
   <>
     <IonMenu contentId="main-content" side='end'>
       <IonContent>
+        <BackgroundTracks/>
       </IonContent>
     </IonMenu>
     <IonPage id="main-content">
