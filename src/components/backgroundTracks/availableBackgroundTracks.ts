@@ -1,3 +1,4 @@
 export enum AvailableBackgroundTracks { 
-    Backgrond_Lofi_Am = "BackgroundLofiAm"
+    Background_Lofi_Am = "BackgroundLofiAm",
+    Background_Perc_Am = "BackgroundPercAm"
 };
