@@ -1,20 +1,38 @@
 import React from 'react';
 import { IonAccordion, IonAccordionGroup, IonIcon, IonItem, IonLabel, IonRange } from '@ionic/react';
 import { volumeHighOutline, volumeOffOutline } from 'ionicons/icons';
-import { useDispatch } from 'react-redux';
-import { playBackgroundTrack } from 'store/sheetMusicSlice';
+import { useDispatch, useSelector } from 'react-redux';
 import backgroundLofiAm from "../../assets/sounds/Background_Lofi_Am.wav";
-import { AvailableBackgroundTracks } from './BackgroundTracksUtil';
+import { AppState } from 'store/store';
+import { AvailableBackgroundTracks } from './availableBackgroundTracks';
+import { addTrack, changeVolume, play } from 'store/backgroundTrackSlice';
 
 const BackgroundTracks: React.FC = ({ }) => {
     const dispatch = useDispatch();
+    const tracks = useSelector((state: AppState) => state.backgroundTrack.tracks);
 
-    const onVolumeChange = (soundKey : string, detail : any) => {
+    const onVolumeChange = (soundKey: string, detail: any) => {
         const volume = detail.value / 100;
+        const existingTrack = tracks.find(track => track.soundKey === soundKey);
 
-        dispatch(playBackgroundTrack({}, { sound: { stop : soundKey } }))
-        dispatch(playBackgroundTrack({}, { sound: { add: { BackgroundLofiAm : { src : backgroundLofiAm, volume : volume, loop : true }} } }))
-        dispatch(playBackgroundTrack({}, { sound: { play : soundKey }}))
+        if (!existingTrack) {
+            const newTrack = { soundKey: soundKey, volume: volume };
+
+            dispatch(addTrack(newTrack, {
+                sound: {
+                    add: {
+                        BackgroundLofiAm: {
+                            src: backgroundLofiAm, volume: volume, loop: true
+                        }
+                    }
+                }
+            }));
+
+            dispatch(play({}, { sound: { play: soundKey } }))
+        }
+        else {
+            dispatch(changeVolume({ soundKey: soundKey, volume: volume }, { sound: { volume: [soundKey, volume] } }))
+        }
     };
 
     return (

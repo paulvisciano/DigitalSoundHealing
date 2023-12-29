@@ -1,10 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
 import soundsMiddleware from 'redux-sounds';
 import sheetMusicReducer from './sheetMusicSlice';
+import backgroundTrackReducer, { BackgroundTrackState } from './backgroundTrackSlice';
 import { MetalSingingBowl } from 'instruments/MetalSingingBowl';
-import { BackgroundTracksUtil } from 'components/backgroundTracks/BackgroundTracksUtil';
 
 const soundsData : any =  {};
+
+export type AppState = {
+  sheetMusic : any;
+  backgroundTrack : BackgroundTrackState;
+};
 
 const registerInstumentSounds = (soundsData : any) => {
   let singingBowl = new MetalSingingBowl();
@@ -12,20 +17,14 @@ const registerInstumentSounds = (soundsData : any) => {
   singingBowl.registerSounds(soundsData);
 }
 
-const registerBackgroundTracks = (soundsData : any) => {
-  let backgroundTracks = new BackgroundTracksUtil();
-
-  backgroundTracks.registerSounds(soundsData);
-};
-
 registerInstumentSounds(soundsData);
-registerBackgroundTracks(soundsData);
 
 const loadedSoundsMiddleware = soundsMiddleware(soundsData);
 
 export default configureStore({
   reducer: {
-    sheetMusic: sheetMusicReducer
+    sheetMusic: sheetMusicReducer,
+    backgroundTrack : backgroundTrackReducer
   },
   middleware: (getDefaultMiddleware) =>
      getDefaultMiddleware().prepend(loadedSoundsMiddleware),
