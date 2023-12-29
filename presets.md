@@ -17,3 +17,8 @@ Different instruments that go well together
 
 4. Upbeat
     - Base https://www.youtube.com/watch?v=2mRFv1k7DMk
+
+5. Relaxing 
+    - Vocals : Ramdas https://www.youtube.com/watch?v=0y0586ffZWQ
+    - Lofi Am : from the app
+
