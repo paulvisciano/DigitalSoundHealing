@@ -20,7 +20,7 @@ const Home: React.FC = () =>
   <>
     <IonMenu contentId="main-content" side='end'>
       <IonContent>
-        <BackgroundTracks/>
+        <BackgroundTracks />
       </IonContent>
     </IonMenu>
     <IonPage id="main-content">

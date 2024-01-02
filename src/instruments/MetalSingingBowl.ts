@@ -15,7 +15,7 @@ import bowlGGlide from "../assets/sounds/Bowl_G_Glide.wav";
 
 import { NoteEnum } from "../sounds/NoteEnum";
 import { InstumentInterface, InstumentName } from "./InstrumentInterface";
-import { sheetMusicSlice } from "store/sheetMusicSlice";
+import { instumentSlice } from "store/instrumentSlice";
 
 enum SoundBowlGestureEnum {
     Strike = "strike",
@@ -29,19 +29,19 @@ export class MetalSingingBowl implements InstumentInterface {
     strike = (note: NoteEnum) => {
         let soundKey = this.getSoundKey(SoundBowlGestureEnum.Strike, note);
 
-        return sheetMusicSlice.actions.play({ instrument: this.name }, { sound: { play: soundKey } })
+        return instumentSlice.actions.play({ instrument: this.name }, { sound: { play: soundKey } })
     }
 
     glide = (note: NoteEnum) => {
         let soundKey = this.getSoundKey(SoundBowlGestureEnum.Glide, note);
 
-        return sheetMusicSlice.actions.play({ instrument: this.name }, { sound: { play: soundKey } })
+        return instumentSlice.actions.play({ instrument: this.name }, { sound: { play: soundKey } })
     }
 
     stopGlide = (note : NoteEnum) => {
         let soundKey = this.getSoundKey(SoundBowlGestureEnum.Glide, note);
 
-        return sheetMusicSlice.actions.stop({ instrument: this.name }, { sound: { stop: soundKey } })
+        return instumentSlice.actions.stop({ instrument: this.name }, { sound: { stop: soundKey } })
     }
 
     registerSounds = (soundsData: any) => {

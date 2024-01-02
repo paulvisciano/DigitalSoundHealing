@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import soundsMiddleware from 'redux-sounds';
-import sheetMusicReducer from './sheetMusicSlice';
+import instrumentReducer from './instrumentSlice';
 import backgroundTrackReducer, { BackgroundTrackState } from './backgroundTrackSlice';
 import { MetalSingingBowl } from 'instruments/MetalSingingBowl';
 
@@ -23,7 +23,7 @@ const loadedSoundsMiddleware = soundsMiddleware(soundsData);
 
 export default configureStore({
   reducer: {
-    sheetMusic: sheetMusicReducer,
+    instrument: instrumentReducer,
     backgroundTrack : backgroundTrackReducer
   },
   middleware: (getDefaultMiddleware) =>
