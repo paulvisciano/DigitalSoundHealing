@@ -6,6 +6,7 @@ import './Home.css';
 import "positions/Positions.css";
 import BackgroundTracks from 'components/backgroundTracks/backgroundTracks';
 import { PositionEnum } from 'positions/PositionsEnum';
+import { AvailableVocals } from 'components/vocalsPlayer/VocalsPlayer';
 
  
 export const Chakras = [
@@ -43,11 +44,11 @@ const Home: React.FC = () => {
     <IonContent fullscreen={true}>
       {/* {Chakras.map(chakra => (<ChakraPlayer key={`${chakra.name}_${chakra.note}`} chakra={chakra} />))} */}
 
-      <ChakraPlayer key={`${heartChakra.name}_${heartChakra.note}`} chakra={heartChakra} />
+      <ChakraPlayer key={`${heartChakra.name}_${heartChakra.note}`} vocals={AvailableVocals.IKnowNothing} chakra={heartChakra} />
 
-      <ChakraPlayer key={`${crownChakra.name}_${crownChakra.note}`} chakra={crownChakra} />
+      <ChakraPlayer key={`${crownChakra.name}_${crownChakra.note}`} vocals={AvailableVocals.FrenchDm} chakra={crownChakra} />
       
-      <ChakraPlayer key={`${throatChakra.name}_${throatChakra.note}`} chakra={throatChakra} />
+      <ChakraPlayer key={`${throatChakra.name}_${throatChakra.note}`} vocals={AvailableVocals.JustADream} chakra={throatChakra} />
    
     </IonContent>
   </IonPage>

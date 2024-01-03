@@ -3,13 +3,17 @@ import React, {
   useRef,
 } from "react";
 import { WaveSurfer, WaveForm } from "wavesurfer-react";
-import "./vocalsPlayer.css";
+import { ChakraEnum } from "components/Chakra";
+import "./VocalsPlayer.css";
+
 import justADreamVocal from "../../assets/sounds/vocals/justADream.wav";
 import noTomorrowVocal from "../../assets/sounds/vocals/noTomorrow.wav";
 import childPlayVocal from "../../assets/sounds/vocals/childplay_Am.wav";
 import chillVocal from "../../assets/sounds/vocals/chill_F.wav";
 import iAmHereVocal from "../../assets/sounds/vocals/iAmHere.wav";
-import { ChakraEnum } from "components/Chakra";
+import iKnowNothing from "../../assets/sounds/vocals/iKnowNothing.wav";
+import frenchDm from "../../assets/sounds/vocals/french_Dm.wav";
+import frenchEm from "../../assets/sounds/vocals/french_Em.wav";
 
 type VocalsPlayerProps = {
   src: AvailableVocals,
@@ -21,7 +25,10 @@ export enum AvailableVocals {
   NoTomorrow = noTomorrowVocal,
   ChildPlay = childPlayVocal,
   Chill = chillVocal,
-  IAmHere = iAmHereVocal
+  IAmHere = iAmHereVocal,
+  IKnowNothing = iKnowNothing,
+  FrenchDm = frenchDm,
+  FrenchEm = frenchEm
 }
 
 type PlayerColors = {
