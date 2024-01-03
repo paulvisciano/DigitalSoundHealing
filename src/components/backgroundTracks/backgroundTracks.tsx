@@ -7,6 +7,7 @@ import { AvailableBackgroundTracks } from './availableBackgroundTracks';
 import { addTrack, changeVolume, play, stop } from 'store/backgroundTrackSlice';
 import backgroundLofiAm from "../../assets/sounds/Background_Lofi_Am.wav";
 import backgroundPercAm from "../../assets/sounds/Background_Perc_Am.wav";
+import backgroundHarpAm from "../../assets/sounds/Background_Harp_Am.wav";
 
 const BackgroundTracks: React.FC = ({ }) => {
     const dispatch = useDispatch();
@@ -46,6 +47,12 @@ const BackgroundTracks: React.FC = ({ }) => {
                     </IonRange>
                     <IonRange mode='ios' pin={true} pinFormatter={(value: number) => `${value}%`}
                         onIonChange={event => onVolumeChange(AvailableBackgroundTracks.Background_Perc_Am, event.detail, backgroundPercAm)}>
+                        <IonIcon slot="start" icon={volumeOffOutline} />
+                        <IonIcon slot="end" icon={volumeHighOutline} />
+                    </IonRange>
+
+                    <IonRange mode='ios' pin={true} pinFormatter={(value: number) => `${value}%`}
+                        onIonChange={event => onVolumeChange(AvailableBackgroundTracks.Background_Harp_Am, event.detail, backgroundHarpAm)}>
                         <IonIcon slot="start" icon={volumeOffOutline} />
                         <IonIcon slot="end" icon={volumeHighOutline} />
                     </IonRange>
