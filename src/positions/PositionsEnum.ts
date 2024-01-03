@@ -5,5 +5,6 @@ export enum PositionEnum {
     Center = "center",
     BottomLeft = "bottom-left",
     BottomMiddle = "bottom-middle",
-    BottomRight = "bottom-right"
+    BottomRight = "bottom-right",
+    None = ""
 }

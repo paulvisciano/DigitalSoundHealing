@@ -1,5 +1,11 @@
 /* Create a mixin to simplify all of this 
 or move it to jscss*/
+.chakra-player-container {
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .chakra-player {
     position: relative;
     cursor: url("assets/icons/rotate.svg") 32 32, pointer;

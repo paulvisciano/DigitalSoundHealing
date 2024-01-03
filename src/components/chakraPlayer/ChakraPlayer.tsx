@@ -8,6 +8,7 @@ import rotation from 'animations/rotation';
 import ChakraShape from '../chakraShape/ChakraShape';
 import ChakraCenter from '../chakraCenter/ChakraCenter';
 import { useDispatch } from 'react-redux';
+import VocalsPlayer, { AvailableVocals } from 'components/vocalsPlayer/vocalsPlayer';
 
 const ChakraPlayer: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
     const dispatch = useDispatch();
@@ -48,12 +49,16 @@ const ChakraPlayer: React.FC<{ chakra: ChakraInterface }> = ({ chakra }) => {
     };
 
     return (
-        <ChakraShape reference={chakraShapeRef} chakra={chakra}>
-            <div ref={chakraCircleRef} className={`chakra-player ${chakra.nameAsString}-player ${soundIsPlaying ? 'is-playing' : ''}`} onClick={toggle
-            }>
-                <ChakraCenter chakra={chakra} />
-            </div>
-        </ChakraShape>
+        <div className={`chakra-player-container ${chakra.position}`}>
+            <ChakraShape reference={chakraShapeRef} chakra={chakra}>
+                <div ref={chakraCircleRef} className={`chakra-player ${chakra.nameAsString}-player ${soundIsPlaying ? 'is-playing' : ''}`} onClick={toggle
+                }>
+                    <ChakraCenter chakra={chakra} />
+                </div>
+            </ChakraShape>
+
+            <VocalsPlayer props={{ src: AvailableVocals.NoTomorrow, chakraName: chakra.name }} />
+        </div>
     );
 }
 
