@@ -1,0 +1,11 @@
+.vocalsPlayer-container { 
+    height: 70px;
+    width: 350px;
+    margin: 0 auto;
+    margin-top: -20px;
+    padding-left: 25px;
+    padding-top: 3px;
+    border-radius: 100px;
+    overflow: hidden;
+    pointer-events: auto;
+}
