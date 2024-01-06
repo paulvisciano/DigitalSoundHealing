@@ -1,9 +1,22 @@
 .instrument-swiper {
-    width: 700px;
-    height: 700px;
-    overflow: hidden;
-}
+    width: 500px;
+    height: 500px;
+    margin-top: 150px;
 
-.mr-swiper-slide .chakra-shape { 
-    margin : 0 auto;
+    .throat-player {
+        height: 76%;
+        width: 76%;
+    }
+
+    .throat-shape,
+    .crown-shape {
+        height: 50vh;
+        width: 50vh;
+    }
+
+    .swiper-slide {
+        .chakra-shape {
+            margin: 0 auto;
+        }
+    }
 }
