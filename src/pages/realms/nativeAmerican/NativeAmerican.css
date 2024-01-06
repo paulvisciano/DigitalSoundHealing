@@ -1,0 +1,9 @@
+.instrument-swiper {
+    width: 700px;
+    height: 700px;
+    overflow: hidden;
+}
+
+.mr-swiper-slide .chakra-shape { 
+    margin : 0 auto;
+}
