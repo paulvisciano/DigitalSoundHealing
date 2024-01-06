@@ -8,14 +8,10 @@
         width: 76%;
     }
 
-    .throat-shape,
-    .crown-shape {
-        height: 50vh;
-        width: 50vh;
-    }
-
     .swiper-slide {
         .chakra-shape {
+            height: 50vh;
+            width: 50vh;
             margin: 0 auto;
         }
     }
