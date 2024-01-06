@@ -12,11 +12,14 @@ const NativeAmericanRealm: React.FC = () => {
   let crownChakra = new Chakra(ChakraEnum.Crown);
   crownChakra.position = PositionEnum.None;
 
-  let heartChakra = new Chakra(ChakraEnum.Sacral);
-  heartChakra.position = PositionEnum.None;
-
   let throatChakra = new Chakra(ChakraEnum.Throat);
   throatChakra.position = PositionEnum.None;
+
+  let sacralChakra = new Chakra(ChakraEnum.Sacral);
+  sacralChakra.position = PositionEnum.None;
+
+  let thirdEyeChakra = new Chakra(ChakraEnum.ThirdEye);
+  thirdEyeChakra.position = PositionEnum.None;
 
   return (<>
     <Swiper
@@ -45,13 +48,14 @@ const NativeAmericanRealm: React.FC = () => {
       </SwiperSlide>
 
       <SwiperSlide>
-        <ChakraPlayer key={`${crownChakra.name}_${crownChakra.note}`} vocals={AvailableVocals.IAmHere} chakra={crownChakra} />
+        <ChakraPlayer key={`${sacralChakra.name}_${sacralChakra.note}`} vocals={AvailableVocals.IAmHere} chakra={sacralChakra} />
       </SwiperSlide>
 
       <SwiperSlide>
-        <ChakraPlayer key={`${heartChakra.name}_${heartChakra.note}`} vocals={AvailableVocals.IKnowNothing} chakra={heartChakra} />
+      <ChakraPlayer key={`${thirdEyeChakra.name}_${thirdEyeChakra.note}`} vocals={AvailableVocals.IAmHere} chakra={thirdEyeChakra} />
       </SwiperSlide>
     </Swiper>
+    
   </>)
 }
 
