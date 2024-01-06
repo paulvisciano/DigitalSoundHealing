@@ -6,11 +6,11 @@ import { MetalSingingBowl } from 'instruments/MetalSingingBowl';
 import pulsating from 'animations/pulsating';
 import rotation from 'animations/rotation';
 import ChakraShape from '../chakraShape/ChakraShape';
-import ChakraCenter from '../chakraCenter/ChakraCenter'; 
+import ChakraCenter from '../chakraCenter/ChakraCenter';
 import { useDispatch } from 'react-redux';
 import VocalsPlayer, { AvailableVocals } from 'components/vocalsPlayer/VocalsPlayer';
 
-const ChakraPlayer: React.FC<{ chakra: ChakraInterface, vocals : AvailableVocals }> = ({ chakra, vocals }) => {
+const ChakraPlayer: React.FC<{ chakra: ChakraInterface, vocals?: AvailableVocals }> = ({ chakra, vocals = null }) => {
     const dispatch = useDispatch();
 
     const singingBowl = new MetalSingingBowl();
@@ -57,7 +57,7 @@ const ChakraPlayer: React.FC<{ chakra: ChakraInterface, vocals : AvailableVocals
                 </div>
             </ChakraShape>
 
-            <VocalsPlayer props={{ src: vocals, chakraName: chakra.name }} />
+            { vocals && <VocalsPlayer props={{ src: vocals, chakraName: chakra.name }} /> }
         </div>
     );
 }
