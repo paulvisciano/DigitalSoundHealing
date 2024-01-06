@@ -1,4 +1,5 @@
 .workspace-swiper { 
+    --swiper-pagination-bullet-size : 12px;
     --swiper-pagination-bullet-inactive-color : white;
 
     width: 100%;
