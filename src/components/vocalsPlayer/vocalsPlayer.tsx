@@ -14,9 +14,10 @@ import iAmHereVocal from "../../assets/sounds/vocals/iAmHere.wav";
 import iKnowNothing from "../../assets/sounds/vocals/iKnowNothing.wav";
 import frenchDm from "../../assets/sounds/vocals/french_Dm.wav";
 import frenchEm from "../../assets/sounds/vocals/french_Em.wav";
+import { nanoid } from "@reduxjs/toolkit";
 
 type VocalsPlayerProps = {
-  src: AvailableVocals,
+  src: any,
   chakraName: ChakraEnum
 }
 
@@ -61,6 +62,7 @@ const getColorsBasedOnChakraName = (chakra: ChakraEnum): PlayerColors => {
 const VocalsPlayer: React.FC<{ props: VocalsPlayerProps }> = ({ props }) => {
   const wavesurferRef: any = useRef();
   const colors = getColorsBasedOnChakraName(props.chakraName);
+  const waveFormUniqueId = `waveform-${props.chakraName}-${nanoid()}`;
 
   const handleWSMount = useCallback(
     (waveSurfer: any) => {
@@ -84,10 +86,10 @@ const VocalsPlayer: React.FC<{ props: VocalsPlayerProps }> = ({ props }) => {
         width={300}
         barWidth={3}
         onMount={handleWSMount}
-        container={`#waveform-${props.chakraName}`}
+        container={`#${waveFormUniqueId}`}
         {...colors}>
 
-        <WaveForm id={`waveform-${props.chakraName}`} />
+        <WaveForm id={waveFormUniqueId} />
 
       </WaveSurfer>
     </div>
