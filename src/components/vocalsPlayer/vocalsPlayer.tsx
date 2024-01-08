@@ -28,7 +28,7 @@ export enum AvailableVocals {
   IAmHere = iAmHereVocal,
   IKnowNothing = iKnowNothing,
   FrenchDm = frenchDm,
-  FrenchEm = frenchEm
+  FrenchEm = frenchEm,
 }
 
 type PlayerColors = {
@@ -40,6 +40,12 @@ type PlayerColors = {
 //This can probably be moved somewhere else
 const getColorsBasedOnChakraName = (chakra: ChakraEnum): PlayerColors => {
   switch (chakra) {
+    case ChakraEnum.Heart:
+      return { waveColor: "#388e3c", progressColor: "#1b5e20", cursorColor: "transparent" }
+    case ChakraEnum.Solar:
+      return { waveColor: "#fbc02d", progressColor: "#f57f17", cursorColor: "transparent" }
+    case ChakraEnum.ThirdEye:
+      return { waveColor: "#1976d2", progressColor: "#0d47a1", cursorColor: "transparent" }
     case ChakraEnum.Crown:
       return { waveColor: "#7b1fa2", progressColor: "#4a148c", cursorColor: "transparent" }
     case ChakraEnum.Sacral:
@@ -61,6 +67,7 @@ const VocalsPlayer: React.FC<{ props: VocalsPlayerProps }> = ({ props }) => {
       wavesurferRef.current = waveSurfer;
 
       if (wavesurferRef.current) {
+        wavesurferRef.current.setVolume(0.2);
         wavesurferRef.current.load(props.src);
         wavesurferRef.current.on("click", () => {
           wavesurferRef.current.play();
