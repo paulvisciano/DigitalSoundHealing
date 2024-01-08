@@ -21,7 +21,6 @@ export interface ChakraInterface {
     color: ColorEnum;
     colorHex : string;
     position : PositionEnum;
-    play : any;
 }
 
 export class Chakra implements ChakraInterface {
@@ -91,16 +90,4 @@ export class Chakra implements ChakraInterface {
 
         this.noteAsString = NoteEnum[this.note].toLowerCase();
     }
-
-    //Note is on the 7 note scale
-    //Color is on the 7 color spectrum
-    play = () => {
-        const uniqueColor = getUniqueColorFromGeneric(this.color);
-
-        //TODO : Change this to actually play a note or insert a message into a queue
-        console.log(`Play ${this.name} | ${this.note} | ${uniqueColor}`);
-
-    }
-
-    
 }

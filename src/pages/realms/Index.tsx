@@ -12,6 +12,7 @@ import 'swiper/css/pagination';
 import './Index.css';
 import TibetanRealm from './tibetan/Tibetan';
 import NativeAmericanRealm from './nativeAmerican/NativeAmerican';
+import AthmospheresDawdioRealm from './athmospheresDawdio/AthmospheresDawdio';
 
 const Realms: React.FC = () => {
 return (<>
@@ -32,12 +33,16 @@ return (<>
             });
           }}
         >
+           <SwiperSlide>
+            <AthmospheresDawdioRealm />
+          </SwiperSlide>
           <SwiperSlide>
             <TibetanRealm />
           </SwiperSlide>
           <SwiperSlide>
             <NativeAmericanRealm />
           </SwiperSlide>
+         
         </Swiper>
 </>)
 }
