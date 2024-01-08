@@ -6,21 +6,23 @@ import { EffectCube, Pagination } from "swiper/modules";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { Swiper as SwiperType } from 'swiper/types';
 import "./AthmospheresDawdio.css";
+import { AthmosphereVocals } from "./vocals/AthmosphereVocals";
 
 const AthmospheresDawdioRealm: React.FC = () => {
 
-  let crownChakra = new Chakra(ChakraEnum.Crown);
-  crownChakra.position = PositionEnum.None;
+  let heartChakra = new Chakra(ChakraEnum.Heart);
+  heartChakra.position = PositionEnum.None;
 
-  let throatChakra = new Chakra(ChakraEnum.Throat);
-  throatChakra.position = PositionEnum.None;
-
-  let sacralChakra = new Chakra(ChakraEnum.Sacral);
-  sacralChakra.position = PositionEnum.None;
+  let solarChakra = new Chakra(ChakraEnum.Solar);
+  solarChakra.position = PositionEnum.None;
 
   let thirdEyeChakra = new Chakra(ChakraEnum.ThirdEye);
   thirdEyeChakra.position = PositionEnum.None;
 
+  let throatChakra = new Chakra(ChakraEnum.Throat);
+  throatChakra.position = PositionEnum.None;
+
+  
   return (<>
     <Swiper
       className='instrument-swiper'
@@ -40,20 +42,21 @@ const AthmospheresDawdioRealm: React.FC = () => {
       modules={[EffectCube, Pagination]}
     >
       <SwiperSlide>
-        <ChakraPlayer key={`${crownChakra.name}_${crownChakra.note}`} vocals={AvailableVocals.FrenchDm} chakra={crownChakra} />
+        <ChakraPlayer key={`${heartChakra.name}_${heartChakra.note}`} vocals={AthmosphereVocals.FreeFSharpm} chakra={heartChakra} />
       </SwiperSlide>
 
       <SwiperSlide>
-        <ChakraPlayer key={`${throatChakra.name}_${throatChakra.note}`} vocals={AvailableVocals.ChildPlay} chakra={throatChakra} />
+        <ChakraPlayer key={`${solarChakra.name}_${solarChakra.note}`} vocals={AthmosphereVocals.AltEm} chakra={solarChakra} />
       </SwiperSlide>
 
       <SwiperSlide>
-        <ChakraPlayer key={`${sacralChakra.name}_${sacralChakra.note}`} vocals={AvailableVocals.IAmHere} chakra={sacralChakra} />
+       <ChakraPlayer key={`${thirdEyeChakra.name}_${thirdEyeChakra.note}`} vocals={AthmosphereVocals.DeepAm} chakra={thirdEyeChakra} />
       </SwiperSlide>
 
       <SwiperSlide>
-      <ChakraPlayer key={`${thirdEyeChakra.name}_${thirdEyeChakra.note}`} vocals={AvailableVocals.IAmHere} chakra={thirdEyeChakra} />
+        <ChakraPlayer key={`${throatChakra.name}_${throatChakra.note}`} vocals={AthmosphereVocals.HeavenlyGm} chakra={throatChakra} />
       </SwiperSlide>
+
     </Swiper>
     
   </>)

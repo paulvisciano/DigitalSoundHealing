@@ -8,9 +8,9 @@ import rotation from 'animations/rotation';
 import ChakraShape from '../chakraShape/ChakraShape';
 import ChakraCenter from '../chakraCenter/ChakraCenter';
 import { useDispatch } from 'react-redux';
-import VocalsPlayer, { AvailableVocals } from 'components/vocalsPlayer/VocalsPlayer';
+import VocalsPlayer from 'components/vocalsPlayer/VocalsPlayer';
 
-const ChakraPlayer: React.FC<{ chakra: ChakraInterface, vocals?: AvailableVocals }> = ({ chakra, vocals = null }) => {
+const ChakraPlayer: React.FC<{ chakra: ChakraInterface, vocals?: any }> = ({ chakra, vocals = null }) => {
     const dispatch = useDispatch();
 
     const singingBowl = new MetalSingingBowl();
