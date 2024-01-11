@@ -75,25 +75,25 @@ const BackgroundTracks: React.FC = ({ }) => {
                     <IonLabel>Athmosphere</IonLabel>
                 </IonItem>
                 <div slot='content'>
-                    <IonRange mode='ios' label='Vocal F#m' labelPlacement='fixed' pin={true} pinFormatter={(value: number) => `${value}%`}
+                    <IonRange mode='ios' label='Vocals F#m' labelPlacement='fixed' pin={true} pinFormatter={(value: number) => `${value}%`}
                         onIonChange={event => onVolumeChange(AvailableBackgroundTracks.Athmosphere_Vocal_Fsharp, event.detail, athmosphere_Vocal_Fsharpm)}>
                         <IonIcon slot="start" icon={volumeOffOutline} />
                         <IonIcon slot="end" icon={volumeHighOutline} />
                     </IonRange>
 
-                    <IonRange mode='ios' label='Vocal Em' labelPlacement='fixed' pin={true} pinFormatter={(value: number) => `${value}%`}
+                    <IonRange mode='ios' label='Em' labelPlacement='fixed' pin={true} pinFormatter={(value: number) => `${value}%`}
                         onIonChange={event => onVolumeChange(AvailableBackgroundTracks.Athmosphere_Vocal_Em, event.detail, athmosphere_Vocal_Em)}>
                         <IonIcon slot="start" icon={volumeOffOutline} />
                         <IonIcon slot="end" icon={volumeHighOutline} />
                     </IonRange>
 
-                    <IonRange mode='ios' label='Vocal Am' labelPlacement='fixed' pin={true} pinFormatter={(value: number) => `${value}%`}
+                    <IonRange mode='ios' label='Am' labelPlacement='fixed' pin={true} pinFormatter={(value: number) => `${value}%`}
                         onIonChange={event => onVolumeChange(AvailableBackgroundTracks.Athmosphere_Vocal_Am, event.detail, athmosphere_Vocal_Am)}>
                         <IonIcon slot="start" icon={volumeOffOutline} />
                         <IonIcon slot="end" icon={volumeHighOutline} />
                     </IonRange>
 
-                    <IonRange mode='ios' label='Vocal Gm' labelPlacement='fixed' pin={true} pinFormatter={(value: number) => `${value}%`}
+                    <IonRange mode='ios' label='Gm' labelPlacement='fixed' pin={true} pinFormatter={(value: number) => `${value}%`}
                         onIonChange={event => onVolumeChange(AvailableBackgroundTracks.Athmosphere_Vocal_Gm, event.detail, athmosphere_Vocal_Gm)}>
                         <IonIcon slot="start" icon={volumeOffOutline} />
                         <IonIcon slot="end" icon={volumeHighOutline} />
@@ -105,19 +105,19 @@ const BackgroundTracks: React.FC = ({ }) => {
                         <IonIcon slot="end" icon={volumeHighOutline} />
                     </IonRange>
 
-                    <IonRange mode='ios' label='Piano Em' labelPlacement='fixed' pin={true} pinFormatter={(value: number) => `${value}%`}
+                    <IonRange mode='ios' label='Em' labelPlacement='fixed' pin={true} pinFormatter={(value: number) => `${value}%`}
                         onIonChange={event => onVolumeChange(AvailableBackgroundTracks.Athmosphere_Piano_Em, event.detail, athmosphere_Piano_Em)}>
                         <IonIcon slot="start" icon={volumeOffOutline} />
                         <IonIcon slot="end" icon={volumeHighOutline} />
                     </IonRange>
 
-                    <IonRange mode='ios' label='Piano Am' labelPlacement='fixed' pin={true} pinFormatter={(value: number) => `${value}%`}
+                    <IonRange mode='ios' label='Am' labelPlacement='fixed' pin={true} pinFormatter={(value: number) => `${value}%`}
                         onIonChange={event => onVolumeChange(AvailableBackgroundTracks.Athmosphere_Piano_Am, event.detail, athmosphere_Piano_Am)}>
                         <IonIcon slot="start" icon={volumeOffOutline} />
                         <IonIcon slot="end" icon={volumeHighOutline} />
                     </IonRange>
 
-                    <IonRange mode='ios' label='Piano Gm' labelPlacement='fixed' pin={true} pinFormatter={(value: number) => `${value}%`}
+                    <IonRange mode='ios' label='Gm' labelPlacement='fixed' pin={true} pinFormatter={(value: number) => `${value}%`}
                         onIonChange={event => onVolumeChange(AvailableBackgroundTracks.Athmosphere_Piano_Gm, event.detail, athmosphere_Piano_Gm)}>
                         <IonIcon slot="start" icon={volumeOffOutline} />
                         <IonIcon slot="end" icon={volumeHighOutline} />
