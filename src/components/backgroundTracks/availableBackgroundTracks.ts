@@ -12,4 +12,6 @@ export enum AvailableBackgroundTracks {
     Athmosphere_Piano_Gm = "Athmosphere_Piano_Gm",
     Athmosphere_Piano_Em = "Athmosphere_Piano_Em",
     Athmosphere_Piano_FSharpm = "Athmosphere_Piano_FSharpm",
+
+    Soul_Harp_Strings_Dm = "Soul_Harp_Strings_Dm",
 };

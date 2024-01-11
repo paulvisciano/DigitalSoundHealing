@@ -62,7 +62,7 @@ const getColorsBasedOnChakraName = (chakra: ChakraEnum): PlayerColors => {
 const VocalsPlayer: React.FC<{ props: VocalsPlayerProps }> = ({ props }) => {
   const wavesurferRef: any = useRef();
   const colors = getColorsBasedOnChakraName(props.chakraName);
-  const waveFormUniqueId = `waveform-${props.chakraName}-${nanoid()}`;
+  const waveFormUniqueId = `waveform-${nanoid()}`;
 
   const handleWSMount = useCallback(
     (waveSurfer: any) => {

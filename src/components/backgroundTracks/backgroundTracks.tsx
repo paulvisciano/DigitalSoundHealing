@@ -20,6 +20,8 @@ import athmosphere_Piano_Gm from "./assets/athmosphere/128_Piano_Peace_Gm.wav";
 import athmosphere_Piano_Em from "./assets/athmosphere/120_Piano_Celestial_Em.wav";
 import athmosphere_Piano_FSharpm from "./assets/athmosphere/110_Piano_Free_FSharpm.wav";
 
+import soul_strings_harp_Dmin from "./assets/soul/130_strings_harp_Dmin.wav";
+
 const BackgroundTracks: React.FC = ({ }) => {
     const dispatch = useDispatch();
     const tracks = useSelector((state: AppState) => state.backgroundTrack.tracks);
@@ -119,6 +121,19 @@ const BackgroundTracks: React.FC = ({ }) => {
 
                     <IonRange mode='ios' label='Gm' labelPlacement='fixed' pin={true} pinFormatter={(value: number) => `${value}%`}
                         onIonChange={event => onVolumeChange(AvailableBackgroundTracks.Athmosphere_Piano_Gm, event.detail, athmosphere_Piano_Gm)}>
+                        <IonIcon slot="start" icon={volumeOffOutline} />
+                        <IonIcon slot="end" icon={volumeHighOutline} />
+                    </IonRange>
+                </div>
+            </IonAccordion>
+
+            <IonAccordion value='third'>
+                <IonItem slot="header">
+                    <IonLabel>Soul</IonLabel>
+                </IonItem>
+                <div slot='content'>
+                    <IonRange mode='ios' label='Vocals Dm' labelPlacement='fixed' pin={true} pinFormatter={(value: number) => `${value}%`}
+                        onIonChange={event => onVolumeChange(AvailableBackgroundTracks.Soul_Harp_Strings_Dm, event.detail, soul_strings_harp_Dmin)}>
                         <IonIcon slot="start" icon={volumeOffOutline} />
                         <IonIcon slot="end" icon={volumeHighOutline} />
                     </IonRange>
