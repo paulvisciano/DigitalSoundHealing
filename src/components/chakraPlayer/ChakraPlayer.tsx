@@ -14,8 +14,7 @@ const ChakraPlayer: React.FC<{ chakra: ChakraInterface, vocals?: any }> = ({ cha
     const dispatch = useDispatch();
 
     const singingBowl = new MetalSingingBowl();
-
-    const [soundIsPlaying, setSoundIsPlaying] = useState(false);
+    let isSoundPlaying = false;
 
     const chakraShapeRef = useRef<HTMLDivElement>(null);
     const chakraCircleRef = useRef<HTMLDivElement | null>(null);
@@ -35,23 +34,23 @@ const ChakraPlayer: React.FC<{ chakra: ChakraInterface, vocals?: any }> = ({ cha
     // })
 
     const toggle = () => {
-        if (soundIsPlaying) {
+        if (isSoundPlaying) {
             rotationAnimation.current?.pause();
             pulsatingAnimation.current?.pause();
             dispatch(singingBowl.stopGlide(chakra.note));
-            setSoundIsPlaying(false);
+            isSoundPlaying = false;
         } else {
             rotationAnimation.current?.play();
             pulsatingAnimation.current?.play();
             dispatch(singingBowl.glide(chakra.note));
-            setSoundIsPlaying(true);
+            isSoundPlaying = true;
         }
     };
 
     return (
         <div className={`chakra-player-container ${chakra.position}`}>
             <ChakraShape reference={chakraShapeRef} chakra={chakra}>
-                <div ref={chakraCircleRef} className={`chakra-player ${chakra.nameAsString}-player ${soundIsPlaying ? 'is-playing' : ''}`} onClick={toggle
+                <div ref={chakraCircleRef} className={`chakra-player ${chakra.nameAsString}-player ${isSoundPlaying ? 'is-playing' : ''}`} onClick={toggle
                 }>
                     <ChakraCenter chakra={chakra} />
                 </div>
