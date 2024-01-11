@@ -2,7 +2,7 @@ import { Chakra, ChakraEnum, ChakraInterface } from "components/Chakra";
 import ChakraPlayer from "components/chakraPlayer/ChakraPlayer";
 import VocalsPlayer, { AvailableVocals } from "components/vocalsPlayer/VocalsPlayer";
 import { PositionEnum } from "positions/PositionsEnum";
-import { EffectCube, Pagination } from "swiper/modules";
+import { EffectCube, Navigation, Pagination } from "swiper/modules";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { Swiper as SwiperType } from 'swiper/types';
 import "./AthmospheresDawdio.css";
@@ -41,10 +41,16 @@ const AthmospheresDawdioRealm: React.FC = () => {
       className='athmosphere-swiper'
       effect={'cube'}
       grabCursor={true}
+      loop={true}
+      navigation={true}
       cubeEffect={{
         shadow: true,
-        shadowOffset: 50,
-        shadowScale: 0.94,
+        shadowOffset: 120,
+        shadowScale: 0.5,
+      }}
+      pagination={{
+        clickable: true,
+        
       }}
       onSwiper={(swiper: SwiperType) => {
         console.log('Force refresh');
@@ -52,25 +58,14 @@ const AthmospheresDawdioRealm: React.FC = () => {
           swiper.update();
         });
       }}
-      modules={[EffectCube, Pagination]}
+      modules={[EffectCube, Navigation, Pagination]}
     >
-      <SwiperSlide>
-        <ChakraPlayer key={`${heartChakra.name}_${heartChakra.note}`} vocals={AthmosphereVocals.FreeFSharpm} chakra={heartChakra} />
-      </SwiperSlide>
 
-      <SwiperSlide>
-        <ChakraPlayer key={`${solarChakra.name}_${solarChakra.note}`} vocals={AthmosphereVocals.AltEm} chakra={solarChakra} />
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <ChakraPlayer key={`${thirdEyeChakra.name}_${thirdEyeChakra.note}`} vocals={AthmosphereVocals.DeepAm} chakra={thirdEyeChakra} />
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <IonGrid fixed={true}>
-          <IonRow class="ion-align-items-center">
+      <SwiperSlide className="throat-slide">
+        <IonGrid >
+          <IonRow class="ion-align-items-center text-center">
             <IonCol size="3">
-              <IonLabel>Strings</IonLabel>
+              <IonLabel >Strings</IonLabel>
               <VocalsPlayer props={{ src: violinGm, chakraName: throatChakra.name }} />
 
               <VocalsPlayer props={{ src: celloLowGm, chakraName: throatChakra.name }} />
@@ -79,11 +74,11 @@ const AthmospheresDawdioRealm: React.FC = () => {
               <VocalsPlayer props={{ src: cello_Ensemble_Gm, chakraName: throatChakra.name }} />
             </IonCol>
 
-            <IonCol offset="1" size="6">
+            <IonCol size="6">
               <ChakraPlayer key={`${throatChakra.name}_${throatChakra.note}`} vocals={AthmosphereVocals.HeavenlyGm} chakra={throatChakra} />
             </IonCol>
 
-            <IonCol size="2">
+            <IonCol size="3">
 
               <IonLabel>Piano</IonLabel>
 
@@ -94,6 +89,18 @@ const AthmospheresDawdioRealm: React.FC = () => {
             </IonCol>
           </IonRow>
         </IonGrid>
+      </SwiperSlide>
+
+      <SwiperSlide className="heart-slide">
+        <ChakraPlayer key={`${heartChakra.name}_${heartChakra.note}`} vocals={AthmosphereVocals.FreeFSharpm} chakra={heartChakra} />
+      </SwiperSlide>
+
+      <SwiperSlide className="solar-slide">
+        <ChakraPlayer key={`${solarChakra.name}_${solarChakra.note}`} vocals={AthmosphereVocals.AltEm} chakra={solarChakra} />
+      </SwiperSlide>
+
+      <SwiperSlide className="thirdeye-slide">
+        <ChakraPlayer key={`${thirdEyeChakra.name}_${thirdEyeChakra.note}`} vocals={AthmosphereVocals.DeepAm} chakra={thirdEyeChakra} />
       </SwiperSlide>
 
     </Swiper>
