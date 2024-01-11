@@ -1,7 +1,8 @@
 .workspace-swiper { 
-    --swiper-pagination-bullet-size : 12px;
+    --swiper-pagination-bullet-size : 24px;
     --swiper-pagination-bullet-inactive-color : white;
-
+    --swiper-pagination-right : 24px;
+    
     width: 100%;
     height: 100%;
 }
