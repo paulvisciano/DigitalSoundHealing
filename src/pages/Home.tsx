@@ -7,7 +7,7 @@ import Realms from './realms/Index';
 
 const Home: React.FC = () => {
   return (<>
-    <IonMenu contentId="main-content" side='end'>
+    <IonMenu contentId="main-content" type='push' side='end'>
       <IonContent>
         <BackgroundTracks />
       </IonContent>
