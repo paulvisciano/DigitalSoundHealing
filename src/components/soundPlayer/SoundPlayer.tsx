@@ -4,7 +4,7 @@ import React, {
 } from "react";
 import { WaveSurfer, WaveForm } from "wavesurfer-react";
 import { ChakraEnum } from "components/Chakra";
-import "./VocalsPlayer.css";
+import "./SoundPlayer.css";
 
 import justADreamVocal from "../../assets/sounds/vocals/justADream.wav";
 import noTomorrowVocal from "../../assets/sounds/vocals/noTomorrow.wav";
@@ -15,10 +15,13 @@ import iKnowNothing from "../../assets/sounds/vocals/iKnowNothing.wav";
 import frenchDm from "../../assets/sounds/vocals/french_Dm.wav";
 import frenchEm from "../../assets/sounds/vocals/french_Em.wav";
 import { nanoid } from "@reduxjs/toolkit";
+import { IonCol, IonGrid, IonRow } from "@ionic/react";
 
-type VocalsPlayerProps = {
+type SoundPlayerProps = {
   src: any,
-  chakraName: ChakraEnum
+  chakraName: ChakraEnum,
+  icon?: InstrumentIcons,
+  iconPosition?: IconPosition
 }
 
 export enum AvailableVocals {
@@ -30,6 +33,18 @@ export enum AvailableVocals {
   IKnowNothing = iKnowNothing,
   FrenchDm = frenchDm,
   FrenchEm = frenchEm,
+}
+
+export enum InstrumentIcons {
+  Guitar = "guitar",
+  Sax = "sax",
+  GlockenSpiel = "glockenSpiel",
+  Flute = "flute"
+}
+
+export enum IconPosition {
+  Top = "top",
+  Bottom = "bottom"
 }
 
 type PlayerColors = {
@@ -59,7 +74,7 @@ const getColorsBasedOnChakraName = (chakra: ChakraEnum): PlayerColors => {
   }
 };
 
-const VocalsPlayer: React.FC<{ props: VocalsPlayerProps }> = ({ props }) => {
+const SoundPlayer: React.FC<{ props: SoundPlayerProps }> = ({ props }) => {
   const wavesurferRef: any = useRef();
   const colors = getColorsBasedOnChakraName(props.chakraName);
   const waveFormUniqueId = `waveform-${nanoid()}`;
@@ -80,20 +95,41 @@ const VocalsPlayer: React.FC<{ props: VocalsPlayerProps }> = ({ props }) => {
   );
 
   return (
-    <div className={`vocalsPlayer-container`}>
-      <WaveSurfer
-        height={60}
-        width={300}
-        barWidth={3}
-        onMount={handleWSMount}
-        container={`#${waveFormUniqueId}`}
-        {...colors}>
+    <div className={`soundPlayer-container`}>
 
-        <WaveForm id={waveFormUniqueId} />
+    <IonGrid>
+      {props.icon && props.iconPosition && props.iconPosition === IconPosition.Top &&
+        <IonRow>
+          <IonCol>
+            <div className={`soundPlayer-icon ${props.icon}`} />
+          </IonCol>
+        </IonRow>}
 
-      </WaveSurfer>
+      <IonRow>
+        <IonCol>
+            <WaveSurfer
+              height={60}
+              width={300}
+              barWidth={3}
+              onMount={handleWSMount}
+              container={`#${waveFormUniqueId}`}
+              {...colors}>
+
+              <WaveForm id={waveFormUniqueId} />
+
+            </WaveSurfer>
+        </IonCol>
+      </IonRow>
+
+      {props.icon && props.iconPosition && props.iconPosition === IconPosition.Bottom &&
+        <IonRow>
+          <IonCol>
+            <div className={`soundPlayer-icon ${props.icon}`} />
+          </IonCol>
+        </IonRow>}
+    </IonGrid>
     </div>
   );
 }
 
-export default VocalsPlayer;
+export default SoundPlayer;

@@ -32,7 +32,7 @@
         position: absolute; 
 
         width: 100%;
-        top: -45px;
+        top: -50px;
         z-index: 15;
     }
 
@@ -46,6 +46,23 @@
         position: absolute; 
 
         width: 100%;
-        bottom: -40px;  
+        bottom: -45px;  
+    }
+
+    .soundPlayer-icon { 
+        &.guitar { 
+            background-image: url("instruments/guitar.svg");
+        }
+        &.sax { 
+            background-image: url("instruments/sax.svg");
+        }
+        &.glockenSpiel { 
+            height: 35px;
+            width: 35px;
+            background-image: url("instruments/glockenSpiel.svg");
+        }
+        &.flute { 
+            background-image: url("instruments/flute.svg");
+        }
     }
 }

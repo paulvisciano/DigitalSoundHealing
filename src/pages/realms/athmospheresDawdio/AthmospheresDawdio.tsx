@@ -1,6 +1,6 @@
 import { Chakra, ChakraEnum, ChakraInterface } from "components/Chakra";
 import ChakraPlayer from "components/chakraPlayer/ChakraPlayer";
-import VocalsPlayer, { AvailableVocals } from "components/vocalsPlayer/VocalsPlayer";
+import SoundPlayer, { AvailableVocals } from "components/soundPlayer/SoundPlayer";
 import { PositionEnum } from "positions/PositionsEnum";
 import { EffectCube, Navigation, Pagination } from "swiper/modules";
 import { SwiperSlide, Swiper } from "swiper/react";
@@ -66,12 +66,12 @@ const AthmospheresDawdioRealm: React.FC = () => {
           <IonRow class="ion-align-items-center text-center">
             <IonCol size="3">
               <IonLabel >Strings</IonLabel>
-              <VocalsPlayer props={{ src: violinGm, chakraName: throatChakra.name }} />
+              <SoundPlayer props={{ src: violinGm, chakraName: throatChakra.name }} />
 
-              <VocalsPlayer props={{ src: celloLowGm, chakraName: throatChakra.name }} />
-              <VocalsPlayer props={{ src: cello_Mid_High_Gm, chakraName: throatChakra.name }} />
-              <VocalsPlayer props={{ src: cello_Full_Gm, chakraName: throatChakra.name }} />
-              <VocalsPlayer props={{ src: cello_Ensemble_Gm, chakraName: throatChakra.name }} />
+              <SoundPlayer props={{ src: celloLowGm, chakraName: throatChakra.name }} />
+              <SoundPlayer props={{ src: cello_Mid_High_Gm, chakraName: throatChakra.name }} />
+              <SoundPlayer props={{ src: cello_Full_Gm, chakraName: throatChakra.name }} />
+              <SoundPlayer props={{ src: cello_Ensemble_Gm, chakraName: throatChakra.name }} />
             </IonCol>
 
             <IonCol size="6">
@@ -82,9 +82,9 @@ const AthmospheresDawdioRealm: React.FC = () => {
 
               <IonLabel>Piano</IonLabel>
 
-              <VocalsPlayer props={{ src: piano_Peace_Gm, chakraName: throatChakra.name }} />
-              <VocalsPlayer props={{ src: piano_Uplifting_Gm, chakraName: throatChakra.name }} />
-              <VocalsPlayer props={{ src: piano_Main_Gm, chakraName: throatChakra.name }} />
+              <SoundPlayer props={{ src: piano_Peace_Gm, chakraName: throatChakra.name }} />
+              <SoundPlayer props={{ src: piano_Uplifting_Gm, chakraName: throatChakra.name }} />
+              <SoundPlayer props={{ src: piano_Main_Gm, chakraName: throatChakra.name }} />
 
             </IonCol>
           </IonRow>

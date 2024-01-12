@@ -1,6 +1,6 @@
 import { Chakra, ChakraEnum, ChakraInterface } from "components/Chakra";
 import ChakraPlayer from "components/chakraPlayer/ChakraPlayer";
-import VocalsPlayer, { AvailableVocals } from "components/vocalsPlayer/VocalsPlayer";
+import SoundPlayer, { AvailableVocals, IconPosition, InstrumentIcons } from "components/soundPlayer/SoundPlayer";
 import { PositionEnum } from "positions/PositionsEnum";
 import { EffectCube, Navigation, Pagination } from "swiper/modules";
 import { SwiperSlide, Swiper } from "swiper/react";
@@ -18,8 +18,11 @@ import leadGuitar from "./instruments/130_guitar_lead_Dmin.wav"
 
 const SoulRealm: React.FC = () => {
   let crownChakra = new Chakra(ChakraEnum.Crown);
+
   crownChakra.position = PositionEnum.None;
 
+  let topSoundPlayersProps = {  iconPosition: IconPosition.Bottom, chakraName: crownChakra.name };
+  let bottomSoundPlayersProps = { icon: InstrumentIcons.Guitar, iconPosition: IconPosition.Top, chakraName: crownChakra.name };
 
   return (<>
     <Swiper
@@ -45,37 +48,29 @@ const SoulRealm: React.FC = () => {
         <IonGrid className="header-vocal-player">
           <IonRow>
             <IonCol>
-              <VocalsPlayer props={{ src: sax, chakraName: crownChakra.name }} />
-              <IonLabel>Sax</IonLabel>
-
+              <SoundPlayer props={{src : sax, icon: InstrumentIcons.Sax, ...topSoundPlayersProps}} />
             </IonCol>
             <IonCol>
-              <VocalsPlayer props={{ src: flute, chakraName: crownChakra.name }} />
-              <IonLabel>Flute</IonLabel>
+              <SoundPlayer props={{ src : flute, icon : InstrumentIcons.Flute, ...topSoundPlayersProps }} />
             </IonCol>
             <IonCol>
-              <VocalsPlayer props={{ src: glockenSpiel, chakraName: crownChakra.name }} />
-              <IonLabel>Glockenspiel</IonLabel>
+              <SoundPlayer props={{ src: glockenSpiel, icon : InstrumentIcons.GlockenSpiel, ...topSoundPlayersProps }} />
             </IonCol>
-
           </IonRow>
         </IonGrid>
 
-              <ChakraPlayer key={`${crownChakra.name}_${crownChakra.note}`} vocals={SoulVocals.SouldDm} chakra={crownChakra} />
+        <ChakraPlayer key={`${crownChakra.name}_${crownChakra.note}`} vocals={SoulVocals.SouldDm} chakra={crownChakra} />
 
         <IonGrid className="footer-vocal-player">
           <IonRow>
-            <IonLabel>Guitar</IonLabel>
             <IonCol>
-              <VocalsPlayer props={{ src: cleanGuitar, chakraName: crownChakra.name }} />
-
+              <SoundPlayer props={{ src: cleanGuitar, ...bottomSoundPlayersProps }} />
             </IonCol>
             <IonCol>
-              <VocalsPlayer props={{ src: distortedGuitar, chakraName: crownChakra.name }} />
-
+              <SoundPlayer props={{ src: distortedGuitar, ...bottomSoundPlayersProps }} />
             </IonCol>
             <IonCol>
-              <VocalsPlayer props={{ src: leadGuitar, chakraName: crownChakra.name }} />
+              <SoundPlayer props={{ src: leadGuitar, ...bottomSoundPlayersProps }} />
             </IonCol>
 
           </IonRow>
