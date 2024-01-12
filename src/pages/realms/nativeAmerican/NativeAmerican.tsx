@@ -32,7 +32,6 @@ const NativeAmericanRealm: React.FC = () => {
         shadowScale: 0.94,
       }}
       onSwiper={(swiper: SwiperType) => {
-        console.log('Force refresh');
         setTimeout(() => {
           swiper.update();
         });

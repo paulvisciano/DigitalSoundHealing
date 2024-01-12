@@ -22,7 +22,7 @@ const Realms: React.FC = () => {
       direction={'vertical'}
       slidesPerView={1}
       spaceBetween={30}
-      mousewheel={true}
+      mousewheel={{forceToAxis : true, thresholdDelta : 50}} 
       pagination={{
         clickable: true,
       }}
@@ -37,16 +37,23 @@ const Realms: React.FC = () => {
       <SwiperSlide>
         <SoulRealm />
       </SwiperSlide>
-      <SwiperSlide>
-        <AthmospheresDawdioRealm />
-      </SwiperSlide>
+     
       <SwiperSlide>
         <TibetanRealm />
       </SwiperSlide>
-      <SwiperSlide>
-        <NativeAmericanRealm />
-      </SwiperSlide>
 
+      <SwiperSlide>
+        <AthmospheresDawdioRealm />
+      </SwiperSlide>
+    
+      {/* <SwiperSlide>
+        <NativeAmericanRealm />
+      </SwiperSlide> */}
+
+
+ {/* <SwiperSlide>
+        <OptimizedForPhone />
+      </SwiperSlide> */}
     </Swiper>
   </>)
 }

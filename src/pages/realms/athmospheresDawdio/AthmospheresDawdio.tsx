@@ -20,7 +20,6 @@ import piano_Peace_Gm from "./instruments/Piano_Peace_Gm.wav";
 import piano_Uplifting_Gm from "./instruments/Piano_Uplifting_Gm.wav";
 import piano_Main_Gm from "./instruments/Piano_Main_Gm.wav";
 
-
 const AthmospheresDawdioRealm: React.FC = () => {
 
   let heartChakra = new Chakra(ChakraEnum.Heart);
@@ -45,22 +44,26 @@ const AthmospheresDawdioRealm: React.FC = () => {
       navigation={true}
       cubeEffect={{
         shadow: true,
-        shadowOffset: 120,
-        shadowScale: 0.5,
+        shadowOffset: 150,
+        shadowScale: 0.6,
       }}
       pagination={{
         clickable: true,
-        
+      }}
+      onInit={(swiper: SwiperType) => {
+        //Force update to remove dark background from slide
+        setTimeout(() => {
+          swiper.update();
+        });
       }}
       onSwiper={(swiper: SwiperType) => {
-        console.log('Force refresh');
+        //Force update to remove dark background from slide
         setTimeout(() => {
           swiper.update();
         });
       }}
       modules={[EffectCube, Navigation, Pagination]}
     >
-
       <SwiperSlide className="throat-slide">
         <IonGrid >
           <IonRow class="ion-align-items-center text-center">
