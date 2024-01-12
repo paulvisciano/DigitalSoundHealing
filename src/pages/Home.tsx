@@ -7,19 +7,15 @@ import Realms from './realms/Index';
 
 const Home: React.FC = () => {
   return (<>
-    <IonMenu contentId="main-content" side='end'>
+    <IonMenu contentId="main-content" type='push' side='end'>
       <IonContent>
         <BackgroundTracks />
       </IonContent>
     </IonMenu>
     <IonPage id="main-content">
-    <IonHeader className='transparent'>
-      <IonToolbar>
-        <IonMenuButton slot="end"></IonMenuButton>
-      </IonToolbar>
-    </IonHeader>
       <IonContent class="fullscreen-content" fullscreen={true}>
-        <Realms/>
+        <IonMenuButton className='main-menu-button' ></IonMenuButton>
+        <Realms />
       </IonContent>
     </IonPage>
   </>)

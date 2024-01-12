@@ -1,6 +1,6 @@
 import { Chakra, ChakraEnum, ChakraInterface } from "components/Chakra";
 import ChakraPlayer from "components/chakraPlayer/ChakraPlayer";
-import { AvailableVocals } from "components/vocalsPlayer/VocalsPlayer";
+import { AvailableVocals } from "components/soundPlayer/SoundPlayer";
 import { PositionEnum } from "positions/PositionsEnum";
 import { EffectCube, Pagination } from "swiper/modules";
 import { SwiperSlide, Swiper } from "swiper/react";
