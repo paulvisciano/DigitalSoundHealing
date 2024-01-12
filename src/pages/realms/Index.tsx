@@ -22,7 +22,7 @@ const Realms: React.FC = () => {
       direction={'vertical'}
       slidesPerView={1}
       spaceBetween={30}
-      mousewheel={true}
+      mousewheel={false}
       pagination={{
         clickable: true,
       }}
