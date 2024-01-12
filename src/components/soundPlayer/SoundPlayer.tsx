@@ -94,6 +94,10 @@ const SoundPlayer: React.FC<{ props: SoundPlayerProps }> = ({ props }) => {
     []
   );
 
+  const playPause = () => {
+    wavesurferRef?.current?.playPause();
+  }
+
   return (
     <div className={`soundPlayer-container`}>
 
@@ -101,9 +105,10 @@ const SoundPlayer: React.FC<{ props: SoundPlayerProps }> = ({ props }) => {
       {props.icon && props.iconPosition && props.iconPosition === IconPosition.Top &&
         <IonRow>
           <IonCol>
-            <div className={`soundPlayer-icon ${props.icon}`} />
+            <div className={`soundPlayer-icon ${props.icon}`} onClick={playPause} />
           </IonCol>
-        </IonRow>}
+        </IonRow>
+        }
 
       <IonRow>
         <IonCol>
@@ -124,7 +129,7 @@ const SoundPlayer: React.FC<{ props: SoundPlayerProps }> = ({ props }) => {
       {props.icon && props.iconPosition && props.iconPosition === IconPosition.Bottom &&
         <IonRow>
           <IonCol>
-            <div className={`soundPlayer-icon ${props.icon}`} />
+            <div className={`soundPlayer-icon ${props.icon}`} onClick={playPause} />
           </IonCol>
         </IonRow>}
     </IonGrid>

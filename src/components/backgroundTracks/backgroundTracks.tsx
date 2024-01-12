@@ -132,7 +132,7 @@ const BackgroundTracks: React.FC = ({ }) => {
                     <IonLabel>Soul</IonLabel>
                 </IonItem>
                 <div slot='content'>
-                    <IonRange mode='ios' label='Vocals Dm' labelPlacement='fixed' pin={true} pinFormatter={(value: number) => `${value}%`}
+                    <IonRange mode='ios' label='Harp Dm' labelPlacement='fixed' pin={true} pinFormatter={(value: number) => `${value}%`}
                         onIonChange={event => onVolumeChange(AvailableBackgroundTracks.Soul_Harp_Strings_Dm, event.detail, soul_strings_harp_Dmin)}>
                         <IonIcon slot="start" icon={volumeOffOutline} />
                         <IonIcon slot="end" icon={volumeHighOutline} />
