@@ -14,6 +14,7 @@ import TibetanRealm from './tibetan/Tibetan';
 import NativeAmericanRealm from './nativeAmerican/NativeAmerican';
 import AthmospheresDawdioRealm from './athmospheresDawdio/AthmospheresDawdio';
 import SoulRealm from './soul/SoulRealm';
+import MusicalCubesRealm from './musicalCubes/MusicalCubes';
 
 const Realms: React.FC = () => {
   return (<>
@@ -22,7 +23,7 @@ const Realms: React.FC = () => {
       direction={'vertical'}
       slidesPerView={1}
       spaceBetween={30}
-      mousewheel={{forceToAxis : true, thresholdDelta : 50}} 
+      mousewheel={{ forceToAxis: true, thresholdDelta: 50 }}
       pagination={{
         clickable: true,
       }}
@@ -34,10 +35,15 @@ const Realms: React.FC = () => {
         });
       }}
     >
+
+      <SwiperSlide>
+        <MusicalCubesRealm />
+      </SwiperSlide>
+
       <SwiperSlide>
         <SoulRealm />
       </SwiperSlide>
-     
+
       <SwiperSlide>
         <TibetanRealm />
       </SwiperSlide>
@@ -45,13 +51,13 @@ const Realms: React.FC = () => {
       <SwiperSlide>
         <AthmospheresDawdioRealm />
       </SwiperSlide>
-    
+
       {/* <SwiperSlide>
         <NativeAmericanRealm />
       </SwiperSlide> */}
 
 
- {/* <SwiperSlide>
+      {/* <SwiperSlide>
         <OptimizedForPhone />
       </SwiperSlide> */}
     </Swiper>

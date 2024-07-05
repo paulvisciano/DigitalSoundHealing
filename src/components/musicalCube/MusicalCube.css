@@ -1,0 +1,30 @@
+.musical-cube-swiper {
+    top : 300px;
+    height: 203px;
+    width: 204px;
+
+    .swiper-cube-shadow { 
+        background-color: var(--yellow-400);
+    }
+
+    .swiper-slide { 
+        border : 1px solid var(--orange-900);
+        /* border-radius: 40px; */
+    }
+
+    :host .wrapper {  
+        margin-left : 20px;
+    }  
+
+    ion-grid, ion-row, ion-col { 
+        padding: 0;
+    }
+}
+
+#waveform-side-0 { 
+    
+}
+
+#waveform-side-0, #waveform-side-1 {
+    transform: translateY(0) rotate(270deg);
+}
