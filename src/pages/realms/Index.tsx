@@ -11,7 +11,6 @@ import 'swiper/css/pagination';
 
 import './Index.css';
 import TibetanRealm from './tibetan/Tibetan';
-import NativeAmericanRealm from './nativeAmerican/NativeAmerican';
 import AthmospheresDawdioRealm from './athmospheresDawdio/AthmospheresDawdio';
 import SoulRealm from './soul/SoulRealm';
 import MusicalCubesRealm from './musicalCubes/MusicalCubes';

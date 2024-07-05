@@ -21,10 +21,6 @@
     }
 }
 
-#waveform-side-0 { 
-    
-}
-
 #waveform-side-0, #waveform-side-1 {
     transform: translateY(0) rotate(270deg);
 }
