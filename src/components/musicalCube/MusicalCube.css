@@ -9,6 +9,7 @@
     }
 
     .wavesurfer-custom-wrapper { 
+        opacity: 0.15;
         transform: translateY(0) rotate(270deg);
     }
 }
@@ -20,17 +21,12 @@
     }
 }
 
-.wavesurfer-custom-wrapper { 
-    opacity: 0.4;
-}
-
 .swiper-slide-fully-visible {
     .wavesurfer-custom-wrapper { 
         opacity: 1;
     }
     
 }
-
 .swiper-cube-shadow { 
     background-color: var(--blue-500);
 }
