@@ -1,21 +1,32 @@
-.musical-cube-swiper {
-    height: 203px;
-    width: 204px;
-    margin-top : 20px;
+.cube-side {
+    border : 1px solid var(--blue-700);
+    border-radius: 4px;
 
-    .swiper-cube-shadow { 
-        background-color: var(--blue-700);
-    }
-
-    .swiper-slide { 
-        border : 1px solid var(--blue-900);
-    }
+    transform: translateY(0) rotate(270deg);
 
     ion-grid, ion-row, ion-col { 
         padding: 0;
     }
 }
 
-#waveform-0, #waveform-1, #waveform-2, #waveform-3  {
-    transform: translateY(0) rotate(270deg);
+/* Override styles to make all sides of the cube visible */
+.swiper-cube { 
+    .swiper-slide {
+        visibility: visible;
+    }
+}
+
+.wavesurfer-custom-wrapper { 
+    opacity: 0.4;
+}
+
+.swiper-slide-fully-visible {
+    .wavesurfer-custom-wrapper { 
+        opacity: 1;
+    }
+    
+}
+
+.swiper-cube-shadow { 
+    background-color: var(--blue-500);
 }

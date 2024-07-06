@@ -15,12 +15,13 @@ import { WaveSurfer, WaveForm } from "wavesurfer-react";
 import CubeSideToolbar from './toolbar/Toolbar';
  
 interface CubeSideOptions {
+    cubeKey : number,
     key: number,
     sound: MusicalCubeSounds,
 };
 
 const CubeSide: React.FC<{ options: CubeSideOptions }> = ({ options }) => {
-    const waveFormUniqueId = `waveform-${options.key}`;
+    const waveFormUniqueId = `cube-${options.cubeKey}-side-${options.key}-waveform`;
     const wavesurferRef: any = useRef();
     let [loop, setLoop] = useState(true);
     let [showToolbar, setShowToolbar] = useState(false);
@@ -67,13 +68,14 @@ const CubeSide: React.FC<{ options: CubeSideOptions }> = ({ options }) => {
     }, [loop]);
 
     return (
-        <>
+        <div className={`cube-side side-${options.key}`}>
             <IonGrid>
                 <IonRow>
                     <IonCol>
+                        <div className='wavesurfer-custom-wrapper'>
                             <WaveSurfer
-                                height={203}
-                                width={204}
+                                height={202} 
+                                width={200}
                                 barWidth={0.1}
                                 //TODO: Get these colors from colors.css
                                 //TODO : Pass them in as params
@@ -90,20 +92,20 @@ const CubeSide: React.FC<{ options: CubeSideOptions }> = ({ options }) => {
                             >
                                 <WaveForm id={waveFormUniqueId} />
                             </WaveSurfer>
+                            </div>
                     </IonCol>
                 </IonRow>
             </IonGrid>
 
             {showToolbar && <CubeSideToolbar loop={loop} setLoop={setLoop} />}
-        </>
+        </div>
     )
 };
 
-const MusicalCube: React.FC<{ sounds: Array<MusicalCubeSounds> }> = ({ sounds }) => {
+const MusicalCube: React.FC<{ keyzz : number, sounds: Array<MusicalCubeSounds> }> = ({ keyzz, sounds }) => {
     return (
-        <div key="musical-cube">
             <Swiper
-                className='musical-cube-swiper'
+                className={`musical-cube-swiper-${keyzz}`}
                 effect={'cube'}
                 loop={true}
                 navigation={true}
@@ -126,14 +128,14 @@ const MusicalCube: React.FC<{ sounds: Array<MusicalCubeSounds> }> = ({ sounds })
                 }}
                 modules={[EffectCube, Navigation]}
             >
-                {sounds.map((sound, index) =>
+                {
+                sounds.map((sound, index) =>
                     <SwiperSlide key={`cube-slide-${index}`}>
-                        <CubeSide options={{ key: index, sound: sound }} />
+                        <CubeSide options={{ cubeKey : keyzz, key: index, sound: sound }} />
                     </SwiperSlide>
                 )}
 
             </Swiper>
-        </div>
     );
 }
 
