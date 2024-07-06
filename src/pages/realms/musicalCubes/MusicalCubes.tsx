@@ -4,12 +4,20 @@ import { MusicalCubeSounds } from "./sounds/MusicalCubeSounds";
 
 const MusicalCubesRealm: React.FC = () => {
   return (<>
-    <div>
-      {/* TODO: Add actual sounds  */}
-      <MusicalCube sounds={[MusicalCubeSounds.PianoCmin, MusicalCubeSounds.PianoCopy ]}></MusicalCube>
+      <MusicalCube sounds={[MusicalCubeSounds.guitarB, MusicalCubeSounds.melodyB, MusicalCubeSounds.vocalsAm]} />
+      {/* <MusicalCube sounds ={[MusicalCubeSounds.guitarB, MusicalCubeSounds.melodyB, MusicalCubeSounds.vocalsAm]} /> */}
+      {/* <MusicalCube sounds={[MusicalCubeSounds.guitarB, MusicalCubeSounds.melodyB, MusicalCubeSounds.vocalsAm]} /> */}
+{/* 
+    <div className="bottom-left">
+      <MusicalCube sounds={[MusicalCubeSounds.guitarB, MusicalCubeSounds.melodyB, MusicalCubeSounds.vocalsAm]} />
     </div>
-
+    <div className="center">
+      <MusicalCube sounds={[MusicalCubeSounds.guitarB, MusicalCubeSounds.melodyB, MusicalCubeSounds.vocalsAm]} />
+    </div>
+    <div className="bottom-right">
+      <MusicalCube sounds={[MusicalCubeSounds.guitarB, MusicalCubeSounds.melodyB, MusicalCubeSounds.vocalsAm]} />
+    </div> */}
   </>)
 }
 
-export default MusicalCubesRealm;
+export default MusicalCubesRealm; 

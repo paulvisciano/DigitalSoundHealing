@@ -12,15 +12,15 @@ import React, {
     useState,
 } from "react";
 import { WaveSurfer, WaveForm } from "wavesurfer-react";
-import CubeSideToolbar from './Toolbar';
-
+import CubeSideToolbar from './toolbar/Toolbar';
+ 
 interface CubeSideOptions {
     key: number,
     sound: MusicalCubeSounds,
 };
 
 const CubeSide: React.FC<{ options: CubeSideOptions }> = ({ options }) => {
-    const waveFormUniqueId = `waveform-side-${options.key}`;
+    const waveFormUniqueId = `waveform-${options.key}`;
     const wavesurferRef: any = useRef();
     let [loop, setLoop] = useState(true);
     let [showToolbar, setShowToolbar] = useState(false);
@@ -56,46 +56,46 @@ const CubeSide: React.FC<{ options: CubeSideOptions }> = ({ options }) => {
     );
 
     useEffect(() => {
-        let sub = wavesurferRef.current.on("finish", () => {
+        let unSub = wavesurferRef.current.on("finish", () => {
             if (loop) {
                 wavesurferRef.current.seekTo(0);
                 wavesurferRef.current.play();
             }
         });
 
-        return () => sub();
+        return () => unSub();
     }, [loop]);
 
     return (
-        <div>
+        <>
             <IonGrid>
                 <IonRow>
                     <IonCol>
-                        <div id="wavesurfer-contain">
                             <WaveSurfer
                                 height={203}
                                 width={204}
                                 barWidth={0.1}
+                                //TODO: Get these colors from colors.css
+                                //TODO : Pass them in as params
                                 waveColor={[
-                                    "#ffe0b2",
-                                    "#fbc02d",
-                                    "#ffe0b2",
+                                    "#1976d2",
+                                    "#2196f3",
+                                    "#1976d2",
                                 ]}
                                 progressColor={[
-                                    "#e65100",
+                                    "#0d47a1",
                                 ]}
                                 onMount={handleWSMount}
                                 container={`#${waveFormUniqueId}`}
                             >
                                 <WaveForm id={waveFormUniqueId} />
                             </WaveSurfer>
-                        </div>
                     </IonCol>
                 </IonRow>
             </IonGrid>
 
             {showToolbar && <CubeSideToolbar loop={loop} setLoop={setLoop} />}
-        </div>
+        </>
     )
 };
 
