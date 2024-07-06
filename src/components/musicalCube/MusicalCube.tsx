@@ -13,9 +13,9 @@ import React, {
 } from "react";
 import { WaveSurfer, WaveForm } from "wavesurfer-react";
 import CubeSideToolbar from './toolbar/Toolbar';
- 
+
 interface CubeSideOptions {
-    cubeKey : number,
+    cubeKey: number,
     key: number,
     sound: MusicalCubeSounds,
 };
@@ -74,9 +74,9 @@ const CubeSide: React.FC<{ options: CubeSideOptions }> = ({ options }) => {
                     <IonCol>
                         <div className='wavesurfer-custom-wrapper'>
                             <WaveSurfer
-                                height={202} 
-                                width={200}
-                                barWidth={0.1}
+                                height={196}
+                                width={196}
+                                barWidth={0.5}
                                 //TODO: Get these colors from colors.css
                                 //TODO : Pass them in as params
                                 waveColor={[
@@ -92,7 +92,7 @@ const CubeSide: React.FC<{ options: CubeSideOptions }> = ({ options }) => {
                             >
                                 <WaveForm id={waveFormUniqueId} />
                             </WaveSurfer>
-                            </div>
+                        </div>
                     </IonCol>
                 </IonRow>
             </IonGrid>
@@ -102,8 +102,9 @@ const CubeSide: React.FC<{ options: CubeSideOptions }> = ({ options }) => {
     )
 };
 
-const MusicalCube: React.FC<{ keyzz : number, sounds: Array<MusicalCubeSounds> }> = ({ keyzz, sounds }) => {
+const MusicalCube: React.FC<{ keyzz: number, sounds: Array<MusicalCubeSounds> }> = ({ keyzz, sounds }) => {
     return (
+        <div style={{ height: 200, width: 200 }}>
             <Swiper
                 className={`musical-cube-swiper-${keyzz}`}
                 effect={'cube'}
@@ -129,13 +130,14 @@ const MusicalCube: React.FC<{ keyzz : number, sounds: Array<MusicalCubeSounds> }
                 modules={[EffectCube, Navigation]}
             >
                 {
-                sounds.map((sound, index) =>
-                    <SwiperSlide key={`cube-slide-${index}`}>
-                        <CubeSide options={{ cubeKey : keyzz, key: index, sound: sound }} />
-                    </SwiperSlide>
-                )}
+                    sounds.map((sound, index) =>
+                        <SwiperSlide key={`cube-slide-${index}`}>
+                            <CubeSide options={{ cubeKey: keyzz, key: index, sound: sound }} />
+                        </SwiperSlide>
+                    )}
 
             </Swiper>
+        </div>
     );
 }
 
