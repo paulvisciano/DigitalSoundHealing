@@ -1,4 +1,5 @@
 .cube-side-toolbar { 
+    position: relative;;
     margin-top: -35px;
 
     ion-icon { 

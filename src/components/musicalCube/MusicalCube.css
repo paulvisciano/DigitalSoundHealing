@@ -2,10 +2,14 @@
     border : 1px solid var(--blue-700);
     border-radius: 4px;
 
-    transform: translateY(0) rotate(270deg);
+    transform: translateY(0);
 
     ion-grid, ion-row, ion-col { 
         padding: 0;
+    }
+
+    .wavesurfer-custom-wrapper { 
+        transform: translateY(0) rotate(270deg);
     }
 }
 
