@@ -1,0 +1,7 @@
+.musical-cube { 
+    display: inline-block;
+
+    .musical-cube-label {
+        text-align: center;
+    }
+}

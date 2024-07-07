@@ -1,0 +1,8 @@
+.musical-realm { 
+    height: 100%;
+
+    ion-row { 
+        height: 100%;
+        text-align: center;
+    }
+}
