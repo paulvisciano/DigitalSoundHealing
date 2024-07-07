@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@capacitor/app": "5.0.6",
     "@capacitor/core": "5.2.2",
     "@capacitor/haptics": "5.0.6",
@@ -60,8 +61,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "preserve" : "npm run build",
-    "serve" : "serve -s build",
+    "preserve": "npm run build",
+    "serve": "serve -s build",
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
     "eject": "react-scripts eject",
     "lint": "eslint --ext .ts,.tsx src"
