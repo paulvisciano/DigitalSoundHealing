@@ -7,10 +7,17 @@ import React, {
 } from "react";
 import { WaveSurfer, WaveForm } from "wavesurfer-react";
 import CubeSideToolbar from '../toolbar/Toolbar';
-import { CubeSideOptions } from '../MusicalCube';
+import { MusicalCubeSound } from 'pages/realms/musicalCubes/sounds/MusicalCubeSounds';
+import "./CubeSide.css";
+
+interface CubeSideOptions {
+    cubeKey: number,
+    sideKey: number,
+    sound: MusicalCubeSound,
+};
 
 export const CubeSide: React.FC<{ options: CubeSideOptions; }> = ({ options }) => {
-    const waveFormUniqueId = `cube-${options.cubeKey}-side-${options.key}-waveform`;
+    const waveFormUniqueId = `cube-${options.cubeKey}-side-${options.sideKey}-waveform`;
     const wavesurferRef: any = useRef();
     let [loop, setLoop] = useState(true);
     let [showToolbar, setShowToolbar] = useState(false);
@@ -57,7 +64,7 @@ export const CubeSide: React.FC<{ options: CubeSideOptions; }> = ({ options }) =
     }, [loop]);
 
     return (
-        <div className={`cube-side side-${options.key}`}>
+        <div className={`cube-side side-${options.sideKey}`}>
             <IonGrid>
                 <IonRow>
                     <IonCol>

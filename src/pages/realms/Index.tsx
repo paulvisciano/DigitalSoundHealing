@@ -13,9 +13,9 @@ import './Index.css';
 import TibetanRealm from './tibetan/Tibetan';
 import AthmospheresDawdioRealm from './athmospheresDawdio/AthmospheresDawdio';
 import SoulRealm from './soul/SoulRealm';
-import MusicalCubesRealm from './musicalCubes/MusicalCubes';
+import MusicalCubesRealm from './musicalCubes/MusicalCubesRealm';
 
-const Realms: React.FC = () => {
+const Realms: React.FC = () => { 
   return (<>
     <Swiper
       className='workspace-swiper'

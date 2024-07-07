@@ -1,0 +1,18 @@
+.musical-cube {
+    /* Override styles to make all sides of the cube visible */
+    .swiper-cube {
+        .swiper-slide {
+            visibility: visible;
+        }
+    }
+
+    .swiper-slide-fully-visible {
+        .wavesurfer-custom-wrapper {
+            opacity: 1;
+        }
+    }
+
+    .swiper-cube-shadow {
+        background-color: var(--blue-500);
+    }
+}
