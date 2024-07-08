@@ -6,18 +6,19 @@ import React, {
     useState
 } from "react";
 import { WaveSurfer, WaveForm } from "wavesurfer-react";
-import { nanoid } from "@reduxjs/toolkit";
 import CubeSideToolbar from '../toolbar/Toolbar';
 import { CubeSound } from 'pages/realms/musicalCubes/sounds/CubeSound';
 import { useCustomWavesurferClick } from './hooks';
 import "./CubeSide.css";
+import { Size } from '../interfaces/Size';
 
 interface SideOptions {
     id: string;
+    size : Size;
     sound: CubeSound,
 };
 
-export const CubeSide: React.FC<SideOptions> = ({ id: id, sound }) => {
+export const CubeSide: React.FC<SideOptions> = ({ id, size, sound }) => {
     //Each waveform needs to have a unique id
     const waveFormUniqueId = `waveform-${id}`;
     const wavesurferRef: any = useRef();
@@ -59,8 +60,8 @@ export const CubeSide: React.FC<SideOptions> = ({ id: id, sound }) => {
                     <IonCol>
                         <div className='wavesurfer-custom-wrapper'>
                             <WaveSurfer
-                                height={196}
-                                width={196}
+                                height={size.height - 4}
+                                width={size.width - 4}
                                 barWidth={0.5}
 
                                 //TODO: Get these colors from colors.css

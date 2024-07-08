@@ -8,11 +8,7 @@ import { CubeSound } from 'pages/realms/musicalCubes/sounds/CubeSound';
 import React from "react";
 import { CubeSide } from './cubeSide/CubeSide';
 import { nanoid } from '@reduxjs/toolkit';
-
-interface Size {
-    height: number;
-    width: number;
-}
+import { Size } from './interfaces/Size';
 
 interface Options {
     label: string;
@@ -20,7 +16,7 @@ interface Options {
     sounds: Array<CubeSound>;
 }
 
-const MusicalCube: React.FC<Options> = ({ label: label, size = { height: 200, width: 200 }, sounds }) => {
+const MusicalCube: React.FC<Options> = ({ label: label, size = { height: 300, width: 300 }, sounds }) => {
     return (
         <div className={`musical-cube`}>
             <p className='musical-cube-label'>{label}</p>
@@ -53,7 +49,7 @@ const MusicalCube: React.FC<Options> = ({ label: label, size = { height: 200, wi
                 {
                     sounds.map((sound, index) =>
                         <SwiperSlide key={`cube-slide-${index}`}>
-                            <CubeSide id={nanoid()} sound={sound} />
+                            <CubeSide id={nanoid()} size={size} sound={sound} />
                         </SwiperSlide>
                     )}
 
