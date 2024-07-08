@@ -6,18 +6,20 @@ import React, {
     useState
 } from "react";
 import { WaveSurfer, WaveForm } from "wavesurfer-react";
+import { nanoid } from "@reduxjs/toolkit";
 import CubeSideToolbar from '../toolbar/Toolbar';
-import { MusicalCubeSound } from 'pages/realms/musicalCubes/sounds/MusicalCubeSounds';
+import { CubeSound } from 'pages/realms/musicalCubes/sounds/CubeSound';
+import { useCustomWavesurferClick } from './hooks';
 import "./CubeSide.css";
 
-interface CubeSideOptions {
-    cubeKey: number,
-    sideKey: number,
-    sound: MusicalCubeSound,
+interface SideOptions {
+    id: string;
+    sound: CubeSound,
 };
 
-export const CubeSide: React.FC<{ options: CubeSideOptions; }> = ({ options }) => {
-    const waveFormUniqueId = `cube-${options.cubeKey}-side-${options.sideKey}-waveform`;
+export const CubeSide: React.FC<SideOptions> = ({ id: id, sound }) => {
+    //Each waveform needs to have a unique id
+    const waveFormUniqueId = `waveform-${id}`;
     const wavesurferRef: any = useRef();
     let [loop, setLoop] = useState(true);
     let [showToolbar, setShowToolbar] = useState(false);
@@ -25,46 +27,33 @@ export const CubeSide: React.FC<{ options: CubeSideOptions; }> = ({ options }) =
     const handleWSMount = useCallback(
         (waveSurfer: any) => {
             wavesurferRef.current = waveSurfer;
-
-            if (wavesurferRef.current) {
-                wavesurferRef.current.setVolume(0.2);
-                wavesurferRef.current.load(options.sound);
-
-                //Customize the way the click event is handled to be able to seek vertically
-                wavesurferRef.current.renderer.parent.addEventListener("click", (e: any) => {
-                    var rect = wavesurferRef.current.renderer.parent.getBoundingClientRect();
-                    let minY = rect.top;
-                    let maxY = rect.bottom;
-                    let newVal = 1 - ((e.clientY - minY) / (maxY - minY));
-
-                    wavesurferRef.current.seekTo((newVal));
-                }, false);
-
-                wavesurferRef.current.on("click", (e: number) => {
-                    wavesurferRef.current.play();
-
-                    setShowToolbar(true);
-
-                    setTimeout(() => setShowToolbar(false), 5000);
-                });
-            }
-        },
-        [options, loop]
-    );
+            wavesurferRef.current?.load(sound);
+        }, []);
 
     useEffect(() => {
-        let unSub = wavesurferRef.current.on("finish", () => {
+        const unsubClick = wavesurferRef.current.on("click", (e: number) => {
+            setShowToolbar(true);
+
+            setTimeout(() => setShowToolbar(false), 5000);
+        });
+
+        const unsubFinish = wavesurferRef.current.on("finish", () => {
             if (loop) {
                 wavesurferRef.current.seekTo(0);
                 wavesurferRef.current.play();
             }
         });
 
-        return () => unSub();
+        return () => {
+            unsubClick();
+            unsubFinish();
+        };
     }, [loop]);
 
+    useCustomWavesurferClick(wavesurferRef);
+
     return (
-        <div className={`cube-side side-${options.sideKey}`}>
+        <div className={`cube-side`}>
             <IonGrid>
                 <IonRow>
                     <IonCol>
@@ -73,6 +62,7 @@ export const CubeSide: React.FC<{ options: CubeSideOptions; }> = ({ options }) =
                                 height={196}
                                 width={196}
                                 barWidth={0.5}
+
                                 //TODO: Get these colors from colors.css
                                 //TODO : Pass them in as params
                                 waveColor={[

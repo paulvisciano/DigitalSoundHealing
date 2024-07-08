@@ -1,6 +1,6 @@
 import "./MusicalCubesRealm.css";
 import MusicalCube from "components/musicalCube/MusicalCube";
-import { MusicalCubeSound } from "./sounds/MusicalCubeSounds";
+import { CubeSound } from "./sounds/CubeSound";
 import { IonCol, IonGrid, IonRow } from "@ionic/react";
 
 const MusicalCubesRealm: React.FC = () => {
@@ -8,13 +8,13 @@ const MusicalCubesRealm: React.FC = () => {
     <IonGrid class="musical-realm">
       <IonRow class="ion-align-items-center">
         <IonCol>
-          <MusicalCube cubeId={1} label="Guitar" sounds={[MusicalCubeSound.guitarB, MusicalCubeSound.melodyB, MusicalCubeSound.vocalsAm, MusicalCubeSound.brassAm]} />
+          <MusicalCube label="Guitar" sounds={[CubeSound.guitarB, CubeSound.melodyB, CubeSound.vocalsAm, CubeSound.brassAm]} />
         </IonCol>
         <IonCol>
-          <MusicalCube cubeId={2} label="Vocals" sounds={[MusicalCubeSound.vocalsAm, MusicalCubeSound.melodyB, MusicalCubeSound.vocalsAm, MusicalCubeSound.brassAm]} />
+          <MusicalCube label="Vocals" sounds={[CubeSound.vocalsAm, CubeSound.melodyB, CubeSound.vocalsAm, CubeSound.brassAm]} />
         </IonCol>
         <IonCol>
-          <MusicalCube cubeId={3} label="Brass" sounds={[MusicalCubeSound.brassAm, MusicalCubeSound.melodyB, MusicalCubeSound.vocalsAm, MusicalCubeSound.brassAm]} />
+          <MusicalCube label="Brass" sounds={[CubeSound.brassAm, CubeSound.melodyB, CubeSound.vocalsAm, CubeSound.brassAm]} />
         </IonCol>
       </IonRow>
     </IonGrid>

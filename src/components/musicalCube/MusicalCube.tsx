@@ -3,30 +3,30 @@ import './SwiperOverrides.css';
 import { SwiperSlide, Swiper } from "swiper/react";
 import { Swiper as SwiperType } from 'swiper/types';
 import { EffectCube, Navigation } from 'swiper/modules';
-import { MusicalCubeSound } from 'pages/realms/musicalCubes/sounds/MusicalCubeSounds';
+import { CubeSound } from 'pages/realms/musicalCubes/sounds/CubeSound';
 
 import React from "react";
 import { CubeSide } from './cubeSide/CubeSide';
+import { nanoid } from '@reduxjs/toolkit';
 
 interface Size {
     height: number;
     width: number;
 }
 
-interface CubeOptions {
-    cubeId: number;
+interface Options {
     label: string;
     size?: Size;
-    sounds: Array<MusicalCubeSound>;
+    sounds: Array<CubeSound>;
 }
 
-const MusicalCube: React.FC<CubeOptions> = ({ cubeId: cubeId, label: label, size = { height: 200, width: 200 }, sounds }) => {
+const MusicalCube: React.FC<Options> = ({ label: label, size = { height: 200, width: 200 }, sounds }) => {
     return (
-        <div className={`musical-cube musical-cube-${cubeId}`}>
+        <div className={`musical-cube`}>
             <p className='musical-cube-label'>{label}</p>
 
             <Swiper
-                className={`musical-cube-swiper-${cubeId}`}
+                className={`musical-cube-swiper`}
                 style={{ height: size.height, width: size.width }}
                 effect={'cube'}
                 loop={true}
@@ -53,7 +53,7 @@ const MusicalCube: React.FC<CubeOptions> = ({ cubeId: cubeId, label: label, size
                 {
                     sounds.map((sound, index) =>
                         <SwiperSlide key={`cube-slide-${index}`}>
-                            <CubeSide options={{ cubeKey: cubeId, sideKey: index, sound: sound }} />
+                            <CubeSide id={nanoid()} sound={sound} />
                         </SwiperSlide>
                     )}
 
