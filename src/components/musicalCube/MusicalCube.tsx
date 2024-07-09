@@ -16,7 +16,7 @@ interface Options {
     sounds: Array<CubeSound>;
 }
 
-const MusicalCube: React.FC<Options> = ({ label: label, size = { height: 300, width: 300 }, sounds }) => {
+const MusicalCube: React.FC<Options> = ({ label: label, size = { height: 333, width: 333 }, sounds }) => {
     return (
         <div className={`musical-cube`}>
             <p className='musical-cube-label'>{label}</p>

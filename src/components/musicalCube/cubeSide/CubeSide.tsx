@@ -34,8 +34,8 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, sound }) => {
     useEffect(() => {
         const unsubClick = wavesurferRef.current.on("click", (e: number) => {
             setShowToolbar(true);
-
-            setTimeout(() => setShowToolbar(false), 5000);
+            wavesurferRef.current.seekTo(0);
+            wavesurferRef.current.play();
         });
 
         const unsubFinish = wavesurferRef.current.on("finish", () => {
@@ -51,7 +51,7 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, sound }) => {
         };
     }, [loop]);
 
-    useCustomWavesurferClick(wavesurferRef);
+    // useCustomWavesurferClick(wavesurferRef);
 
     return (
         <div className={`cube-side`}>
@@ -74,6 +74,7 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, sound }) => {
                                 progressColor={[
                                     "#0d47a1",
                                 ]}
+                                dragToSeek={false}
                                 onMount={handleWSMount}
                                 container={`#${waveFormUniqueId}`}
                             >
