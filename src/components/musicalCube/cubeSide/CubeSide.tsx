@@ -7,25 +7,25 @@ import React, {
 } from "react";
 import { WaveSurfer, WaveForm } from "wavesurfer-react";
 import CubeSideToolbar from '../toolbar/Toolbar';
-import { CubeSound } from 'pages/realms/musicalCubes/sounds/CubeSound';
-import { useCustomWavesurferClick } from './hooks';
 import "./CubeSide.css";
 import { Size } from '../interfaces/Size';
 
 interface SideOptions {
     id: string;
     size: Size;
-    sound: CubeSound,
+    sound: any,
+    enableLoop? : boolean;
+    enableSync? : boolean;
     setSharedTrackTime: any;
     getSharedTrackTime: any;
 };
 
-export const CubeSide: React.FC<SideOptions> = ({ id, size, sound, ...props }) => {
+export const CubeSide: React.FC<SideOptions> = ({ id, size, enableLoop = true, enableSync = true, sound, ...props }) => {
     //Each waveform needs to have a unique id
     const waveFormUniqueId = `waveform-${id}`;
     const wavesurferRef: any = useRef();
 
-    let [loop, setLoop] = useState(true);
+    let [loop, setLoop] = useState(enableLoop);
     let [showToolbar, setShowToolbar] = useState(false);
     let [isPlaying, setIsPlaying] = useState(false);
 
@@ -56,18 +56,24 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, sound, ...props }) =
                 const trackPosition = wavesurferRef.current.getCurrentTime();
 
                 props.setSharedTrackTime(trackPosition);
-            }, 100);
+            }, 10);
 
             wavesurferRef.current.play();
             setIsPlaying(true);
         }
     }
 
+    const playFromBeginning = () => {
+        wavesurferRef.current.seekTo(0);
+        wavesurferRef.current.play();
+        setIsPlaying(true);
+    }
+
     useEffect(() => {
         const unsubClick = wavesurferRef.current.on("click", (e: number) => {
             setShowToolbar(true);
 
-            triggerSync();
+            enableSync ? triggerSync() : playFromBeginning();
         });
 
         const unsubFinish = wavesurferRef.current.on("finish", () => {

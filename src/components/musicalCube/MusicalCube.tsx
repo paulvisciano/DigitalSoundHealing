@@ -3,17 +3,19 @@ import './SwiperOverrides.css';
 import { SwiperSlide, Swiper } from "swiper/react";
 import { Swiper as SwiperType } from 'swiper/types';
 import { EffectCube, Navigation } from 'swiper/modules';
-import { CubeSound } from 'pages/realms/musicalCubes/sounds/CubeSound';
-
+ 
 import React from "react";
 import { CubeSide } from './cubeSide/CubeSide';
 import { nanoid } from '@reduxjs/toolkit';
 import { Size } from './interfaces/Size';
+import { InTheCity } from 'pages/realms/musicalCubes/sounds/CubeSound';
 
 interface Options {
     label: string;
     size?: Size;
-    sounds: Array<CubeSound>;
+    sounds: Array<InTheCity>;
+    enableLoop? : boolean;
+    enableSync? : boolean;
     setSharedTrackTime : (newTrackTime : number) => void;
     getSharedTrackTime : () => number;
 }
