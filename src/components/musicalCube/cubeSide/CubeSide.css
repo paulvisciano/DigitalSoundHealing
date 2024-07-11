@@ -12,5 +12,10 @@
         opacity: 0.3;
         transform: translateY(0) rotate(270deg);
     }
+
+    ::part(cursor) {
+        width: 5px;
+        background-color: var(--blue-900);
+    }
 }
  

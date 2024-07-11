@@ -42,20 +42,23 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, sound, ...props }) =
             wavesurferRef.current.play();
         }
         else {
+            wavesurferRef.current.seekTo(0);
+
             setInterval(() => {
                 const trackPosition = wavesurferRef.current.getCurrentTime();
 
                 props.setSharedTrackTime(trackPosition);
             }, 100);
+
+            wavesurferRef.current.play();
         }
     }
-
 
     useEffect(() => {
         const unsubClick = wavesurferRef.current.on("click", (e: number) => {
             setShowToolbar(true);
-            wavesurferRef.current.seekTo(0);
-            wavesurferRef.current.play();
+
+            triggerSync();
         });
 
         const unsubFinish = wavesurferRef.current.on("finish", () => {
