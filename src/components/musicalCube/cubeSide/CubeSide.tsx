@@ -27,12 +27,19 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, sound, ...props }) =
 
     let [loop, setLoop] = useState(true);
     let [showToolbar, setShowToolbar] = useState(false);
+    let [isPlaying, setIsPlaying] = useState(false);
 
     const handleWSMount = useCallback(
         (waveSurfer: any) => {
             wavesurferRef.current = waveSurfer;
             wavesurferRef.current?.load(sound);
         }, []);
+    
+    const playPause = () => {
+        wavesurferRef?.current?.playPause();
+
+        setIsPlaying(wavesurferRef?.current?.isPlaying());
+    }
 
     const triggerSync = () => {
         const sharedPosition = props.getSharedTrackTime();
@@ -40,6 +47,7 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, sound, ...props }) =
         if (sharedPosition) {
             wavesurferRef.current.setTime(sharedPosition);
             wavesurferRef.current.play();
+            setIsPlaying(true);
         }
         else {
             wavesurferRef.current.seekTo(0);
@@ -51,6 +59,7 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, sound, ...props }) =
             }, 100);
 
             wavesurferRef.current.play();
+            setIsPlaying(true);
         }
     }
 
@@ -65,6 +74,7 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, sound, ...props }) =
             if (loop) {
                 wavesurferRef.current.seekTo(0);
                 wavesurferRef.current.play();
+                setIsPlaying(true);
             }
         });
 
@@ -108,7 +118,7 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, sound, ...props }) =
                 </IonRow>
             </IonGrid>
 
-            {showToolbar && <CubeSideToolbar loop={loop} setLoop={setLoop} triggerSync={triggerSync} />}
+            {showToolbar && <CubeSideToolbar isPlaying={isPlaying} playPause={playPause} loop={loop} setLoop={setLoop} triggerSync={triggerSync} />}
         </div>
     );
 };

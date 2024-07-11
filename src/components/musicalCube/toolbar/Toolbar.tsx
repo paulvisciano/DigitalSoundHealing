@@ -1,15 +1,23 @@
 import { IonGrid, IonIcon, IonRow } from "@ionic/react";
-import { reloadCircleSharp, reloadCircleOutline, syncCircle } from "ionicons/icons";
+import { reloadCircleSharp, reloadCircleOutline, syncCircle, pauseCircle, playCircle } from "ionicons/icons";
 import './Toolbar.css'
 
-const CubeSideToolbar: React.FC<{ loop: boolean, setLoop: any, triggerSync: any }> = ({ loop, setLoop, triggerSync }) => {
+interface ToolbarOptions {
+    isPlaying: boolean;
+    playPause: () => void;
+    loop: boolean;
+    setLoop: (val: boolean) => void;
+    triggerSync: () => void;
+};
+
+const CubeSideToolbar: React.FC<ToolbarOptions> = ({ isPlaying, playPause, loop, setLoop }) => {
     return (<div className="cube-side-toolbar">
         <IonGrid>
             <IonRow>
-                {loop ? <IonIcon size='large' icon={reloadCircleSharp} onClick={() => setLoop(false)} /> : <IonIcon size='large' icon={reloadCircleOutline} onClick={() => setLoop(true)} />}
+                {isPlaying ? <IonIcon size='large' icon={pauseCircle} onClick={() => playPause()} /> : <IonIcon size='large' icon={playCircle} onClick={() => playPause()} />}
             </IonRow>
             <IonRow>
-                <IonIcon size='large' icon={syncCircle} onClick={() => triggerSync()} />
+                {loop ? <IonIcon size='large' icon={reloadCircleSharp} onClick={() => setLoop(false)} /> : <IonIcon size='large' icon={reloadCircleOutline} onClick={() => setLoop(true)} />}
             </IonRow>
         </IonGrid>
     </div>);
