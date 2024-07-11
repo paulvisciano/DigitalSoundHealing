@@ -14,9 +14,11 @@ interface Options {
     label: string;
     size?: Size;
     sounds: Array<CubeSound>;
+    setSharedTrackTime : (newTrackTime : number) => void;
+    getSharedTrackTime : () => number;
 }
 
-const MusicalCube: React.FC<Options> = ({ label: label, size = { height: 333, width: 333 }, sounds }) => {
+const MusicalCube: React.FC<Options> = ({ label: label, size = { height: 333, width: 333 }, sounds, ...props }) => {
     return (
         <div className={`musical-cube`}>
             <p className='musical-cube-label'>{label}</p>
@@ -49,7 +51,7 @@ const MusicalCube: React.FC<Options> = ({ label: label, size = { height: 333, wi
                 {
                     sounds.map((sound, index) =>
                         <SwiperSlide key={`cube-slide-${index}`}>
-                            <CubeSide id={nanoid()} size={size} sound={sound} />
+                            <CubeSide id={nanoid()} size={size} sound={sound} {...props} />
                         </SwiperSlide>
                     )}
 

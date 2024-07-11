@@ -14,14 +14,17 @@ import { Size } from '../interfaces/Size';
 
 interface SideOptions {
     id: string;
-    size : Size;
+    size: Size;
     sound: CubeSound,
+    setSharedTrackTime: any;
+    getSharedTrackTime: any;
 };
 
-export const CubeSide: React.FC<SideOptions> = ({ id, size, sound }) => {
+export const CubeSide: React.FC<SideOptions> = ({ id, size, sound, ...props }) => {
     //Each waveform needs to have a unique id
     const waveFormUniqueId = `waveform-${id}`;
     const wavesurferRef: any = useRef();
+
     let [loop, setLoop] = useState(true);
     let [showToolbar, setShowToolbar] = useState(false);
 
@@ -30,6 +33,23 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, sound }) => {
             wavesurferRef.current = waveSurfer;
             wavesurferRef.current?.load(sound);
         }, []);
+
+    const triggerSync = () => {
+        const sharedPosition = props.getSharedTrackTime();
+
+        if (sharedPosition) {
+            wavesurferRef.current.setTime(sharedPosition);
+            wavesurferRef.current.play();
+        }
+        else {
+            setInterval(() => {
+                const trackPosition = wavesurferRef.current.getCurrentTime();
+
+                props.setSharedTrackTime(trackPosition);
+            }, 100);
+        }
+    }
+
 
     useEffect(() => {
         const unsubClick = wavesurferRef.current.on("click", (e: number) => {
@@ -85,7 +105,7 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, sound }) => {
                 </IonRow>
             </IonGrid>
 
-            {showToolbar && <CubeSideToolbar loop={loop} setLoop={setLoop} />}
+            {showToolbar && <CubeSideToolbar loop={loop} setLoop={setLoop} triggerSync={triggerSync} />}
         </div>
     );
 };
