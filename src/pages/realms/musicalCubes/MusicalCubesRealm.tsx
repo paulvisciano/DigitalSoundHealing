@@ -20,7 +20,7 @@ const MusicalCubesRealm: React.FC = () => {
           <MusicalCube label="Melody" sounds={[InTheCity.piano, InTheCity.guitar, InTheCity.brass, InTheCity.brass]} setSharedTrackTime={setSharedTrackTime} getSharedTrackTime={getSharedTrackTime} />
         </IonCol>
         <IonCol>
-          <MusicalCube label="One Shots" size={{ height: 200, width: 200 }} enableSync={false} enableLoop={false} sounds={[InTheCity.brass_oneShot, InTheCity.melody_noHorns, InTheCity.melody_noGuitar, InTheCity.melody_noKeys]} setSharedTrackTime={setSharedTrackTime} getSharedTrackTime={getSharedTrackTime} />
+          <MusicalCube label="One Shots" size={{ height: 250, width: 250 }} enableSync={false} enableLoop={false} sounds={[InTheCity.brass_oneShot, InTheCity.melody_noHorns, InTheCity.melody_noGuitar, InTheCity.melody_noKeys]} setSharedTrackTime={setSharedTrackTime} getSharedTrackTime={getSharedTrackTime} />
         </IonCol>
         <IonCol>
           <MusicalCube label="Vocals" sounds={[InTheCity.vocals, InTheCity.vocals, InTheCity.vocals, InTheCity.vocals]} setSharedTrackTime={setSharedTrackTime} getSharedTrackTime={getSharedTrackTime} />
