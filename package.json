@@ -59,7 +59,7 @@
     "redux-devtools-extension": "^2.13.9"
   },
   "scripts": {
-    "prestart": "npm run discoverSounds",
+    "prestart": "npm run discoverTracks",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "preserve": "npm run build",
@@ -67,7 +67,7 @@
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
     "eject": "react-scripts eject",
     "lint": "eslint --ext .ts,.tsx src",
-    "discoverSounds": "node scripts/discoverSounds.js"
+    "discoverTracks": "node scripts/discoverTracks.js"
   },
   "browserslist": [
     "Chrome >=79",

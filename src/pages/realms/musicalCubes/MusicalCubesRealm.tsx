@@ -1,7 +1,7 @@
 import "./MusicalCubesRealm.css";
 import MusicalCube from "components/musicalCube/MusicalCube";
 import { IonCol, IonGrid, IonRow } from "@ionic/react";
-import { tracks } from "./sounds";
+import tracks from "./sounds";
 
 const MusicalCubesRealm: React.FC = () => {
   let sharedTrackTime = 0;
