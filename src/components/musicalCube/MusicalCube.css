@@ -4,4 +4,8 @@
     .musical-cube-label {
         text-align: center;
     }
+
+    .cube-slide-title {
+        margin-bottom: 10px;
+    }
 }
