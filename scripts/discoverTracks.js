@@ -5,7 +5,7 @@ const outputPath = path.resolve("./src/pages/realms/musicalCubes/sounds/index.ts
 
 //https://gist.github.com/kethinov/6658166
 const getFilePaths = (folderPath) => {
-    const entryPaths = fs.readdirSync(folderPath).map(entry => path.join(folderPath, entry));
+    const entryPaths = fs.readdirSync(folderPath).filter(file => file != '.DS_Store').map(entry => path.join(folderPath, entry));
     const filePaths = entryPaths.filter(entryPath => fs.statSync(entryPath).isFile());
     const dirPaths = entryPaths.filter(entryPath => !filePaths.includes(entryPath));
     const dirFiles = dirPaths.reduce((prev, curr) => prev.concat(getFilePaths(curr)), []);
@@ -21,6 +21,7 @@ const getSoundsForTrack = (trackName, trackFolderPath) => {
 }
 
 const tracks = fs.readdirSync(tracksPath)
+    .filter(file => file != '.DS_Store')
     .map(trackName => getSoundsForTrack(trackName, path.join(tracksPath, trackName)));
 
 const formatTracks = trackArray => `const tracks = { ${trackArray.join(',')} } \n\nexport default tracks;`;
