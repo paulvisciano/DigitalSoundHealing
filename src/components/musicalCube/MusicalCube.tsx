@@ -8,13 +8,12 @@ import React from "react";
 import { CubeSide } from './cubeSide/CubeSide';
 import { nanoid } from '@reduxjs/toolkit';
 import { Size } from './interfaces/Size';
-import { InTheCity } from 'pages/realms/musicalCubes/sounds/CubeSound';
 import { IonLabel } from '@ionic/react';
 
 interface Options {
     label?: string;
     size?: Size;
-    sounds: Array<InTheCity>;
+    sounds: any;
     enableLoop?: boolean;
     enableSync?: boolean;
     setSharedTrackTime: (newTrackTime: number) => void;
@@ -52,11 +51,9 @@ const MusicalCube: React.FC<Options> = ({ label: label, size = { height: 333, wi
                 modules={[EffectCube, Navigation]}
             >
                 {
-                    sounds.map((sound, index) =>
+                    sounds.map((sound : any, index : any) =>
                         <SwiperSlide key={`cube-slide-${index}`}>
-                            <div className='cube-slide-title'>{Object.keys(InTheCity)[Object.values(InTheCity).indexOf(sound)].replaceAll('_', ' ')}</div>
-                            
-                            <CubeSide id={nanoid()} size={size} sound={sound} {...props} />
+                            <CubeSide id={nanoid()} sound={sound} size={size} {...props} />
                         </SwiperSlide>
                     )}
 
