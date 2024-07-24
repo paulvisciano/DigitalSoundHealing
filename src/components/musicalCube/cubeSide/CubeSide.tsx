@@ -125,7 +125,7 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, enableLoop = true, e
                 </IonRow>
             </IonGrid>
 
-            {showToolbar && <CubeSideToolbar isPlaying={isPlaying} playPause={playPause} loop={loop} setLoop={setLoop} triggerSync={triggerSync} />}
+            {showToolbar && <CubeSideToolbar isPlaying={isPlaying} playPause={playPause} loop={loop} setLoop={setLoop} enableLoop={enableLoop} triggerSync={triggerSync} />}
         </div>
     );
 };
