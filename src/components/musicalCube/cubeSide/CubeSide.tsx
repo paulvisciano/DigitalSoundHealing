@@ -33,26 +33,28 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, enableLoop = true, e
         (waveSurfer: any) => {
             wavesurferRef.current = waveSurfer;
             wavesurferRef.current?.load(sound);
+        }, [sound]);
 
-            const unsubClick = wavesurferRef.current.on("click", (e: number) => {
-                setShowToolbar(true);
-    
-                enableSync ? triggerSync() : playFromBeginning();
-            });
-    
-            const unsubFinish = wavesurferRef.current.on("finish", () => {
-                if (loop) {
-                    wavesurferRef.current.seekTo(0);
-                    wavesurferRef.current.play();
-                    setIsPlaying(true);
-                }
-            });
+    useEffect(() => {
+        const unsubClick = wavesurferRef.current.on("click", (e: number) => {
+            setShowToolbar(true);
 
-            return () => {
-                unsubClick();
-                unsubFinish();
-            };
-        }, [loop]);
+            enableSync ? triggerSync() : playFromBeginning();
+        });
+
+        const unsubFinish = wavesurferRef.current.on("finish", () => {
+            if (loop) {
+                wavesurferRef.current.seekTo(0);
+                wavesurferRef.current.play();
+                setIsPlaying(true);
+            }
+        });
+
+        return () => {
+            unsubClick();
+            unsubFinish();
+        };
+    }, [loop])
     
     const playPause = () => {
         wavesurferRef?.current?.playPause();
