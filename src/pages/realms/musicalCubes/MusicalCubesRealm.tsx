@@ -17,13 +17,13 @@ const MusicalCubesRealm: React.FC = () => {
     <IonGrid class="musical-realm">
       <IonRow class="ion-align-items-center">
         <IonCol>
-          <MusicalCube label="Melody" sounds={[InTheCity.piano, InTheCity.guitar, InTheCity.brass, InTheCity.brass]} setSharedTrackTime={setSharedTrackTime} getSharedTrackTime={getSharedTrackTime} />
+          <MusicalCube label="Melody" sounds={[InTheCity.Piano, InTheCity.Guitar, InTheCity.Brass, InTheCity.Brass]} setSharedTrackTime={setSharedTrackTime} getSharedTrackTime={getSharedTrackTime} />
         </IonCol>
         <IonCol>
-          <MusicalCube label="One Shots" size={{ height: 250, width: 250 }} enableSync={false} enableLoop={false} sounds={[InTheCity.brass_oneShot, InTheCity.melody_noHorns, InTheCity.melody_noGuitar, InTheCity.melody_noKeys]} setSharedTrackTime={setSharedTrackTime} getSharedTrackTime={getSharedTrackTime} />
+          <MusicalCube size={{ height: 250, width: 250 }} enableSync={false} enableLoop={false} sounds={[InTheCity.Brass_Choo_Choo, InTheCity.Brass_Stab_Bump, InTheCity.Sub, InTheCity.Sub]} setSharedTrackTime={setSharedTrackTime} getSharedTrackTime={getSharedTrackTime} />
         </IonCol>
         <IonCol>
-          <MusicalCube label="Vocals" sounds={[InTheCity.vocals, InTheCity.vocals, InTheCity.vocals, InTheCity.vocals]} setSharedTrackTime={setSharedTrackTime} getSharedTrackTime={getSharedTrackTime} />
+          <MusicalCube sounds={[InTheCity.Vocals, InTheCity.Vocals, InTheCity.Vocals, InTheCity.Vocals]} setSharedTrackTime={setSharedTrackTime} getSharedTrackTime={getSharedTrackTime} />
         </IonCol>
       </IonRow>
     </IonGrid>
