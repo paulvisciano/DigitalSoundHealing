@@ -39,7 +39,7 @@ const Realms: React.FC = () => {
         <MusicalCubesRealm />
       </SwiperSlide>
 
-      <SwiperSlide>
+      {/* <SwiperSlide>
         <SoulRealm />
       </SwiperSlide>
 
@@ -49,7 +49,7 @@ const Realms: React.FC = () => {
 
       <SwiperSlide>
         <AthmospheresDawdioRealm />
-      </SwiperSlide>
+      </SwiperSlide> */}
 
       {/* <SwiperSlide>
         <NativeAmericanRealm />

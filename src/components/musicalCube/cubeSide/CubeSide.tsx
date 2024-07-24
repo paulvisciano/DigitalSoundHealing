@@ -13,7 +13,7 @@ import { Size } from '../interfaces/Size';
 interface SideOptions {
     id: string;
     size: Size;
-    sound: any,
+    sound?: any,
     enableLoop? : boolean;
     enableSync? : boolean;
     setSharedTrackTime: any;
@@ -33,7 +33,26 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, enableLoop = true, e
         (waveSurfer: any) => {
             wavesurferRef.current = waveSurfer;
             wavesurferRef.current?.load(sound);
-        }, []);
+
+            const unsubClick = wavesurferRef.current.on("click", (e: number) => {
+                setShowToolbar(true);
+    
+                enableSync ? triggerSync() : playFromBeginning();
+            });
+    
+            const unsubFinish = wavesurferRef.current.on("finish", () => {
+                if (loop) {
+                    wavesurferRef.current.seekTo(0);
+                    wavesurferRef.current.play();
+                    setIsPlaying(true);
+                }
+            });
+
+            return () => {
+                unsubClick();
+                unsubFinish();
+            };
+        }, [loop]);
     
     const playPause = () => {
         wavesurferRef?.current?.playPause();
@@ -69,26 +88,6 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, enableLoop = true, e
         setIsPlaying(true);
     }
 
-    useEffect(() => {
-        const unsubClick = wavesurferRef.current.on("click", (e: number) => {
-            setShowToolbar(true);
-
-            enableSync ? triggerSync() : playFromBeginning();
-        });
-
-        const unsubFinish = wavesurferRef.current.on("finish", () => {
-            if (loop) {
-                wavesurferRef.current.seekTo(0);
-                wavesurferRef.current.play();
-                setIsPlaying(true);
-            }
-        });
-
-        return () => {
-            unsubClick();
-            unsubFinish();
-        };
-    }, [loop]);
 
     // useCustomWavesurferClick(wavesurferRef);
 
@@ -97,7 +96,8 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, enableLoop = true, e
             <IonGrid>
                 <IonRow>
                     <IonCol>
-                        <div className='wavesurfer-custom-wrapper'>
+                    <div className='wavesurfer-custom-wrapper'>
+                        { sound && 
                             <WaveSurfer
                                 height={size.height - 4}
                                 width={size.width - 4}
@@ -119,6 +119,7 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, enableLoop = true, e
                             >
                                 <WaveForm id={waveFormUniqueId} />
                             </WaveSurfer>
+                    }
                         </div>
                     </IonCol>
                 </IonRow>
