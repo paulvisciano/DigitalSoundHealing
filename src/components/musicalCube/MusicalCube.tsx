@@ -23,7 +23,7 @@ interface Options {
 const MusicalCube: React.FC<Options> = ({ label: label, size = { height: 333, width: 333 }, sounds, ...props }) => {
     return (
         <div className={`musical-cube`}>
-            <p className='musical-cube-label'>{label}</p>
+            {label && <IonLabel className='musical-cube-label'>{label}</IonLabel>}
 
             <Swiper
                 className={`musical-cube-swiper`}
