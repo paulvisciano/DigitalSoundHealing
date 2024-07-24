@@ -12,7 +12,7 @@ const MusicalCubesRealm: React.FC = () => {
 
   return (
     <IonGrid class="musical-realm">
-      <IonRow>
+      <IonRow class="ion-align-items-center">
         {Object.entries(tracks).map((track) => {
           let trackName = track[0];
           let trackSounds = track[1]
@@ -20,23 +20,26 @@ const MusicalCubesRealm: React.FC = () => {
           let oneShotSounds = trackSounds.filter(path => path.indexOf('\/one_shots') != -1);
 
           return (
-            <div key={trackName} style={{ paddingRight: 100 }}>
-              <p>{trackName}</p>
-              <IonCol>
-                <IonGrid >
+              <IonCol key={trackName}>
+                <p>{trackName}</p>
+
+                <IonGrid>
+                  {oneShotSounds.length > 0 ? (
+                    <IonRow style={{ paddingBottom: 50 }}>
+                      <IonCol>
+                        <MusicalCube size={{ height: 225, width: 225 }} enableSync={false} enableLoop={false} sounds={oneShotSounds} setSharedTrackTime={setSharedTrackTime} getSharedTrackTime={getSharedTrackTime} />
+                      </IonCol>
+                    </IonRow>) : null}
+
                   {melodySounds.length > 0 ? (
-                    <IonRow style={{ paddingBottom: 100 }}>
+                    <IonRow >
+                      <IonCol>
                       <MusicalCube label="Melody" sounds={melodySounds} setSharedTrackTime={setSharedTrackTime} getSharedTrackTime={getSharedTrackTime} />
+                      </IonCol>
                     </IonRow>
                   ) : null}
-
-                  {oneShotSounds.length > 0 ? (
-                    <IonRow >
-                      <MusicalCube size={{ height: 250, width: 250 }} enableSync={false} enableLoop={false} sounds={oneShotSounds} setSharedTrackTime={setSharedTrackTime} getSharedTrackTime={getSharedTrackTime} />
-                    </IonRow>) : null}
                 </IonGrid>
               </IonCol>
-            </div>
           )
         }
         )}
