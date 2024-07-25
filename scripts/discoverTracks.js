@@ -15,7 +15,7 @@ const getFilePaths = (folderPath) => {
 
 const getSoundsForTrack = (trackName, trackFolderPath) => {
     const fileList = getFilePaths(trackFolderPath);
-    const formatFileList = (fileList) => `${trackName} : [${fileList.map(filepath => `"${filepath.replace('public/', './')}"`)}]`;
+    const formatFileList = (fileList) => `"${trackName}" : [${fileList.map(filepath => `"${filepath.replace('public/', './')}"`)}]`;
 
     return formatFileList(fileList);
 }
