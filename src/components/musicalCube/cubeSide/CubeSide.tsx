@@ -1,4 +1,4 @@
-import { IonGrid, IonRow, IonCol } from '@ionic/react';
+import { IonGrid, IonRow, IonCol, IonIcon } from '@ionic/react';
 import React, {
     useCallback,
     useEffect,
@@ -9,21 +9,25 @@ import { WaveSurfer, WaveForm } from "wavesurfer-react";
 import CubeSideToolbar from '../toolbar/Toolbar';
 import "./CubeSide.css";
 import { Size } from '../interfaces/Size';
+import { getInstrumentFromSamplePath } from 'instruments/InstrumentDetection';
+import { InstrumentName } from 'instruments/InstrumentName';
 
 interface SideOptions {
     id: string;
     size: Size;
     sound?: any,
-    enableLoop? : boolean;
-    enableSync? : boolean;
+    enableLoop?: boolean;
+    enableSync?: boolean;
     setSharedTrackTime: any;
     getSharedTrackTime: any;
 };
+
 
 export const CubeSide: React.FC<SideOptions> = ({ id, size, enableLoop = true, enableSync = true, sound, ...props }) => {
     //Each waveform needs to have a unique id
     const waveFormUniqueId = `waveform-${id}`;
     const wavesurferRef: any = useRef();
+    const instrument: InstrumentName = getInstrumentFromSamplePath(sound);
 
     let [loop, setLoop] = useState(enableLoop);
     let [showToolbar, setShowToolbar] = useState(false);
@@ -55,7 +59,7 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, enableLoop = true, e
             unsubFinish();
         };
     }, [loop])
-    
+
     const playPause = () => {
         wavesurferRef?.current?.playPause();
 
@@ -63,6 +67,7 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, enableLoop = true, e
     }
 
     const triggerSync = () => {
+        console.log('Triggering sync for', sound);
         const sharedPosition = props.getSharedTrackTime();
 
         if (sharedPosition) {
@@ -85,6 +90,7 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, enableLoop = true, e
     }
 
     const playFromBeginning = () => {
+        console.log('Playing ', sound);
         wavesurferRef.current.seekTo(0);
         wavesurferRef.current.play();
         setIsPlaying(true);
@@ -98,30 +104,32 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, enableLoop = true, e
             <IonGrid>
                 <IonRow>
                     <IonCol>
-                    <div className='wavesurfer-custom-wrapper'>
-                        { sound && 
-                            <WaveSurfer
-                                height={size.height - 4}
-                                width={size.width - 4}
-                                barWidth={0.5}
+                        <div className='wavesurfer-custom-wrapper'>
 
-                                //TODO: Get these colors from colors.css
-                                //TODO : Pass them in as params
-                                waveColor={[
-                                    "#1976d2",
-                                    "#2196f3",
-                                    "#1976d2",
-                                ]}
-                                progressColor={[
-                                    "#0d47a1",
-                                ]}
-                                dragToSeek={false}
-                                onMount={handleWSMount}
-                                container={`#${waveFormUniqueId}`}
-                            >
-                                <WaveForm id={waveFormUniqueId} />
-                            </WaveSurfer>
-                    }
+                            {sound &&
+                                <WaveSurfer
+                                    height={size.height - 4}
+                                    width={size.width - 4}
+                                    barWidth={0.5}
+
+                                    //TODO: Get these colors from colors.css
+                                    //TODO : Pass them in as params
+                                    waveColor={[
+                                        "#1976d2",
+                                        "#2196f3",
+                                        "#1976d2",
+                                    ]}
+                                    progressColor={[
+                                        "#0d47a1",
+                                    ]}
+                                    dragToSeek={false}
+                                    onMount={handleWSMount}
+                                    container={`#${waveFormUniqueId}`}
+                                >
+                                    <WaveForm id={waveFormUniqueId} />
+                                </WaveSurfer>
+                            }
+                            <div className='instrument-icon' style={{ backgroundImage: `url("assets/icon/instruments/${instrument}.svg")` }} />
                         </div>
                     </IonCol>
                 </IonRow>

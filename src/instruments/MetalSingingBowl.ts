@@ -14,7 +14,8 @@ import bowlFGlide from "../assets/sounds/Bowl_F_Glide.wav";
 import bowlGGlide from "../assets/sounds/Bowl_G_Glide.wav";
 
 import { NoteEnum } from "../sounds/NoteEnum";
-import { InstumentInterface, InstumentName } from "./InstrumentInterface";
+import { InstumentInterface } from "./InstrumentInterface";
+import { InstrumentName } from "./InstrumentName";
 import { instumentSlice } from "store/instrumentSlice";
 
 enum SoundBowlGestureEnum {
@@ -23,7 +24,7 @@ enum SoundBowlGestureEnum {
 }
 
 export class MetalSingingBowl implements InstumentInterface {
-    name = InstumentName.TibetanMetalSingingBowl;
+    name = InstrumentName.TibetanMetalSingingBowl;
     readonly VOLUME = 0.07;
 
     strike = (note: NoteEnum) => {

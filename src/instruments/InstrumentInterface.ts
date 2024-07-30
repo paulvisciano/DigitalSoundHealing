@@ -1,9 +1,6 @@
-export enum InstumentName {
-    TibetanMetalSingingBowl = "Tibetan Metal Singing Bowl",
-    TibetanCrystalSingingBowl = "Tibetan Crystal Singing Bowl",
-}
+import { InstrumentName } from "./InstrumentName";
 
 export interface InstumentInterface { 
-    name : InstumentName;
+    name : InstrumentName;
     registerSounds : (soundsData : any) => void;
 }

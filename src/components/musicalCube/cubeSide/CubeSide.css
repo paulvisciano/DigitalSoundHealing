@@ -13,9 +13,20 @@
         transform: translateY(0) rotate(270deg);
     }
 
-    ::part(cursor) {
+    ::part(cursor) { 
         width: 5px;
         background-color: var(--blue-900);
+    }
+
+    .instrument-icon { 
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        left: 5px;
+        bottom: 0px;
+        opacity: 0.6;
+        transform: translateY(0) rotate(-270deg);
+        z-index: 999;
     }
 }
  
