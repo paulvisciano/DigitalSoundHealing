@@ -27,7 +27,6 @@ const tracks = fs.readdirSync(tracksPath)
 const formatTracks = trackArray => `const tracks = { ${trackArray.join(',')} } \n\nexport default tracks;`;
 
 const finalFileContent = formatTracks(tracks);
-// console.log(`tracks`, formatTracks(tracks));
 
 fs.writeFile(outputPath, finalFileContent, err => {
     if (err) {
