@@ -10,16 +10,15 @@ import { Size } from '../interfaces/Size';
 import { CubeSide } from '../cubeSide/CubeSide';
 
 interface Options {
-    label?: string;
     size?: Size;
-    sounds: any;
+    sounds: string[];
     enableLoop?: boolean;
     enableSync?: boolean;
     setSharedTrackTime: (newTrackTime: number) => void;
     getSharedTrackTime: () => number;
 }
 
-const MusicalCube: React.FC<Options> = ({ label: label, size = { height: 333, width: 333 }, sounds, ...props }) => {
+const MusicalCube: React.FC<Options> = ({ size = { height: 333, width: 333 }, sounds, ...props }) => {
     return (
         <div className={`musical-cube`}>
             <Swiper
@@ -55,7 +54,6 @@ const MusicalCube: React.FC<Options> = ({ label: label, size = { height: 333, wi
                     )}
 
             </Swiper>
-            {label && <div className='musical-cube-label'>{label}</div>}
         </div>
     );
 }
