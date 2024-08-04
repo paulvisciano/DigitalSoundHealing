@@ -1,22 +1,23 @@
 import { IonPicker, IonPickerColumn, IonPickerColumnOption } from "@ionic/react";
-import tracks from "pages/realms/musicalCubes/tracks";
+import tracks, { Track } from "pages/realms/musicalCubes/tracks";
+import { useEffect, useState } from "react";
 
 interface Props {
- onTrackSelected(selectedTrack: any): void;   
+    initialTrack: Track;
+    onTrackSelected(selectedTrack: any): void;
 }
 
-const TrackPicker: React.FC<Props> = ({onTrackSelected}) => {
-    return (
-        <IonPicker>
-          <IonPickerColumn onIonChange={(newVal) => onTrackSelected(newVal?.detail.value)} >
+const TrackPicker: React.FC<Props> = ({ initialTrack, onTrackSelected }) =>
+    <IonPicker>
+        <IonPickerColumn value={initialTrack?.name} onIonChange={({ detail }) => {
+            onTrackSelected(tracks.find(track => track.name === detail.value));
+        }} >
             {
                 tracks.map(track => (
-                    <IonPickerColumnOption key={track.name} value={track}>{track.name}</IonPickerColumnOption>
+                    <IonPickerColumnOption key={track.name} value={track.name}>{track.name}</IonPickerColumnOption>
                 ))
             }
-          </IonPickerColumn>
-        </IonPicker>
-    )
-  }
-  
-  export default TrackPicker;
+        </IonPickerColumn>
+    </IonPicker>
+
+export default TrackPicker;

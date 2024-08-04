@@ -6,9 +6,6 @@ export const getInstrumentFromSamplePath = (samplePath: string): InstrumentName 
     let instrumentName = instruments.find(name => {
         let isIn = sampleName.indexOf(name) > 0;
 
-        console.log('sampleName ', sampleName)
-        console.log('Name => ', name)
-        console.log('name is in samplename ', isIn)
 
         return isIn;
     });
