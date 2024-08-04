@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const tracksPath = './public/assets/sounds/musicalCube/tracks';
-const outputPath = path.resolve("./src/pages/realms/musicalCubes/sounds/index.ts")
+const outputPath = path.resolve("./src/pages/realms/musicalCubes/tracks.ts")
 
 //https://gist.github.com/kethinov/6658166
 const getFilePaths = (folderPath) => {
@@ -15,7 +15,11 @@ const getFilePaths = (folderPath) => {
 
 const getSoundsForTrack = (trackName, trackFolderPath) => {
     const fileList = getFilePaths(trackFolderPath);
-    const formatFileList = (fileList) => `"${trackName}" : [${fileList.map(filepath => `"${filepath.replace('public/', './')}"`)}]`;
+    const formatFileList = (fileList) => `
+      { 
+        name : "${trackName}",
+        sounds : [${fileList.map(filepath => `"${filepath.replace('public/', './')}"`)}]
+      }`;
 
     return formatFileList(fileList);
 }
@@ -24,7 +28,15 @@ const tracks = fs.readdirSync(tracksPath)
     .filter(file => file != '.DS_Store')
     .map(trackName => getSoundsForTrack(trackName, path.join(tracksPath, trackName)));
 
-const formatTracks = trackArray => `const tracks = { ${trackArray.join(',')} } \n\nexport default tracks;`;
+const formatTracks = trackArray => `
+export interface Track { 
+  name : string; 
+  sounds : string[];
+}
+
+const tracks : Track[] = [${trackArray.join(',')} ];
+
+export default tracks;`;
 
 const finalFileContent = formatTracks(tracks);
 
