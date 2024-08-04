@@ -4,12 +4,10 @@
     right : -60px;
     height: 100%;
 
-   
-
     ion-icon { 
         color : var(--yellow-800);
-        height: 46px;
-        width: 46px;
+        height: 50px;
+        width: 50px;
         margin-bottom: 4px;
     }
 }
