@@ -5,10 +5,9 @@ import { Swiper as SwiperType } from 'swiper/types';
 import { EffectCube, Navigation } from 'swiper/modules';
 
 import React from "react";
-import { CubeSide } from './cubeSide/CubeSide';
 import { nanoid } from '@reduxjs/toolkit';
-import { Size } from './interfaces/Size';
-import { IonLabel } from '@ionic/react';
+import { Size } from '../interfaces/Size';
+import { CubeSide } from '../cubeSide/CubeSide';
 
 interface Options {
     label?: string;
