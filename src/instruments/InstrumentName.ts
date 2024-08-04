@@ -5,8 +5,12 @@ export enum InstrumentName {
     Violin = 'violin',
     Piano = 'piano',
     Cello = 'cello',
-    Drums = 'drums', 
+    Drums = 'drums',
     Synth = 'synth',
+    Brass = 'brass',
+    Keys = 'keys',
+    Guitar = 'guitar',
+    Vocal = 'vocal',
     Baseline = 'baseline',
     Unknown = 'unknown'
 }
