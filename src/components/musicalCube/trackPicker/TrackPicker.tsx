@@ -1,6 +1,7 @@
 import { IonPicker, IonPickerColumn, IonPickerColumnOption } from "@ionic/react";
 import tracks, { Track } from "pages/realms/musicalCubes/tracks";
-import { useEffect, useState } from "react";
+
+import "./TrackPicker.css"
 
 interface Props {
     initialTrack: Track;
