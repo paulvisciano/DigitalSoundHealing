@@ -96,16 +96,12 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, enableLoop = true, e
         setIsPlaying(true);
     }
 
-
-    // useCustomWavesurferClick(wavesurferRef);
-
     return (
         <div className={`cube-side`}>
             <IonGrid>
                 <IonRow>
                     <IonCol>
                         <div className='wavesurfer-custom-wrapper'>
-
                             {sound &&
                                 <WaveSurfer
                                     height={size.height - 4}
