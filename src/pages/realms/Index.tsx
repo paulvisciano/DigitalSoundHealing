@@ -15,7 +15,7 @@ import AthmospheresDawdioRealm from './athmospheresDawdio/AthmospheresDawdio';
 import SoulRealm from './soul/SoulRealm';
 import MusicalCubesRealm from './musicalCubes/MusicalCubesRealm';
 
-const Realms: React.FC = () => { 
+const Realms: React.FC = () => {
   return (<>
     <Swiper
       className='workspace-swiper'
@@ -38,7 +38,7 @@ const Realms: React.FC = () => {
       <SwiperSlide>
         <MusicalCubesRealm />
       </SwiperSlide>
-
+      {/* 
       <SwiperSlide>
         <SoulRealm />
       </SwiperSlide>
@@ -49,7 +49,7 @@ const Realms: React.FC = () => {
 
       <SwiperSlide>
         <AthmospheresDawdioRealm />
-      </SwiperSlide>
+      </SwiperSlide> */}
 
       {/* <SwiperSlide>
         <NativeAmericanRealm />
