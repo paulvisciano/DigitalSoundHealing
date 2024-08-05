@@ -39,12 +39,14 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, enableLoop = true, e
             wavesurferRef.current?.load(sound);
         }, [sound]);
 
-    useEffect(() => {
-        const unsubClick = wavesurferRef.current.on("click", (e: number) => {
-            setShowToolbar(true);
+    const onClick = () => {
+        setShowToolbar(true);
 
-            enableSync ? triggerSync() : playFromBeginning();
-        });
+        enableSync ? triggerSync() : playFromBeginning();
+    }
+
+    useEffect(() => {
+        const unsubClick = wavesurferRef.current.on("click", onClick);
 
         const unsubFinish = wavesurferRef.current.on("finish", () => {
             if (loop) {
@@ -125,7 +127,8 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, enableLoop = true, e
                                     <WaveForm id={waveFormUniqueId} />
                                 </WaveSurfer>
                             }
-                            <div className='instrument-icon' style={{ backgroundImage: `url("assets/icon/instruments/${instrument}.svg")` }} />
+
+                            <div className='instrument-icon' onClick={onClick} style={{ backgroundImage: `url("assets/icon/instruments/${instrument}.svg")` }} />
                         </div>
                     </IonCol>
                 </IonRow>
