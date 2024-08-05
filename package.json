@@ -1,6 +1,7 @@
 {
   "name": "musical-realms",
   "version": "0.0.1",
+  "homepage": "https://paulvisciano.github.io/Musical-Realms",
   "private": true,
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
@@ -21,6 +22,7 @@
     "@types/react-dom": "^18.0.6",
     "@types/react-router": "^5.1.11",
     "@types/react-router-dom": "^5.1.7",
+    "gh-pages": "^6.1.1",
     "history": "^4.9.0",
     "ionicons": "^7.0.0",
     "nanoid": "^5.0.4",
@@ -64,8 +66,9 @@
     "build": "react-scripts build",
     "preserve": "npm run build",
     "serve": "serve -s build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
-    "eject": "react-scripts eject",
     "lint": "eslint --ext .ts,.tsx src",
     "discoverTracks": "node scripts/discoverTracks.js"
   },
