@@ -15,7 +15,7 @@ const tracks : Track[] = [
       },
       { 
         name : "In the City",
-        sounds : ["./assets/sounds/musicalCube/tracks/In the City/melody/001_AHA_SV_60_piano_loop_in_the_city_6-8_Am.wav","./assets/sounds/musicalCube/tracks/In the City/melody/002_AHA_SV_60_guitar_stack_loop_in_the_city_6-8_Am.wav","./assets/sounds/musicalCube/tracks/In the City/melody/003_AHA_SV_60_brass_stack_loop_in_the_city_6-8_Am.wav","./assets/sounds/musicalCube/tracks/In the City/melody/004_AHA_SV_60_vocal_loop_in_the_city_6-8_Am.wav","./assets/sounds/musicalCube/tracks/In the City/one_shots/AHA_SV_brass_stack_one_shot_stab_choo_choo_Am.wav","./assets/sounds/musicalCube/tracks/In the City/one_shots/AHA_SV_melody_stack_one_shot_stab_bump_Am.wav","./assets/sounds/musicalCube/tracks/In the City/one_shots/SNS_SF_808_sub_comp_Am.wav"]
+        sounds : ["./assets/sounds/musicalCube/tracks/In the City/melody/001_AHA_SV_60_piano_loop_in_the_city_6-8_Am.wav","./assets/sounds/musicalCube/tracks/In the City/melody/002_AHA_SV_60_guitar_stack_loop_in_the_city_6-8_Am.wav","./assets/sounds/musicalCube/tracks/In the City/melody/003_AHA_SV_60_brass_stack_loop_in_the_city_6-8_Am.wav","./assets/sounds/musicalCube/tracks/In the City/melody/004_AHA_SV_60_vocal_loop_in_the_city_6-8_Am.wav","./assets/sounds/musicalCube/tracks/In the City/one_shots/AHA_SV_brass_stack_one_shot_stab_bump_Am.wav","./assets/sounds/musicalCube/tracks/In the City/one_shots/AHA_SV_brass_stack_one_shot_stab_choo_choo_Am.wav"]
       },
       { 
         name : "New Jungle",
