@@ -1,16 +1,16 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { InstumentName } from 'instruments/InstrumentInterface';
+import { InstrumentName } from 'instruments/InstrumentName';
 
 type Meta = {
   sound: any;
 }
 
 type PlayInstrumentPayload = {
-  instrument: InstumentName;
+  instrument: InstrumentName;
 }
 
 type SheetMusicAction = {
-  instrument: InstumentName;
+  instrument: InstrumentName;
   sound: Meta;
 }
 

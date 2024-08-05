@@ -1,0 +1,12 @@
+.musical-cube { 
+    display: inline-block;
+
+    .musical-cube-label {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .cube-slide-title {
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,22 @@
+.cube-side {
+    border: 2px solid var(--blue-900);
+    border-radius: 4px;
+
+    transform: translateY(0);
+
+    ion-grid,
+    ion-row,
+    ion-col {
+        padding: 0;
+    }
+
+    .wavesurfer-custom-wrapper {
+        opacity: 0.3;
+        transform: translateY(0) rotate(270deg);
+    }
+
+    ::part(cursor) {
+        width: 5px;
+        background-color: var(--blue-900);
+    }
+}

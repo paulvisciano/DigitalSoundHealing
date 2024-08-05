@@ -1,0 +1,19 @@
+.musical-realm { 
+    height: 100%;
+
+    ion-grid {
+        height: 100%;
+    }
+
+    ion-row { 
+        text-align: center;
+    }
+
+    .track-cubes-container {
+        height: 75%;
+    }
+
+    .track-picker-container {
+        height: 25%;
+    }
+}

@@ -1,0 +1,44 @@
+.instrument-icon {
+    position: absolute;
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+    left: 5px;
+    bottom: 5px;
+    opacity: 1;
+    transform: translateY(0) rotate(-270deg);
+    z-index: 999;
+
+    &.piano,
+    &.synth {
+        height: 40px;
+        width: 40px;
+    }
+
+    &.brass {
+        height: 65px;
+        width: 65px;
+        left: 0px;
+        bottom: -5px;
+    }
+
+    &.vocal {
+        height: 60px;
+        width: 60px;
+        left: 0px;
+        bottom: -5px;
+    }
+
+    &.guitar {
+        height: 45px;
+        width: 45px;
+        left: 10px;
+    }
+
+    &.strings {
+        height: 40px;
+        width: 40px;
+        left: 10px;
+
+    }
+}
