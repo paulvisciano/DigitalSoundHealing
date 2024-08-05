@@ -9,8 +9,7 @@ import { WaveSurfer, WaveForm } from "wavesurfer-react";
 import CubeSideToolbar from '../toolbar/Toolbar';
 import "./CubeSide.css";
 import { Size } from '../interfaces/Size';
-import { getInstrumentFromSamplePath } from 'instruments/InstrumentDetection';
-import { InstrumentName } from 'instruments/InstrumentName';
+import InstumentIcon from '../InstrumentIcon/InstrumentIcon';
 
 interface SideOptions {
     id: string;
@@ -22,12 +21,10 @@ interface SideOptions {
     getSharedTrackTime: any;
 };
 
-
 export const CubeSide: React.FC<SideOptions> = ({ id, size, enableLoop = true, enableSync = true, sound, ...props }) => {
     //Each waveform needs to have a unique id
     const waveFormUniqueId = `waveform-${id}`;
     const wavesurferRef: any = useRef();
-    const instrument: InstrumentName = getInstrumentFromSamplePath(sound);
 
     let [loop, setLoop] = useState(enableLoop);
     let [showToolbar, setShowToolbar] = useState(false);
@@ -128,7 +125,7 @@ export const CubeSide: React.FC<SideOptions> = ({ id, size, enableLoop = true, e
                                 </WaveSurfer>
                             }
 
-                            <div className='instrument-icon' onClick={onClick} style={{ backgroundImage: `url("assets/icon/instruments/${instrument}.svg")` }} />
+                            <InstumentIcon sound={sound} onClick={onClick} />
                         </div>
                     </IonCol>
                 </IonRow>

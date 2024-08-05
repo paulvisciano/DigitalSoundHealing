@@ -19,16 +19,4 @@
         width: 5px;
         background-color: var(--blue-900);
     }
-
-    .instrument-icon {
-        position: absolute;
-        background-size: cover;
-        height: 50px;
-        width: 50px;
-        left: 5px;
-        bottom: 5px;
-        opacity: 1;
-        transform: translateY(0) rotate(-270deg);
-        z-index: 999;
-    }
 }
