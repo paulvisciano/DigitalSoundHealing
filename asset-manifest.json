@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/musical-cubes/static/css/main.84f12d64.css",
-    "main.js": "/musical-cubes/static/js/main.dc9f74a7.js",
+    "main.js": "/musical-cubes/static/js/main.8d289cc5.js",
     "static/js/201.d2d63be8.chunk.js": "/musical-cubes/static/js/201.d2d63be8.chunk.js",
     "static/js/466.12f98e34.chunk.js": "/musical-cubes/static/js/466.12f98e34.chunk.js",
     "static/js/372.e5f9ec6d.chunk.js": "/musical-cubes/static/js/372.e5f9ec6d.chunk.js",
@@ -29,7 +29,7 @@
     "service-worker.js": "/musical-cubes/service-worker.js",
     "index.html": "/musical-cubes/index.html",
     "main.84f12d64.css.map": "/musical-cubes/static/css/main.84f12d64.css.map",
-    "main.dc9f74a7.js.map": "/musical-cubes/static/js/main.dc9f74a7.js.map",
+    "main.8d289cc5.js.map": "/musical-cubes/static/js/main.8d289cc5.js.map",
     "201.d2d63be8.chunk.js.map": "/musical-cubes/static/js/201.d2d63be8.chunk.js.map",
     "466.12f98e34.chunk.js.map": "/musical-cubes/static/js/466.12f98e34.chunk.js.map",
     "372.e5f9ec6d.chunk.js.map": "/musical-cubes/static/js/372.e5f9ec6d.chunk.js.map",
@@ -43,6 +43,6 @@
   },
   "entrypoints": [
     "static/css/main.84f12d64.css",
-    "static/js/main.dc9f74a7.js"
+    "static/js/main.8d289cc5.js"
   ]
 }
