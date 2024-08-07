@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/musical-cubes/static/css/main.84f12d64.css",
-    "main.js": "/musical-cubes/static/js/main.8d289cc5.js",
+    "main.css": "/musical-cubes/static/css/main.ff431436.css",
+    "main.js": "/musical-cubes/static/js/main.853e6d83.js",
     "static/js/201.d2d63be8.chunk.js": "/musical-cubes/static/js/201.d2d63be8.chunk.js",
     "static/js/466.12f98e34.chunk.js": "/musical-cubes/static/js/466.12f98e34.chunk.js",
     "static/js/372.e5f9ec6d.chunk.js": "/musical-cubes/static/js/372.e5f9ec6d.chunk.js",
@@ -27,9 +27,11 @@
     "static/media/Bowl_A_Strike.wav": "/musical-cubes/static/media/Bowl_A_Strike.e186271dc0557602678a.wav",
     "static/media/Bowl_G_Strike.wav": "/musical-cubes/static/media/Bowl_G_Strike.fd11f3036cf7457ecb1f.wav",
     "service-worker.js": "/musical-cubes/service-worker.js",
+    "static/media/loop-disabled.svg": "/musical-cubes/static/media/loop-disabled.d3e77ccc18e4a6a5a6460804b6912198.svg",
+    "static/media/loop-enabled.svg": "/musical-cubes/static/media/loop-enabled.424b6774e9d394432ef74214156306f4.svg",
     "index.html": "/musical-cubes/index.html",
-    "main.84f12d64.css.map": "/musical-cubes/static/css/main.84f12d64.css.map",
-    "main.8d289cc5.js.map": "/musical-cubes/static/js/main.8d289cc5.js.map",
+    "main.ff431436.css.map": "/musical-cubes/static/css/main.ff431436.css.map",
+    "main.853e6d83.js.map": "/musical-cubes/static/js/main.853e6d83.js.map",
     "201.d2d63be8.chunk.js.map": "/musical-cubes/static/js/201.d2d63be8.chunk.js.map",
     "466.12f98e34.chunk.js.map": "/musical-cubes/static/js/466.12f98e34.chunk.js.map",
     "372.e5f9ec6d.chunk.js.map": "/musical-cubes/static/js/372.e5f9ec6d.chunk.js.map",
@@ -42,7 +44,7 @@
     "377.9f408f9d.chunk.js.map": "/musical-cubes/static/js/377.9f408f9d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.84f12d64.css",
-    "static/js/main.8d289cc5.js"
+    "static/css/main.ff431436.css",
+    "static/js/main.853e6d83.js"
   ]
 }
