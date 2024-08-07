@@ -1,10 +1,9 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
-import { IonReactRouter } from '@ionic/react-router';
+import { IonReactHashRouter } from '@ionic/react-router';
 import { Provider } from 'react-redux'
 import store from "./store/store";
-import Home from './pages/Home';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -27,21 +26,22 @@ import './theme/variables.css';
 import './theme/colors.css';
 import './theme/utility.css';
 
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-cube';
+import 'swiper/css/pagination';
+import MusicalCubesRealm from 'pages/realms/musicalCubes/MusicalCubesRealm';
+
 setupIonicReact();
 
 const App: React.FC = () => (
   <Provider store={store}>
     <IonApp>
-      <IonReactRouter basename={process.env.PUBLIC_URL}>
+      <IonReactHashRouter>
         <IonRouterOutlet>
-          <Route exact path="/home">
-            <Home />
-          </Route>
-          <Route exact path="/">
-            <Redirect to="/home" />
-          </Route>
+          <Route exact path="*" component={MusicalCubesRealm} />
         </IonRouterOutlet>
-      </IonReactRouter>
+      </IonReactHashRouter>
     </IonApp>
   </Provider>
 );
