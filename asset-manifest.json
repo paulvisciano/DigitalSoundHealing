@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/musical-realms/static/css/main.84f12d64.css",
-    "main.js": "/musical-realms/static/js/main.4a0cd190.js",
+    "main.js": "/musical-realms/static/js/main.a03334f9.js",
     "static/js/201.bec6d2e7.chunk.js": "/musical-realms/static/js/201.bec6d2e7.chunk.js",
     "static/js/466.9d2cb19c.chunk.js": "/musical-realms/static/js/466.9d2cb19c.chunk.js",
     "static/js/372.3ef7d64d.chunk.js": "/musical-realms/static/js/372.3ef7d64d.chunk.js",
@@ -29,7 +29,7 @@
     "service-worker.js": "/musical-realms/service-worker.js",
     "index.html": "/musical-realms/index.html",
     "main.84f12d64.css.map": "/musical-realms/static/css/main.84f12d64.css.map",
-    "main.4a0cd190.js.map": "/musical-realms/static/js/main.4a0cd190.js.map",
+    "main.a03334f9.js.map": "/musical-realms/static/js/main.a03334f9.js.map",
     "201.bec6d2e7.chunk.js.map": "/musical-realms/static/js/201.bec6d2e7.chunk.js.map",
     "466.9d2cb19c.chunk.js.map": "/musical-realms/static/js/466.9d2cb19c.chunk.js.map",
     "372.3ef7d64d.chunk.js.map": "/musical-realms/static/js/372.3ef7d64d.chunk.js.map",
@@ -43,6 +43,6 @@
   },
   "entrypoints": [
     "static/css/main.84f12d64.css",
-    "static/js/main.4a0cd190.js"
+    "static/js/main.a03334f9.js"
   ]
 }
